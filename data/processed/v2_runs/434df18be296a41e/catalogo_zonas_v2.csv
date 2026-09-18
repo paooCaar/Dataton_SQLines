@@ -1,0 +1,107 @@
+zone_id,colonia,alcaldia,aliases,geometry_available,n_estaciones_catalogo_actual,station_history_available
+col_1fd836f8991b530f861257d28b0cb970,Agricola,Alvaro Obregon,"[""Agricola""]",False,1,False
+col_d4e474286fa85c0aa9cd393c8e2880c1,Axotla,Alvaro Obregon,"[""Axotla""]",True,2,False
+col_543d04998daf5e4ab3306049617a67b4,Florida,Alvaro Obregon,"[""Florida""]",True,5,False
+col_f884dc870afb59218eed6bb359ce0e0f,Guadalupe Chimalistac,Alvaro Obregon,"[""Guadalupe Chimalistac""]",False,2,False
+col_cbef3a463b0b5bc2ac31e747b6721178,Guadalupe Inn,Alvaro Obregon,"[""Guadalupe Inn""]",True,6,False
+col_47716220585b527aaf095e5cd827326f,San Angel,Alvaro Obregon,"[""San Angel""]",True,1,False
+col_175c1726756a5dda90d2345c13795848,Angel Zimbron,Azcapotzalco,"[""Angel Zimbron""]",True,2,False
+col_46ef3d6067b85bc580fd6f574f0e5a26,Claveria,Azcapotzalco,"[""Claveria""]",True,6,False
+col_218c753a6a38548aa02718260c2caef7,Del Recreo,Azcapotzalco,"[""Del Recreo""]",True,1,False
+col_debb68f1d0525506bae6ef15b9e39d2f,Hogar y Seguridad,Azcapotzalco,"[""Hogar y Seguridad""]",False,2,False
+col_d24f94824377561c8616923a56c96081,Ignacio Allende,Azcapotzalco,"[""Ignacio Allende""]",True,1,False
+col_a21a9068f97957a2a0828f64e9102bde,Nueva Santa Maria,Azcapotzalco,"[""Nueva Santa Maria""]",True,5,False
+col_075ade1e8b735efcac21da8802b37c0a,Obrero Popular,Azcapotzalco,"[""Obrero Popular""]",True,1,False
+col_0d7a0b5c2d6b5f31bd586ed063d99183,San Alvaro,Azcapotzalco,"[""San Alvaro""]",True,2,False
+col_ba378e9f675c57f6b84cd80ba4906921,San Salvador Xochimanca,Azcapotzalco,"[""San Salvador Xochimanca""]",True,2,False
+col_a8d3b136a1115b0380f6f041ad7b12a8,Sector Naval,Azcapotzalco,"[""Sector Naval""]",True,1,False
+col_145462232cb0506eac0d954b79bb4e67,Tlatilco,Azcapotzalco,"[""Tlatilco""]",True,3,False
+col_b0071da2a8ad5c38b1d137c8dd21a966,Unidad Habitacional Cuitláhuac,Azcapotzalco,"[""Unidad Habitacional Cuitláhuac""]",False,1,False
+col_321ef9a198015257a1d0afd095d56686,Victoria de las Democracias,Azcapotzalco,"[""Victoria de las Democracias""]",True,1,False
+col_4d16bf4016d1531fac1806d04420e1fc,Acacias,Benito Juarez,"[""Acacias""]",True,5,False
+col_9f7b23fc019150a58f8d3fa8ecb0545b,Actipan,Benito Juarez,"[""Actipan""]",True,6,False
+col_479170cdfd5b53c484ffa7a376547b3a,Alamos,Benito Juarez,"[""Alamos""]",True,9,False
+col_49f6b5a0ab625bda9ca00f7acd601c17,Americas Unidas,Benito Juarez,"[""Americas Unidas""]",False,3,False
+col_f8e6271a3b155d19906933df376c56d8,Ampliacion Napoles,Benito Juarez,"[""Ampliacion Napoles""]",False,4,False
+col_e72f76ae560a556e957e54c180d9d323,Centro Urbano Presidente Aleman,Benito Juarez,"[""Centro Urbano Presidente Aleman""]",True,1,False
+col_9bbea60acc995fa7b9c482efc14ebb94,Ciudad de los Deportes,Benito Juarez,"[""Ciudad de los Deportes""]",True,5,False
+col_81496637921a5e749f117e8ef4f2ee99,Credito Constructor,Benito Juarez,"[""Credito Constructor""]",True,1,False
+col_058b0a95e3e35746bf806f626cc29e3c,Del Valle Centro,Benito Juarez,"[""Del Valle Centro"", ""Del valle Centro""]",False,15,False
+col_cbe1b970a3525757af7647d6463839ff,Del Valle Norte,Benito Juarez,"[""Del Valle Norte""]",False,17,False
+col_b311567e717b53408adc7485d395fbd0,Del Valle Sur,Benito Juarez,"[""Del Valle Sur""]",False,15,False
+col_84c2fef5059c546e9a59e6816fb7e72b,Extremadura Insurgentes,Benito Juarez,"[""Extremadura Insurgentes""]",True,2,False
+col_21faee63d17e537f90a501b5c0313a20,General Pedro Maria Anaya,Benito Juarez,"[""General Pedro Maria Anaya""]",True,5,False
+col_347bf8c118ae5cde8343a717c911525d,Independencia,Benito Juarez,"[""Independencia""]",True,2,False
+col_a069943804255517b1a44551a37b7d8e,Insurgentes Mixcoac,Benito Juarez,"[""Insurgentes Mixcoac""]",True,7,False
+col_64a29c6aaaf85a42bb0e87a40667ac42,Insurgentes San Borja,Benito Juarez,"[""Insurgentes San Borja""]",True,3,False
+col_eadac3374f095a63b927c12303b7218a,Josefa Ortiz de Dominguez,Benito Juarez,"[""Josefa Ortiz de Dominguez""]",True,1,False
+col_81ad18034e5855e38b63dfffe608d3d3,Letran Valle,Benito Juarez,"[""Letran Valle""]",True,4,False
+col_6bf10fd8943e5967b7603760fb6cd344,Napoles,Benito Juarez,"[""Napoles""]",True,13,False
+col_fff7ee1276da58efb088edf2d4f0141e,Narvarte,Benito Juarez,"[""Narvarte""]",True,11,False
+col_99820d9ec1005837855fcf0d7f8dcaf0,Narvarte Poniente,Benito Juarez,"[""Narvarte Poniente""]",False,16,False
+col_5481a24d7414578eb3d8dcf5c715fb23,Niños Heroes de Chapultepec,Benito Juarez,"[""Niños Heroes de Chapultepec""]",True,2,False
+col_a11503ab8f7b52ecba6e146f1cd2bcae,Noche Buena,Benito Juarez,"[""Noche Buena""]",True,2,False
+col_f685e6afce2f59ffb8b623a8882cd0ef,Nonoalco,Benito Juarez,"[""Nonoalco""]",True,2,False
+col_ee0096c66b1754fb83cf4c4170f93dd6,Piedad Narvarte,Benito Juarez,"[""Piedad Narvarte""]",True,1,False
+col_e426afce41e3549e9144c6ee8c8047dc,Portales,Benito Juarez,"[""Portales""]",True,16,False
+col_588e4e85b75a566e85b1e464fdd27b30,Portales Norte,Benito Juarez,"[""Portales Norte""]",False,2,False
+col_aeb67b70520e58b895caf170c4cc2b7b,Postal,Benito Juarez,"[""Postal""]",True,3,False
+col_4a6ce89e87ac5037b13cd12239825b31,Residencial Emperadores,Benito Juarez,"[""Residencial Emperadores""]",True,1,False
+col_506a1cf0beec53eb97a74f9abc9cfe66,San Jose Insurgentes,Benito Juarez,"[""San Jose Insurgentes""]",True,7,False
+col_7d88ca5b0c8d519c962986381a6c0a11,San Pedro de los Pinos,Benito Juarez,"[""San Pedro de los Pinos""]",True,9,False
+col_abad05146e545e0cb59abdc228f8373c,San Simon Ticumac,Benito Juarez,"[""San Simon Ticumac""]",True,4,False
+col_6e124db5b88b5695a72b6c82db5754cd,Santa Cruz Atoyac,Benito Juarez,"[""Santa Cruz Atoyac""]",False,7,False
+col_8e89f7e8963258c3b4c0ec85deb35ae9,Tlacoquemecatl del Valle,Benito Juarez,"[""Tlacoquemecatl del Valle""]",True,6,False
+col_c4ce45851ad35a61b8fb1e683c4b52a5,Vertiz Narvarte,Benito Juarez,"[""Vertiz Narvarte""]",True,4,False
+col_8694171d7ed551d78020504424e7148c,Xoco,Benito Juarez,"[""Xoco""]",True,2,False
+col_c00d00bb38f656119c21216810bac6c9,Barrio San Lucas,Coyoacan,"[""Barrio San Lucas""]",False,1,False
+col_bed54b5fa7b155169b5367f26e64ee77,Barrio la Concepcion,Coyoacan,"[""Barrio la Concepcion""]",False,2,False
+col_6573c9286c5a50288130ecf1765ab3b5,Del Carmen,Coyoacan,"[""Del Carmen""]",True,17,False
+col_96af67dbdc945131a7e1fb18aab974fa,Parque San Andres,Coyoacan,"[""Parque San Andres""]",True,4,False
+col_3c107741e9aa5999ac5f00ed40d5deea,San Diego Churubusco,Coyoacan,"[""San Diego Churubusco""]",True,2,False
+col_aaef3bfb4fb259e8ab32bf1eb9404368,San Mateo,Coyoacan,"[""San Mateo""]",True,2,False
+col_4b057d99c17f5783822af98b43744780,Santa Catarina,Coyoacan,"[""Santa Catarina""]",True,6,False
+col_34ef10debc6452f7a37e4eb02f41010f,Villa Coyoacan,Coyoacan,"[""Villa Coyoacan""]",True,3,False
+col_6954f4d5482a5e07b5721c81d464cd43,Algarin,Cuauhtemoc,"[""Algarin""]",True,4,False
+col_8dd63c1e84435db49a927bcd4b149776,Atlampa,Cuauhtemoc,"[""Atlampa""]",True,3,False
+col_af634a3d6a0956f8930194b36da1dbde,Buenavista,Cuauhtemoc,"[""Buenavista""]",True,7,False
+col_e56a7334b36e5ca6841813031c3b8d2b,Centro,Cuauhtemoc,"[""Centro""]",True,31,False
+col_5176ae04e5c95d57b5192bbca17b2436,Condesa,Cuauhtemoc,"[""Condesa""]",True,13,False
+col_76cd2cc2efb657e1a3779dc11ff63e1d,Cuauhtemoc,Cuauhtemoc,"[""Cuauhtemoc""]",True,18,False
+col_eb93b25ca61954fa8e9ee2ca2ca57f16,Doctores,Cuauhtemoc,"[""Doctores""]",True,18,False
+col_5322fef4c1c650588d41946f956ec97e,Hipodromo,Cuauhtemoc,"[""Hipodromo""]",True,19,False
+col_77126fcee0bf5162978113f718dc8420,Hipodromo Condesa,Cuauhtemoc,"[""Hipodromo Condesa""]",True,5,False
+col_b9647cb13b4b5ebebd069fd56e70a36f,Juarez,Cuauhtemoc,"[""Juarez""]",True,24,False
+col_df8f37e24dff550bb52ef711568f9cb7,Obrera,Cuauhtemoc,"[""Obrera""]",True,13,False
+col_9b8d9872383b59f7a23d22ab97fc79d8,Roma Norte,Cuauhtemoc,"[""Roma Norte""]",True,37,False
+col_a20da3b32dc95373bfc155a68e4197fa,Roma Sur,Cuauhtemoc,"[""Roma Sur""]",True,15,False
+col_ffeedd6a32945225b84ecc416148dd76,San Rafael,Cuauhtemoc,"[""San Rafael""]",True,12,False
+col_bd478b6a570f533f803bd0118bf3f055,Santa Maria la Ribera,Cuauhtemoc,"[""Santa Maria la Ribera""]",True,17,False
+col_0f6878a834535080af77fae943ae9b95,Tabacalera,Cuauhtemoc,"[""Tabacalera""]",True,7,False
+col_e38591c35bd05184a3caa0318add5f06,Agricultura,Miguel Hidalgo,"[""Agricultura""]",True,2,False
+col_2d383baad6155258af666ad388181e00,Ampliacion Granada,Miguel Hidalgo,"[""Ampliacion Granada""]",False,3,False
+col_49351caf73a652ba8bcc7655ce37dd18,Anahuac,Miguel Hidalgo,"[""Anahuac""]",True,10,False
+col_3d725e14185a5c38a7d3e1cda93adc73,Anahuac I Seccion,Miguel Hidalgo,"[""Anahuac I Seccion""]",False,5,False
+col_926ff32000a751399a54daad7479254d,Anzures,Miguel Hidalgo,"[""Anzures""]",True,9,False
+col_a4784e1d94d556b3b35e2f91d799fbf4,Bosque de Chapultepec,Miguel Hidalgo,"[""Bosque de Chapultepec""]",False,3,False
+col_6e932760ad7e5318b2922fea188ea3f8,Cuauhtemoc Pensil,Miguel Hidalgo,"[""Cuauhtemoc Pensil""]",True,1,False
+col_f1b446f58ae65b7f8a814bab39bf17dc,Escandon,Miguel Hidalgo,"[""Escandon""]",True,13,False
+col_b0d667d100335a2cbd38dd885b4a49ae,Granada,Miguel Hidalgo,"[""Granada""]",True,6,False
+col_d230756d48c258b4b050767d29182a80,Irrigacion,Miguel Hidalgo,"[""Irrigacion""]",True,2,False
+col_296d6268c64b5552821a2eebfad2256f,Lomas de Chapultepec Seccion III,Miguel Hidalgo,"[""Lomas de Chapultepec Seccion III""]",False,2,False
+col_bbdf83c90b8d5945967637dfe673bde4,Lomas de Chapultepec Seccion IV/Lomas Virreyes,Miguel Hidalgo,"[""Lomas de Chapultepec Seccion IV/Lomas Virreyes""]",False,2,False
+col_333380f5322950cf9a22ac2947f13767,Lomas de Chapultepec Seccion V,Miguel Hidalgo,"[""Lomas de Chapultepec Seccion V""]",False,2,False
+col_7f4389bc274355ffaf821a5f6d5a33f1,Mariano Escobedo,Miguel Hidalgo,"[""Mariano Escobedo""]",False,2,False
+col_76d47b3676925748aa9d3dee653c6562,Modelo Pensil,Miguel Hidalgo,"[""Modelo Pensil""]",True,1,False
+col_d40150e91a0457b18f3ac9b3be178bdc,Molino del Rey,Miguel Hidalgo,"[""Molino del Rey""]",True,1,False
+col_19663fbe37bd50ee8eff60a93705eb35,Nextitla,Miguel Hidalgo,"[""Nextitla""]",True,2,False
+col_2006d9e5f6975534a01a4ae3d0063ec1,Plutarco Elias Calles,Miguel Hidalgo,"[""Plutarco Elias Calles""]",True,2,False
+col_43db8a95c872541680d0688e731fe141,Polanco,Miguel Hidalgo,"[""Polanco""]",True,44,False
+col_cda58c28c9e35bd7b4c277287cc632da,Polanco Seccion I/ Los Morales,Miguel Hidalgo,"[""Polanco Seccion I/ Los Morales""]",False,1,False
+col_92cd6e3f23155eedb10936246b2da76c,Popotla,Miguel Hidalgo,"[""Popotla""]",True,4,False
+col_62bb8f5cf8d25a898a34208ad6dee465,San Miguel Chapultepec,Miguel Hidalgo,"[""San Miguel Chapultepec""]",True,10,False
+col_c84c8cba11e05de082c7496795578d88,Santo Tomas,Miguel Hidalgo,"[""Santo Tomas""]",True,1,False
+col_de2ee5e1ae0955e6845ef669ea127a75,Tacuba,Miguel Hidalgo,"[""Tacuba""]",True,2,False
+col_39b7c034d6a15d22952ae31d1eab536a,Tlaxpana,Miguel Hidalgo,"[""Tlaxpana""]",True,3,False
+col_fb144842ece557ce8e184ba17ea11743,Un Hogar para Nosotros,Miguel Hidalgo,"[""Un Hogar para Nosotros""]",True,1,False
+col_6f85f8cb1357503bae86559c4ab47194,Veronica Anzures,Miguel Hidalgo,"[""Veronica Anzures""]",True,5,False
