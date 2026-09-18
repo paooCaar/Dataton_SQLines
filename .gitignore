@@ -12,6 +12,14 @@ data/external/*
 datos_bici/*
 !datos_bici/.gitkeep
 
+# Dump viejo de INEGI (~150 CSV, algunos de hasta 98MB, p.ej.
+# atus_anual_*.csv) superado desde el 2026-09-15 por data/raw/ + los
+# scripts de src/data/ (ver docs/fuentes_datos.md). Ya se retiro del
+# tracking en este commit; se ignora la carpeta completa (incluye
+# "talvez/", sin decidir todavia) para que nadie la vuelva a agregar por
+# accidente con un `git add -A`.
+data/csvs inegi/
+
 # Python
 __pycache__/
 *.pyc
