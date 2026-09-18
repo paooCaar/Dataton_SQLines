@@ -1030,3 +1030,15 @@ algoritmo de puntuación/categorización. Falta el Temporal Fusion Transformer
 **Decisiones pendientes de confirmar**: si LightGBM reemplaza a Theil-Sen
 como baseline "de seguridad" dado que ya lo supera en todas las métricas
 (pendiente de discusión de equipo, no decidido unilateralmente aquí).
+
+### Migración V2 en paralelo (2026-09-18)
+
+La rama `feature/forecast-geoespacial-v2` inicia una migración incremental
+documentada en [`docs/MIGRATION_V2.md`](docs/MIGRATION_V2.md). El índice
+`indice_demanda_compuesto` se conserva como producto de oportunidad; el nuevo
+forecast V2 usará `viajes_total` como actividad ECOBICI (retiros + arribos),
+sin modificar todavía los outputs legacy ni la aplicación Streamlit.
+
+La Fase 1 ya genera `panel_demanda_v2.csv`, un catálogo estable de `zone_id`,
+un calendario explícito y manifiestos de calidad. No se han implementado aún
+features temporales o espaciales, validación rolling ni modelos nuevos.
