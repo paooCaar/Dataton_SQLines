@@ -1,0 +1,32 @@
+# Datos pesados: no versionar, usar scripts reproducibles en src/data/
+data/raw/*
+!data/raw/.gitkeep
+data/external/*
+!data/external/.gitkeep
+# datos_bici/ (~1.9GB, con CSV mensuales de hasta 112MB) NO viene de un
+# script reproducible (el equipo lo coloca directo en el repo, ver
+# docs/fuentes_datos.md) - pero igual es demasiado pesado para git normal
+# (GitHub rechaza cualquier archivo >100MB sin Git LFS). Se documenta aqui
+# en vez de intentar subirlo: hay que compartirlo por otro medio (drive,
+# almacenamiento en la nube) entre el equipo.
+datos_bici/*
+!datos_bici/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# R
+.Rhistory
+
+# Entorno
+.env
+
+# Streamlit
+.streamlit/secrets.toml
+
+# SO
+.DS_Store

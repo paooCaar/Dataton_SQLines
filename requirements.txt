@@ -1,0 +1,26 @@
+# Punto de partida — ajustar una vez confirmado el stack final (CONTEXT.md, sección 8.5)
+
+# Datos y geoespacial
+pandas
+geopandas
+numpy
+scipy
+requests
+python-dotenv
+
+# Modelado
+scikit-learn
+lightgbm
+torch
+pytorch-forecasting
+pytorch-lightning
+
+# App / visualización
+streamlit
+pydeck
+folium
+# >=5.24 por px.choropleth_map (mapa de src/app/app.py); ademas, plotly<7
+# junto con pandas>=3 rompe el groupby interno de plotly.express al colorear
+# por una columna discreta (KeyError en choropleth_mapbox/choropleth_map) -
+# ver CONTEXT.md 8.6.
+plotly>=7

@@ -1,0 +1,689 @@
+num_cicloe,viajes_retiro,viajes_arribo,viajes_total,sistema,calle_prin,calle_secu,colonia,alcaldia,latitud,longitud,sitio_de_e,estatus
+271-272,304179,506142,810321,Ecobici,Jesus Garcia,Carlos J. Meneses,Buenavista,Cuauhtemoc,19.443684,-99.152465,Arroyo,Instalada
+027,214352,222131,436483,Ecobici,Av. Paseo de la Reforma,Havre,Juarez,Cuauhtemoc,19.42916,-99.162703,Banqueta,Instalada
+064,208867,218170,427037,Ecobici,Sonora,Amsterdam,Hipodromo,Cuauhtemoc,19.412982,-99.166936,Arroyo,Instalada
+014,163941,213445,377386,Ecobici,Av. Paseo de la Reforma,Rio de la Plata,Cuauhtemoc,Cuauhtemoc,19.42454,-99.173247,Banqueta,Instalada
+001,161283,166686,327969,Ecobici,Rio Sena,Rio Balsas,Cuauhtemoc,Cuauhtemoc,19.4335895,-99.1678193,Arroyo,Instalada
+043,150698,176406,327104,Ecobici,Juarez,Doctor Mora,Centro,Cuauhtemoc,19.4351365,-99.1460756,Banqueta,Instalada
+018,158339,165626,323965,Ecobici,Av. Paseo de la Reforma,Rio Rhin,Cuauhtemoc,Cuauhtemoc,19.428802,-99.164381,Banqueta,Instalada
+208,170361,144890,315251,Ecobici,Hesiodo,Lamartine,Polanco,Miguel Hidalgo,19.434182,-99.189835,Arroyo,Instalada
+031,152052,153722,305774,Ecobici,Hamburgo,Av. Insurgentes,Juarez,Cuauhtemoc,19.427937,-99.161245,Arroyo,Instalada
+548,146744,158598,305342,Ecobici,Doctor Mariano Azuela,Jose Antonio Alzate,Santa Maria la Ribera,Cuauhtemoc,19.44701,-99.154318,Arroyo,Instalada
+028,146135,156827,302962,Ecobici,Toledo,Tokio,Juarez,Cuauhtemoc,19.423664,-99.172568,Arroyo,Instalada
+029,141023,161604,302627,Ecobici,Av. Paseo de la Reforma,Bucareli,Centro,Cuauhtemoc,19.434944,-99.150295,Banqueta,Instalada
+158-159,150310,151917,302227,Ecobici,Huatabampo,Av. Cuauhtemoc,Roma Sur,Cuauhtemoc,19.407507,-99.155541,Arroyo,Instalada
+038,151296,150295,301591,Ecobici,Cozumel,Puebla,Roma Norte,Cuauhtemoc,19.4208433,-99.1713729,Arroyo,Instalada
+194,149133,147273,296406,Ecobici,Circuito Mahatma Gandhi,Av. Paseo de la Reforma,Bosque de Chapultepec,Miguel Hidalgo,19.424282,-99.180334,Banqueta,Instalada
+555,148052,145317,293369,Ecobici,Av. Ribera de San Cosme,Av. Insurgentes Centro,Santa Maria la Ribera,Cuauhtemoc,19.44021597,-99.15616778,Banqueta,Instalada
+107-108,147423,144681,292104,Ecobici,Tolsa,Balderas,Centro,Cuauhtemoc,19.427329,-99.149971,Arroyo,Instalada
+134,137262,152167,289429,Ecobici,Alvaro Obregon,Orizaba,Roma Norte,Cuauhtemoc,19.418304,-99.15956,Camellón,Instalada
+052,141879,146155,288034,Ecobici,Hidalgo,Trujano,Centro,Cuauhtemoc,19.436208,-99.141931,Banqueta,Instalada
+041,143084,140661,283745,Ecobici,Av. Paseo de la Reforma,Av. de la Republica,Tabacalera,Cuauhtemoc,19.43542,-99.150317,Banqueta,Instalada
+242,131289,147063,278352,Ecobici,Av. Moliere,Blvd. Miguel de Cervantes Saavedra,Polanco,Miguel Hidalgo,19.440195,-99.200715,Arroyo,Instalada
+237-238,156578,119786,276364,Ecobici,Andres Bello,George Eliot,Polanco,Miguel Hidalgo,19.426744,-99.193986,Arroyo,Instalada
+007,133301,141200,274501,Ecobici,Rio  Elba,Rio Lerma,Cuauhtemoc,Cuauhtemoc,19.425355,-99.17515,Arroyo,Instalada
+053,135778,136647,272425,Ecobici,Fernando Montes de Oca,Tula,Condesa,Cuauhtemoc,19.4148233,-99.1783527,Arroyo,Instalada
+056,133134,137173,270307,Ecobici,Alvaro Obregon,Medellin,Roma Norte,Cuauhtemoc,19.417102,-99.165607,Banqueta,Instalada
+030,126886,141357,268243,Ecobici,Hamburgo,Genova,Juarez,Cuauhtemoc,19.426384,-99.164255,Arroyo,Instalada
+017,127972,138427,266399,Ecobici,Av. Paseo de la Reforma,Rio Tiber,Cuauhtemoc,Cuauhtemoc,19.427553,-99.167396,Banqueta,Instalada
+266-267,109788,152399,262187,Ecobici,Jesus Garcia,Carlos J. Meneses,Buenavista,Cuauhtemoc,19.444031,-99.152187,Arroyo,Instalada
+192-193,140232,116713,256945,Ecobici,Ruben Dario,Av. Paseo de la Reforma,Bosque de Chapultepec,Miguel Hidalgo,19.42592,-99.190755,Camellón,Instalada
+074,124749,127783,252532,Ecobici,Nuevo Leon,Ozulama,Hipodromo,Cuauhtemoc,19.410468,-99.172802,Banqueta,Instalada
+032,124131,127088,251219,Ecobici,Londres,Sevilla,Juarez,Cuauhtemoc,19.4226672,-99.1699751,Arroyo,Instalada
+047,121772,127617,249389,Ecobici,Plaza Madrid,Medellin,Roma Norte,Cuauhtemoc,19.41955,-99.166214,Arroyo,Instalada
+036,123925,125069,248994,Ecobici,Puebla,Veracruz,Roma Norte,Cuauhtemoc,19.41966,-99.17588,Arroyo,Instalada
+010,126276,122197,248473,Ecobici,Av. Paseo de la Reforma,Ramirez,Tabacalera,Cuauhtemoc,19.433431,-99.155142,Banqueta,Instalada
+182,122972,122782,245754,Ecobici,Progreso,Astronomos,Escandon,Miguel Hidalgo,19.40198,-99.17132,Arroyo,Instalada
+072,121661,119790,241451,Ecobici,Mazatlan,Alfonso Reyes,Hipodromo Condesa,Cuauhtemoc,19.409859,-99.179565,Banqueta,Instalada
+174,124864,116477,241341,Ecobici,Joaquin Garcia Icazbalceta,Ignacio Manuel Altamirano,San Rafael,Cuauhtemoc,19.441114,-99.161636,Arroyo,Instalada
+019,125988,114128,240116,Ecobici,Av. Paseo de la Reforma,Rio Rhin,Cuauhtemoc,Cuauhtemoc,19.429453,-99.16283,Banqueta,Instalada
+141,113236,124366,237602,Ecobici,Zacatecas,Luis Cabrera,Roma Norte,Cuauhtemoc,19.415905,-99.15954,Arroyo,Instalada
+154,119665,114343,234008,Ecobici,Tuxpan,Tlaxcala,Roma Sur,Cuauhtemoc,19.406683,-99.167962,Arroyo,Instalada
+139,111101,119244,230345,Ecobici,Tonala,Guanajuato,Roma Norte,Cuauhtemoc,19.416128,-99.162097,Arroyo,Instalada
+015,113532,116743,230275,Ecobici,Av. Paseo de la Reforma,Rio Mississippi,Cuauhtemoc,Cuauhtemoc,19.425597,-99.171409,Banqueta,Instalada
+045,109065,116140,225205,Ecobici,Durango,Sonora,Roma Norte,Cuauhtemoc,19.418749,-99.171942,Banqueta,Instalada
+273-274,101193,123665,224858,Ecobici,Luis Donaldo Colosio,Jesus Garcia,Buenavista,Cuauhtemoc,19.442707,-99.152956,Arroyo,Instalada
+150,109140,114918,224058,Ecobici,Campeche,Medellin,Roma Sur,Cuauhtemoc,19.409894,-99.164288,Arroyo,Instalada
+016,109756,110177,219933,Ecobici,Av. Paseo de la Reforma,Rio Tiber,Cuauhtemoc,Cuauhtemoc,19.4267528,-99.16861944,Banqueta,Instalada
+059,105243,113923,219166,Ecobici,Popocatepetl,Amsterdam,Hipodromo,Cuauhtemoc,19.415237,-99.16659,Arroyo,Instalada
+217,100577,118277,218854,Ecobici,Euler,Horacio,Polanco,Miguel Hidalgo,19.432888,-99.183605,Arroyo,Instalada
+116,106835,110912,217747,Ecobici,Londres,Roma,Juarez,Cuauhtemoc,19.428985,-99.15664,Arroyo,Instalada
+070,106077,110175,216252,Ecobici,Parque Mexico,Michoacan,Hipodromo,Cuauhtemoc,19.41128,-99.169825,Arroyo,Instalada
+086,108931,106882,215813,Ecobici,Sullivan,Av. Insurgentes,San Rafael,Cuauhtemoc,19.432452,-99.15924,Banqueta,Instalada
+390-391,113501,102112,215613,Ecobici,Oso,Felix Cuevas,Actipan,Benito Juarez,19.373384,-99.178173,Arroyo,Instalada
+260,98323,113895,212218,Ecobici,Juarez,Balderas,Centro,Cuauhtemoc,19.4352787,-99.1477913,Banqueta,Instalada
+142,101320,110473,211793,Ecobici,San Luis Potosi,Eje 2 Pte. Monterrey,Roma Norte,Cuauhtemoc,19.413232,-99.164121,Arroyo,Instalada
+037,105116,105371,210487,Ecobici,Guadalajara,Puebla,Roma Norte,Cuauhtemoc,19.4204398,-99.1727208,Arroyo,Instalada
+136,100423,108311,208734,Ecobici,Alvaro Obregon,Tonala,Roma Norte,Cuauhtemoc,19.417715,-99.162729,Camellón,Instalada
+111,107265,101003,208268,Ecobici,Guillermo Prieto,Joaquin Velazquez de Leon,San Rafael,Cuauhtemoc,19.438197,-99.165918,Arroyo,Instalada
+046,99008,107702,206710,Ecobici,Durango,Salamanca,Roma Norte,Cuauhtemoc,19.41919,-99.169764,Arroyo,Instalada
+270,102944,103601,206545,Ecobici,Av. de la Republica,Ponciano Arriaga,Tabacalera,Cuauhtemoc,19.436764,-99.153865,Banqueta,Instalada
+195,104831,100467,205298,Ecobici,Av. Paseo de la Reforma,Mahatma Gandhi,Bosque de Chapultepec,Miguel Hidalgo,19.424858,-99.185181,Camellón,Instalada
+257,101438,100491,201929,Ecobici,Manuel Maria Conteras,Calz. Manuel Villalongin,San Rafael,Cuauhtemoc,19.433803,-99.166223,Arroyo,Instalada
+068,98222,102264,200486,Ecobici,Tamaulipas,Michoacan,Condesa,Cuauhtemoc,19.411771,-99.173783,Banqueta,Instalada
+005,97145,102992,200137,Ecobici,Rio Panuco,Rio Tiber,Cuauhtemoc,Cuauhtemoc,19.429804,-99.169451,Arroyo,Instalada
+061,96651,102828,199479,Ecobici,Avenida Mexico,Sonora,Hipodromo,Cuauhtemoc,19.413789,-99.169427,Arroyo,Instalada
+054,95250,102411,197661,Ecobici,Parque España,Sonora,Condesa,Cuauhtemoc,19.416163,-99.170795,Arroyo,Instalada
+020,101995,95532,197527,Ecobici,Av. Paseo de la Reforma,Rio Tamesis,Cuauhtemoc,Cuauhtemoc,19.430907,-99.160148,Banqueta,Instalada
+025,96930,99259,196189,Ecobici,Av. Paseo de la Reforma,Estocolmo,Juarez,Cuauhtemoc,19.427338,-99.16672,Banqueta,Instalada
+006,98169,97325,195494,Ecobici,Rio Panuco,Rio Sena,Cuauhtemoc,Cuauhtemoc,19.430963,-99.166986,Arroyo,Instalada
+121,96161,97045,193206,Ecobici,Niza,Chapultepec,Juarez,Cuauhtemoc,19.424137,-99.161317,Arroyo,Instalada
+117,91393,101280,192673,Ecobici,Londres,Napoles,Juarez,Cuauhtemoc,19.427132,-99.160369,Arroyo,Instalada
+084,99468,92505,191973,Ecobici,Chilpancingo,Tlaxcala,Hipodromo,Cuauhtemoc,19.406872,-99.169572,Arroyo,Instalada
+449,96047,94710,190757,Ecobici,Acapulco,Puebla,Roma Norte,Cuauhtemoc,19.420281,-99.174392,Arroyo,Instalada
+066,95141,94414,189555,Ecobici,Mazatlan,Francisco Marquez,Condesa,Cuauhtemoc,19.411825,-99.178456,Banqueta,Instalada
+145,91231,96440,187671,Ecobici,Yucatan,Chiapas,Roma Norte,Cuauhtemoc,19.41286,-99.160661,Arroyo,Instalada
+115,95955,91532,187487,Ecobici,Roma,Dinamarca,Juarez,Cuauhtemoc,19.429947,-99.159698,Arroyo,Instalada
+119,91884,94623,186507,Ecobici,Turin,Abraham Gonzalez,Juarez,Cuauhtemoc,19.426785,-99.155535,Arroyo,Instalada
+302,90427,95127,185554,Ecobici,Luz Saviñon,Magdalena,Del Valle Norte,Benito Juarez,19.393832,-99.171466,Arroyo,Instalada
+033,90766,94101,184867,Ecobici,Londres,Florencia,Juarez,Cuauhtemoc,19.424187,-99.166497,Arroyo,Instalada
+131,86553,97652,184205,Ecobici,Colima,Jalapa,Roma Norte,Cuauhtemoc,19.419579,-99.161314,Arroyo,Instalada
+096,88205,95024,183229,Ecobici,Lopez,Ayuntamiento,Centro,Cuauhtemoc,19.430625,-99.14248,Arroyo,Instalada
+553,91325,90164,181489,Ecobici,Jaime Torres Bodet,Av. Ribera de San Cosme,Santa Maria la Ribera,Cuauhtemoc,19.442,-99.15933333,Arroyo,Instalada
+476,90732,89591,180323,Ecobici,Lago Como,Laguna de Mayran,Granada,Miguel Hidalgo,19.442127,-99.184433,Arroyo,Instalada
+040,88833,90927,179760,Ecobici,Oaxaca,Puebla,Roma Norte,Cuauhtemoc,19.422379,-99.164137,Banqueta,Instalada
+494,93942,81889,175831,Ecobici,Tlaloc,Calzada Mexico Tacuba,Tlaxpana,Miguel Hidalgo,19.444053,-99.167429,Arroyo,Instalada
+034,86173,88086,174259,Ecobici,Liverpool,Genova,Juarez,Cuauhtemoc,19.424584,-99.163688,Arroyo,Instalada
+495,94442,79655,174097,Ecobici,Amado Nervo,Avenida de los Maestros,Agricultura,Miguel Hidalgo,19.445528,-99.166934,Arroyo,Instalada
+087,83219,90310,173529,Ecobici,Gante,Venustiano Carranza,Centro,Cuauhtemoc,19.432024,-99.139705,Banqueta,Instalada
+146,85219,87039,172258,Ecobici,Coahuila,Manzanillo,Roma Norte,Cuauhtemoc,19.410737,-99.165716,Arroyo,Instalada
+474,79780,91754,171534,Ecobici,Bahia  de San Hipolito,Bahia del Espiritu Santo,Anahuac I Seccion,Miguel Hidalgo,19.438984,-99.177549,Arroyo,Instalada
+133,81170,90182,171352,Ecobici,Colima,Morelia,Roma Norte,Cuauhtemoc,19.421138,-99.154725,Arroyo,Instalada
+123,88430,82695,171125,Ecobici,Claudio Bernard,Doctor Lavista,Doctores,Cuauhtemoc,19.424161,-99.153117,Arroyo,Instalada
+183,88569,82434,171003,Ecobici,Gabino Barreda,Guillermo Prieto,San Rafael,Cuauhtemoc,19.437665,-99.164018,Arroyo,Instalada
+389,88122,82484,170606,Ecobici,Santander,Felix Cuevas,Insurgentes Mixcoac,Benito Juarez,19.373438,-99.179531,Arroyo,Instalada
+135,83785,86533,170318,Ecobici,Alvaro Obregon,Morelia,Roma Norte,Cuauhtemoc,19.419225,-99.155099,Camellón,Instalada
+180,84781,84218,168999,Ecobici,Quintana Roo,Villahermosa,Hipodromo,Cuauhtemoc,19.404554,-99.169953,Arroyo,Instalada
+594,81097,87739,168836,Ecobici,Xochicalco,Obrero Mundial,Piedad Narvarte,Benito Juarez,19.402277,-99.153294,Arroyo,Instalada
+190,85957,82194,168151,Ecobici,Gobernador Ignacio Esteva,Maestro Jose Vasconcelos,San Miguel Chapultepec,Miguel Hidalgo,19.409577,-99.183818,Arroyo,Instalada
+128,81058,86199,167257,Ecobici,Orizaba,Rio de Janeiro,Roma Norte,Cuauhtemoc,19.422148,-99.160645,Arroyo,Instalada
+060,81767,80504,162271,Ecobici,Mazatlan,Fernando Montes de Oca,Condesa,Cuauhtemoc,19.414119,-99.177214,Banqueta,Instalada
+049,81692,80000,161692,Ecobici,Mazatlan,Juan de la Barrera,Condesa,Cuauhtemoc,19.41689,-99.17562,Banqueta,Instalada
+175,81362,80321,161683,Ecobici,Mutualismo,Jose Marti,Escandon,Miguel Hidalgo,19.400767,-99.172533,Arroyo,Instalada
+071,80056,81506,161562,Ecobici,Amsterdam,Michoacan,Hipodromo,Cuauhtemoc,19.411361,-99.171271,Arroyo,Instalada
+137,78052,82287,160339,Ecobici,Alvaro Obregon,Merida,Roma Norte,Cuauhtemoc,19.418774,-99.157081,Camellón,Instalada
+082,79432,80282,159714,Ecobici,Independencia,Jose Maria Marroqui,Centro,Cuauhtemoc,19.433344,-99.14404,Banqueta,Instalada
+280,72048,86847,158895,Ecobici,Anaxagoras,Obrero Mundial,Narvarte Poniente,Benito Juarez,19.4015,-99.156406,Arroyo,Instalada
+212,82747,75864,158611,Ecobici,Hegel,Horacio,Polanco,Miguel Hidalgo,19.433567,-99.188096,Arroyo,Instalada
+563,79126,78481,157607,Ecobici,Doctor Velasco,Niños Heroes,Doctores,Cuauhtemoc,19.419444,-99.149776,Arroyo,Instalada
+126,73601,83495,157096,Ecobici,Jalapa,Puebla,Roma Norte,Cuauhtemoc,19.422288,-99.162138,Arroyo,Instalada
+372,77641,79233,156874,Ecobici,Doctor Roberto Gayol,Tlacoquemecatl,Del Valle Sur,Benito Juarez,19.377966,-99.170272,Arroyo,Instalada
+077,79781,76474,156255,Ecobici,Choapan,Tamaulipas,Hipodromo,Cuauhtemoc,19.406745,-99.178272,Arroyo,Instalada
+151,75770,80044,155814,Ecobici,Campeche,Tonala,Roma Sur,Cuauhtemoc,19.410529,-99.160873,Arroyo,Instalada
+023,78326,75110,153436,Ecobici,Av. Paseo de la Reforma,Praga,Juarez,Cuauhtemoc,19.42528,-99.171099,Banqueta,Instalada
+447,78124,74598,152722,Ecobici,Agustin Melgar,Zamora,Condesa,Cuauhtemoc,19.418879,-99.176854,Arroyo,Instalada
+125,78095,74222,152317,Ecobici,Morelia,Circular de Morelia,Roma Norte,Cuauhtemoc,19.424197,-99.156127,Arroyo,Instalada
+024,76853,74600,151453,Ecobici,Av. Paseo de la Reforma,Varsovia,Juarez,Cuauhtemoc,19.426614,-99.168078,Banqueta,Instalada
+291,75524,75400,150924,Ecobici,Magdalena,Av. Division del Norte,Del Valle Norte,Benito Juarez,19.397651,-99.169946,Arroyo,Instalada
+185,75443,74099,149542,Ecobici,General Antonio Leon,General Pedro Antonio de los Santos,San Miguel Chapultepec,Miguel Hidalgo,19.412776,-99.182805,Arroyo,Instalada
+079,75533,73735,149268,Ecobici,Saltillo,Alfonso Reyes,Hipodromo,Cuauhtemoc,19.407479,-99.174403,Banqueta,Instalada
+129,72020,76895,148915,Ecobici,Tonala,Durango,Roma Norte,Cuauhtemoc,19.4206,-99.163312,Arroyo,Instalada
+155,73318,75150,148468,Ecobici,Jalapa,Tlaxcala,Roma Sur,Cuauhtemoc,19.408218,-99.159911,Arroyo,Instalada
+080,75789,72536,148325,Ecobici,Nuevo Leon,Aguascalientes,Hipodromo,Cuauhtemoc,19.407233,-99.172131,Banqueta,Instalada
+004,71191,76820,148011,Ecobici,Rio  Nilo,Rio Panuco,Cuauhtemoc,Cuauhtemoc,19.428491,-99.171693,Arroyo,Instalada
+164,72816,75069,147885,Ecobici,Bajio,Tlacotalpan,Roma Sur,Cuauhtemoc,19.403204,-99.16596,Arroyo,Instalada
+058,73837,73632,147469,Ecobici,Parque España,Juan de la Barrera,Condesa,Cuauhtemoc,19.415358,-99.171902,Banqueta,Instalada
+051,71833,75534,147367,Ecobici,Colima,Oaxaca,Roma Norte,Cuauhtemoc,19.418031,-99.168435,Arroyo,Instalada
+166,75784,71355,147139,Ecobici,Progreso,Cda. Antonio Maceo,Escandon,Miguel Hidalgo,19.406069,-99.183549,Arroyo,Instalada
+211,84706,61662,146368,Ecobici,Isaac Newton,Horacio,Polanco,Miguel Hidalgo,19.433607,-99.188528,Arroyo,Instalada
+405,73841,72257,146098,Ecobici,Division del Norte,Municipio Libre,Portales Norte,Benito Juarez,19.3705556,-99.15666667,Banqueta,Instalada
+085,74139,71717,145856,Ecobici,Jose Rosas Moreno,James Sullivan,San Rafael,Cuauhtemoc,19.434081,-99.162434,Arroyo,Instalada
+475,71918,73173,145091,Ecobici,Lago Muritz,Lago Alberto,Anahuac I Seccion,Miguel Hidalgo,19.439249,-99.181065,Arroyo,Instalada
+011,72785,71827,144612,Ecobici,Rio Amazonas,Rio Lerma,Cuauhtemoc,Cuauhtemoc,19.431192,-99.163546,Arroyo,Instalada
+464,72010,72499,144509,Ecobici,Mateo Aleman,Prolongacion Moliere,Ampliacion Granada,Miguel Hidalgo,19.442421,-99.199838,Arroyo,Instalada
+152,73831,70206,144037,Ecobici,Tlacotalpan,Campeche,Roma Sur,Cuauhtemoc,19.409098,-99.167181,Arroyo,Instalada
+075,72655,70942,143597,Ecobici,Alfonso Reyes,Atlixco,Hipodromo Condesa,Cuauhtemoc,19.408676,-99.176759,Banqueta,Instalada
+149,72092,71399,143491,Ecobici,Merida,Antonio M. Anza,Roma Sur,Cuauhtemoc,19.41199,-99.155699,Arroyo,Instalada
+120,70837,71927,142764,Ecobici,Marsella,Napoles,Juarez,Cuauhtemoc,19.425437,-99.159458,Arroyo,Instalada
+492,73887,68511,142398,Ecobici,Lago Cuitzeo,Felipe Carrillo Puerto,Anahuac,Miguel Hidalgo,19.449125,-99.173442,Arroyo,Instalada
+035,69167,73037,142204,Ecobici,Liverpool,Genova,Juarez,Cuauhtemoc,19.424558,-99.163518,Arroyo,Instalada
+042,70342,71808,142150,Ecobici,Sinaloa,Valladolid,Roma Norte,Cuauhtemoc,19.420627,-99.16821,Arroyo,Instalada
+560,72108,69837,141945,Ecobici,Doctor Liceaga,Eje Central Lazaro Cardenas,Doctores,Cuauhtemoc,19.421599,-99.143408,Arroyo,Instalada
+465,77559,64286,141845,Ecobici,Lago Ginebra,Lago Wetter,Cuauhtemoc Pensil,Miguel Hidalgo,19.445039,-99.194078,Arroyo,Instalada
+668,71477,69918,141395,Ecobici,Plateros,Capuchinas,San Jose Insurgentes,Benito Juarez,19.367522,-99.181727,Banqueta,Instalada
+124,71120,69913,141033,Ecobici,Claudio Bernard,Doctor Liceaga,Doctores,Cuauhtemoc,19.422392,-99.150358,Arroyo,Instalada
+002,71055,69380,140435,Ecobici,Rio Guadalquivir,Rio Nazas,Cuauhtemoc,Cuauhtemoc,19.43062276,-99.17123066,Arroyo,Instalada
+170,70808,69134,139942,Ecobici,Observatorio Oriente,Av. Revolucion,Escandon,Miguel Hidalgo,19.404029,-99.184342,Arroyo,Instalada
+118,69043,70888,139931,Ecobici,Liverpool,Dinamarca,Juarez,Cuauhtemoc,19.427114,-99.158251,Arroyo,Instalada
+165,69483,70314,139797,Ecobici,Bajio,Eje 2 Pte. Monterrey,Roma Sur,Cuauhtemoc,19.404268,-99.160503,Arroyo,Instalada
+067,69759,69951,139710,Ecobici,Vicente Suarez,Michoacan,Condesa,Cuauhtemoc,19.411703,-99.175753,Arroyo,Instalada
+206,68243,71278,139521,Ecobici,Homero,Av. Moliere,Polanco,Miguel Hidalgo,19.436142,-99.200996,Arroyo,Instalada
+073,69818,69644,139462,Ecobici,Campeche,Tamaulipas,Hipodromo Condesa,Cuauhtemoc,19.410073,-99.175542,Arroyo,Instalada
+026,69895,68591,138486,Ecobici,Av. Paseo de la Reforma,Versalles,Juarez,Cuauhtemoc,19.432595,-99.154995,Banqueta,Instalada
+255,72440,65721,138161,Ecobici,Jose Rosas Moreno,Guillermo Prieto,San Rafael,Cuauhtemoc,19.437118,-99.161862,Arroyo,Instalada
+197,68308,68690,136998,Ecobici,Presa Falcon,Blvd. Miguel de Cervantes Saavedra,Ampliacion Granada,Miguel Hidalgo,19.440501,-99.205086,Arroyo,Instalada
+169,68640,67937,136577,Ecobici,Prosperidad,Progreso,Escandon,Miguel Hidalgo,19.403019,-99.174934,Arroyo,Instalada
+399,68537,67967,136504,Ecobici,Heriberto Frias,San Lorenzo,Del Valle Sur,Benito Juarez,19.372469,-99.164538,Arroyo,Instalada
+369,67421,68342,135763,Ecobici,Porfirio Diaz,Av. Insurgentes,Extremadura Insurgentes,Benito Juarez,19.379941,-99.177224,Arroyo,Instalada
+549,66032,69731,135763,Ecobici,Sor Juana Ines de la Cruz,Doctor Atl,Santa Maria la Ribera,Cuauhtemoc,19.4450444,-99.15713333,Arroyo,Instalada
+163,64702,70886,135588,Ecobici,Toluca,Bajio,Roma Sur,Cuauhtemoc,19.405246,-99.15643,Arroyo,Instalada
+063,67134,68281,135415,Ecobici,Nuevo Leon,Laredo,Hipodromo,Cuauhtemoc,19.41299,-99.171675,Banqueta,Instalada
+256,69730,65633,135363,Ecobici,Gomez Farias,Sadi Carnot,San Rafael,Cuauhtemoc,19.437167,-99.158313,Arroyo,Instalada
+144,65064,70278,135342,Ecobici,Frontera,San Luis Potosi,Roma Norte,Cuauhtemoc,19.415192,-99.154837,Arroyo,Instalada
+295,66460,68817,135277,Ecobici,Anaxagoras,Eje 4 Sur Xola,Narvarte Poniente,Benito Juarez,19.396328,-99.156871,Arroyo,Instalada
+012,68088,66962,135050,Ecobici,Rio Lerma,Calz. Manuel Villalongin,Cuauhtemoc,Cuauhtemoc,19.432223,-99.161686,Arroyo,Instalada
+132,64810,69456,134266,Ecobici,Colima,Frontera,Roma Norte,Cuauhtemoc,19.420667,-99.15645,Arroyo,Instalada
+112,65295,68739,134034,Ecobici,Av. Morelos,Abraham Gonzalez,Juarez,Cuauhtemoc,19.432819,-99.151734,Banqueta,Instalada
+048,66364,67286,133650,Ecobici,Independencia,Azueta,Centro,Cuauhtemoc,19.433705,-99.146665,Banqueta,Instalada
+099,63675,69700,133375,Ecobici,Ernesto Pugibet,Luis Moya,Centro,Cuauhtemoc,19.429947,-99.14591,Arroyo,Instalada
+167,68341,64168,132509,Ecobici,General Salvador Alvarado,Progreso,Escandon,Miguel Hidalgo,19.404651,-99.179375,Arroyo,Instalada
+076,67715,64689,132404,Ecobici,Chilpancingo,Campeche,Hipodromo,Cuauhtemoc,19.4086886,-99.169938,Arroyo,Instalada
+173,69085,63316,132401,Ecobici,Mineria,Jose Marti,Escandon,Miguel Hidalgo,19.401682,-99.176398,Arroyo,Instalada
+480,67087,65308,132395,Ecobici,Lago Iseo,Av. Marina Nacional,Mariano Escobedo,Miguel Hidalgo,19.446073,-99.181654,Arroyo,Instalada
+114,64702,66971,131673,Ecobici,Lucerna,Abraham Gonzalez,Juarez,Cuauhtemoc,19.428989,-99.153618,Arroyo,Instalada
+179,66606,64281,130887,Ecobici,Nuevo Leon,Quintana Roo,Hipodromo,Cuauhtemoc,19.404452,-99.171438,Camellón,Instalada
+143,63973,66880,130853,Ecobici,Cordoba,San Luis Potosi,Roma Norte,Cuauhtemoc,19.414303,-99.157542,Arroyo,Instalada
+310,66137,63858,129995,Ecobici,Calle 1,Patriotismo,San Pedro de los Pinos,Benito Juarez,19.395322,-99.181667,Arroyo,Instalada
+450,62792,67140,129932,Ecobici,Ramos Arizpe,Av. Mexico Tenochtitlan,Tabacalera,Cuauhtemoc,19.438228,-99.152269,Arroyo,Instalada
+113,63584,65320,128904,Ecobici,General Prim,Versalles,Juarez,Cuauhtemoc,19.430369,-99.154419,Arroyo,Instalada
+044,65965,62806,128771,Ecobici,Durango,Veracruz,Roma Norte,Cuauhtemoc,19.418141,-99.174709,Banqueta,Instalada
+003,66198,62392,128590,Ecobici,Av. Paseo de la Reforma,Av. Insurgentes,Tabacalera,Cuauhtemoc,19.43163,-99.158547,Banqueta,Instalada
+065,59534,68249,127783,Ecobici,Marconi,Tacuba,Centro,Cuauhtemoc,19.436522,-99.139811,Arroyo,Instalada
+009,64506,63040,127546,Ecobici,Rio Guadalquivir,Rio Lerma,Cuauhtemoc,Cuauhtemoc,19.428184,-99.170013,Arroyo,Instalada
+253,63396,64007,127403,Ecobici,Dante,Tolstoi,Anzures,Miguel Hidalgo,19.4264486,-99.1781433,Arroyo,Instalada
+069,63300,64071,127371,Ecobici,Michoacan,Amsterdam,Hipodromo,Cuauhtemoc,19.410797,-99.168143,Arroyo,Instalada
+222,63927,63305,127232,Ecobici,Alejandro Dumas,Presidente Masaryk,Polanco,Miguel Hidalgo,19.431417,-99.195774,Arroyo,Instalada
+384,66214,60899,127113,Ecobici,Empresa,Poussin,Insurgentes Mixcoac,Benito Juarez,19.375865,-99.185573,Arroyo,Instalada
+317,64095,62965,127060,Ecobici,Avenida Coyoacan,Torres Adalid,Del Valle Norte,Benito Juarez,19.391456,-99.166157,Arroyo,Instalada
+130,59930,66776,126706,Ecobici,Merida,Durango,Roma Norte,Cuauhtemoc,19.421576,-99.158015,Arroyo,Instalada
+140,63208,62860,126068,Ecobici,Merida,Zacatecas,Roma Norte,Cuauhtemoc,19.416596,-99.156879,Arroyo,Instalada
+235-236,68773,57255,126028,Ecobici,Campos Eliseos,Av. Moliere,Polanco,Miguel Hidalgo,19.429332,-99.202181,Arroyo,Instalada
+147,61511,63983,125494,Ecobici,Coahuila,Orizaba,Roma Norte,Cuauhtemoc,19.412182,-99.158443,Arroyo,Instalada
+281,60660,63923,124583,Ecobici,Pitagoras,La Morena,Narvarte Poniente,Benito Juarez,19.398532,-99.157308,Arroyo,Instalada
+377,60918,63314,124232,Ecobici,Heriberto Frias,Miguel Laurent,Del Valle Sur,Benito Juarez,19.375397,-99.163778,Arroyo,Instalada
+223,64515,59356,123871,Ecobici,Isaac Newton,Presidente Masaryk,Polanco,Miguel Hidalgo,19.431242,-99.191613,Arroyo,Instalada
+305,62220,61200,123420,Ecobici,Avenida del Parque,Arizona,Napoles,Benito Juarez,19.394693,-99.175531,Arroyo,Instalada
+467,62874,60133,123007,Ecobici,Lago Mayor,Lago Alberto,Granada,Miguel Hidalgo,19.440399,-99.186784,Arroyo,Instalada
+081,63116,59860,122976,Ecobici,Aguascalientes,Av. Insurgentes,Hipodromo,Cuauhtemoc,19.407927,-99.168734,Arroyo,Instalada
+250,59214,63744,122958,Ecobici,Darwin,Mariano Escobedo,Anzures,Miguel Hidalgo,19.428949,-99.179796,Banqueta,Instalada
+055,56892,65418,122310,Ecobici,5 de Mayo,Simon Bolivar,Centro,Cuauhtemoc,19.434514,-99.138068,Banqueta,Instalada
+398,61754,60298,122052,Ecobici,Juan Sanchez Azcona,Felix Cuevas,Del Valle Sur,Benito Juarez,19.37104,-99.165653,Arroyo,Instalada
+551,61698,59975,121673,Ecobici,Nogal,Av. Ribera de San Cosme,Santa Maria la Ribera,Cuauhtemoc,19.4435806,-99.16488333,Arroyo,Instalada
+340,61777,59699,121476,Ecobici,Anaxagoras,Avenida Eugenia,Narvarte Poniente,Benito Juarez,19.3856299,-99.1582241,Arroyo,Instalada
+546,61451,59214,120665,Ecobici,Salvador Diaz Miron,Santa Maria la Ribera,Santa Maria la Ribera,Cuauhtemoc,19.448764,-99.156817,Arroyo,Instalada
+498,57922,61558,119480,Ecobici,Avenida de los Maestros,Plan de Agua Prieta,Plutarco Elias Calles,Miguel Hidalgo,19.453197,-99.16645,Arroyo,Instalada
+303,55138,63858,118996,Ecobici,Montecito,Av. Insurgentes,Napoles,Benito Juarez,19.394842,-99.173025,Arroyo,Instalada
+186,61240,57195,118435,Ecobici,Gobernador Gregorio V. Gelati,General Francisco Molinos del Campo,San Miguel Chapultepec,Miguel Hidalgo,19.412455,-99.188489,Arroyo,Instalada
+039,58587,59411,117998,Ecobici,Puebla,Medellin,Roma Norte,Cuauhtemoc,19.421762,-99.166931,Arroyo,Instalada
+374,58564,58718,117282,Ecobici,Pitagoras,Pilares,Del valle Centro,Benito Juarez,19.376918,-99.16108,Arroyo,Instalada
+254,59718,57210,116928,Ecobici,Alfonso Herrera,Miguel Schultz,San Rafael,Cuauhtemoc,19.439347,-99.160074,Arroyo,Instalada
+181,58541,57543,116084,Ecobici,Benjamin Franklin,Ometusco,Hipodromo,Cuauhtemoc,19.404733,-99.174461,Arroyo,Instalada
+259,55884,58955,114839,Ecobici,Tomas Alva Edison,Ponciano Arriaga,Tabacalera,Cuauhtemoc,19.437569,-99.15468,Arroyo,Instalada
+618,56078,58061,114139,Ecobici,Bartolome R. Salido,Edzna,Vertiz Narvarte,Benito Juarez,19.381824,-99.148086,Arroyo,Instalada
+022,64555,49278,113833,Ecobici,Av. Paseo de la Reforma,Manchester,Juarez,Cuauhtemoc,19.424784,-99.172119,Banqueta,Instalada
+226,53968,59647,113615,Ecobici,Wallon,Presidente Masaryk,Polanco,Miguel Hidalgo,19.431033,-99.18222,Arroyo,Instalada
+685,56775,56815,113590,Ecobici,Av. de la Paz,Av. Insurgentes,Guadalupe Chimalistac,Alvaro Obregon,19.347693,-99.187026,Banqueta,Instalada
+092,55802,57717,113519,Ecobici,San Ildefonso,Republica de Argentina,Centro,Cuauhtemoc,19.436531,-99.131497,Banqueta,Instalada
+127,55994,57291,113285,Ecobici,Puebla,Merida,Roma Norte,Cuauhtemoc,19.423318,-99.15833,Arroyo,Instalada
+021,63456,49675,113131,Ecobici,Av. Paseo de la Reforma,Dublin,Juarez,Cuauhtemoc,19.424784,-99.172119,Banqueta,Instalada
+162,55905,56812,112717,Ecobici,Tehuantepec,Medellin,Roma Sur,Cuauhtemoc,19.404907,-99.162485,Arroyo,Instalada
+499,54941,57419,112360,Ecobici,Avenida de los Maestros,Calzada de los Gallos,Agricultura,Miguel Hidalgo,19.455986,-99.165966,Arroyo,Instalada
+207,53016,59184,112200,Ecobici,Torcuato Tasso,Homero,Polanco,Miguel Hidalgo,19.434861,-99.183322,Arroyo,Instalada
+315,52514,59659,112173,Ecobici,Alabama,Montana,Napoles,Benito Juarez,19.391472,-99.1736,Arroyo,Instalada
+286,59096,53007,112103,Ecobici,13 de Septiembre,Avenida Patriotismo,Escandon,Miguel Hidalgo,19.399201,-99.179943,Arroyo,Instalada
+095,52343,58205,110548,Ecobici,20 de Noviembre,Venustiano Carranza,Centro,Cuauhtemoc,19.430722,-99.133698,Banqueta,Instalada
+188,58166,52303,110469,Ecobici,Gobernador Melchor Muzquiz,Gobernador Ignacio Esteva,San Miguel Chapultepec,Miguel Hidalgo,19.411711,-99.190139,Arroyo,Instalada
+110,54026,55777,109803,Ecobici,Doctor Valenzuela,Av. Dr. Rio de la Loza,Doctores,Cuauhtemoc,19.425126,-99.143391,Arroyo,Instalada
+621,54822,54677,109499,Ecobici,Lago Poniente,Calzada de Tlalpan,Americas Unidas,Benito Juarez,19.379458,-99.140943,Arroyo,Instalada
+327,56278,53198,109476,Ecobici,Georgia,Pensilvania,Napoles,Benito Juarez,19.38885,-99.17772,Arroyo,Instalada
+233,55278,53751,109029,Ecobici,Julio Verne,Luis G. Urbina,Polanco,Miguel Hidalgo,19.429314,-99.196965,Arroyo,Instalada
+258,55012,53415,108427,Ecobici,Circuito Interior,Juan Escutia,Condesa,Cuauhtemoc,19.4165298,-99.1790435,Banqueta,Instalada
+083,55840,52381,108221,Ecobici,Alfonso Reyes,Nuevo León,Hipodromo,Cuauhtemoc,19.40655,-99.172275,Arroyo,Instalada
+008,55037,52775,107812,Ecobici,Av. Paseo de la Reforma,General Prim,Tabacalera,Cuauhtemoc,19.431256,-99.158153,Banqueta,Instalada
+412,52260,55272,107532,Ecobici,Parroquia,Av. Universidad,Santa Cruz Atoyac,Benito Juarez,19.368107,-99.164376,Arroyo,Instalada
+078,56605,50131,106736,Ecobici,Benjamin Hill,Tamaulipas,Hipodromo,Cuauhtemoc,19.407512,-99.177361,Arroyo,Instalada
+455,59751,46730,106481,Ecobici,Pedregal,Ferrocarril de Cuernavaca,Molino del Rey,Miguel Hidalgo,19.426308,-99.2033,Arroyo,Instalada
+485,53650,52822,106472,Ecobici,Lago de Patzcuaro,Av. Marina Nacional,Anahuac,Miguel Hidalgo,19.438506,-99.172696,Arroyo,Instalada
+261,52096,54318,106414,Ecobici,Av. Paseo de la Reforma,Rio de la Plata,Cuauhtemoc,Cuauhtemoc,19.42491,-99.172455,Camellón,Instalada
+466,56265,49020,105285,Ecobici,Lago Onega,Lago Ladoga,Modelo Pensil,Miguel Hidalgo,19.44269,-99.19083,Arroyo,Instalada
+160,57305,47578,104883,Ecobici,Alfonso Herrera,Gabino Barreda,San Rafael,Cuauhtemoc,19.440252,-99.163455,Arroyo,Instalada
+584,50108,54535,104643,Ecobici,Enrique Granados,Jose Peon Contreras (Eje 3),Algarin,Cuauhtemoc,19.40697,-99.14383,Arroyo,Instalada
+284,50569,54029,104598,Ecobici,Dakota,Vermont,Napoles,Benito Juarez,19.397693,-99.172981,Arroyo,Instalada
+290,48427,55615,104042,Ecobici,Yosemite,Colorado,Napoles,Benito Juarez,19.396333,-99.172667,Arroyo,Instalada
+461,58339,45539,103878,Ecobici,Presa Don Martin,Simon Bolivar,Irrigacion,Miguel Hidalgo,19.440106,-99.210031,Arroyo,Instalada
+477,54287,49570,103857,Ecobici,Lago Iseo,Laguna de Mayran,Anahuac I Seccion,Miguel Hidalgo,19.440905,-99.181743,Arroyo,Instalada
+644,51311,51982,103293,Ecobici,Monrovia,Eje 8 Sur Av. Popocatepetl,Portales,Benito Juarez,19.361371,-99.150619,Arroyo,Instalada
+481,51622,51358,102980,Ecobici,Lago Garda,Mariano Escobedo,Popotla,Miguel Hidalgo,19.449367,-99.182461,Arroyo,Instalada
+013,52327,50244,102571,Ecobici,Av. Paseo de la Reforma,Rio Mississippi,Cuauhtemoc,Cuauhtemoc,19.424941,-99.17233,Banqueta,Instalada
+550,52685,49704,102389,Ecobici,Sor Juana Ines de la Cruz,Fresno,Santa Maria la Ribera,Cuauhtemoc,19.4459583,-99.16137222,Arroyo,Instalada
+397,51883,50425,102308,Ecobici,San Lorenzo,Eje 2 Pte. Gabriel Mancera,Del Valle Sur,Benito Juarez,19.373112,-99.166981,Arroyo,Instalada
+300,52665,49634,102299,Ecobici,Providencia,Luz Saviñon,Del Valle Norte,Benito Juarez,19.3932287,-99.1684308,Arroyo,Instalada
+427,50174,50761,100935,Ecobici,Avenida Mexico-Coyoacan,Eje 8 Sur Av. Popocatepetl,Santa Cruz Atoyac,Benito Juarez,19.364912,-99.162968,Arroyo,Instalada
+448,51891,48492,100383,Ecobici,Doctor Andrade,Av. Arcos de Belen,Doctores,Cuauhtemoc,19.426611,-99.14447,Arroyo,Instalada
+219,52490,47836,100326,Ecobici,Esopo,Ferrocarril de Cuernavaca,Polanco,Miguel Hidalgo,19.433542,-99.207808,Arroyo,Instalada
+172,49447,50782,100229,Ecobici,General Francisco Murguia,Jose Marti,Escandon,Miguel Hidalgo,19.4034757,-99.1817166,Arroyo,Instalada
+460,53948,46191,100139,Ecobici,Juan Vazquez de Mella,Homero,Polanco Seccion I/ Los Morales,Miguel Hidalgo,19.437014,-99.207932,Arroyo,Instalada
+228,56575,43327,99902,Ecobici,Campos Eliseos,Lafontaine,Polanco,Miguel Hidalgo,19.427705,-99.19912,Arroyo,Instalada
+148,50861,48637,99498,Ecobici,Coahuila,Av. Cuauhtemoc,Roma Norte,Cuauhtemoc,19.412829,-99.155116,Arroyo,Instalada
+062,49905,49142,99047,Ecobici,Fernando Montes de Oca,Amatlan,Condesa,Cuauhtemoc,19.413314,-99.175225,Arroyo,Instalada
+098,46796,51650,98446,Ecobici,Emilio Donde,Av. Balderas,Centro,Cuauhtemoc,19.430267,-99.14861,Arroyo,Instalada
+299,48950,48960,97910,Ecobici,Romero de Terreros,Mier y Pesado,Del Valle Norte,Benito Juarez,19.394601,-99.165054,Arroyo,Instalada
+552,51226,46420,97646,Ecobici,Fresno,Av. Ribera de San Cosme,Santa Maria la Ribera,Cuauhtemoc,19.44310811,-99.16245373,Arroyo,Instalada
+252,49840,47592,97432,Ecobici,Victor Hugo,Shakespeare,Anzures,Miguel Hidalgo,19.427575,-99.17702,Arroyo,Instalada
+425,46855,50551,97406,Ecobici,Nicolas San Juan,Av. Universidad,Del Valle Sur,Benito Juarez,19.36704,-99.167387,Arroyo,Instalada
+393,50407,46804,97211,Ecobici,Adolfo Prieto,Felix Cuevas,Tlacoquemecatl del Valle,Benito Juarez,19.373307,-99.172471,Arroyo,Instalada
+224,49130,47832,96962,Ecobici,Hegel,Presidente Masaryk,Polanco,Miguel Hidalgo,19.431255,-99.188065,Arroyo,Instalada
+385,50555,46103,96658,Ecobici,Poussin,Empresa,Insurgentes Mixcoac,Benito Juarez,19.375806,-99.185527,Arroyo,Instalada
+635,47799,48758,96557,Ecobici,Calzada Santa Cruz,Antillas,Portales,Benito Juarez,19.370586,-99.142294,Arroyo,Instalada
+541,47749,48718,96467,Ecobici,Eligio Ancona,Naranjo,Santa Maria la Ribera,Cuauhtemoc,19.45272,-99.158014,Arroyo,Instalada
+050,48789,47355,96144,Ecobici,Cuernavaca,Veracruz,Condesa,Cuauhtemoc,19.416886,-99.173591,Arroyo,Instalada
+365,48119,47969,96088,Ecobici,Holbein,Av. Revolucion,Nonoalco,Benito Juarez,19.381123,-99.18667,Arroyo,Instalada
+232,46627,49334,95961,Ecobici,Taine,Ruben Dario,Polanco,Miguel Hidalgo,19.42894,-99.185389,Arroyo,Instalada
+276,47852,47581,95433,Ecobici,Anaxagoras,Obrero Mundial,Narvarte Poniente,Benito Juarez,19.401986,-99.156366,Arroyo,Instalada
+225,46655,48264,94919,Ecobici,Petrarca,Presidente Masaryk,Polanco,Miguel Hidalgo,19.431172,-99.185612,Arroyo,Instalada
+596,47369,47515,94884,Ecobici,Cumbres de Maltrata,Uxmal,Narvarte,Benito Juarez,19.395205,-99.155049,Arroyo,Instalada
+292,47060,47544,94604,Ecobici,Adolfo Prieto,Eje 4 Sur Xola,Del Valle Norte,Benito Juarez,19.396917,-99.166264,Arroyo,Instalada
+205,45500,48755,94255,Ecobici,Taine,Homero,Polanco,Miguel Hidalgo,19.435525,-99.184713,Arroyo,Instalada
+329,50460,43524,93984,Ecobici,Calle 13,Avenida 1,San Pedro de los Pinos,Benito Juarez,19.390306,-99.184812,Arroyo,Instalada
+337,47261,46610,93871,Ecobici,San Borja,Martin Mendalde,Del Valle Centro,Benito Juarez,19.384849,-99.16704,Arroyo,Instalada
+204,52895,40950,93845,Ecobici,Temistocles,Homero,Polanco,Miguel Hidalgo,19.435882,-99.19152,Arroyo,Instalada
+323,47051,46510,93561,Ecobici,Concepcion Beistegui,Eje 2 Pte. Gabriel Mancera,Del Valle Norte,Benito Juarez,19.388927,-99.163127,Arroyo,Instalada
+545,47682,45740,93422,Ecobici,Sabino,Salvador Diaz Miron,Santa Maria la Ribera,Cuauhtemoc,19.449104,-99.159931,Arroyo,Instalada
+103,51301,41791,93092,Ecobici,Joaquin Velazquez de Leon,Garcia Icazbalceta,San Rafael,Cuauhtemoc,19.441533,-99.165268,Arroyo,Instalada
+359,48043,44851,92894,Ecobici,Matias Romero,Pestalozzi,Del Valle Centro,Benito Juarez,19.379331,-99.161163,Arroyo,Instalada
+243,47224,45416,92640,Ecobici,Lago Filt,Blvd. Miguel de Cervantes Saavedra,Granada,Miguel Hidalgo,19.441123,-99.195857,Arroyo,Instalada
+593,45701,46747,92448,Ecobici,Zempoala,Diagonal de San Antonio,Narvarte,Benito Juarez,19.400943,-99.147989,Arroyo,Instalada
+628,46336,45939,92275,Ecobici,Tenayuca,Chichen Itza,Letran Valle,Benito Juarez,19.378281,-99.15841,Arroyo,Instalada
+595,45827,46015,91842,Ecobici,Yacatas,Diagonal de San Antonio,Narvarte,Benito Juarez,19.396983,-99.155114,Arroyo,Instalada
+554,46729,44742,91471,Ecobici,Heroes Ferrocarrileros,Mariano Azuela,Santa Maria la Ribera,Cuauhtemoc,19.44174727,-99.15563897,Arroyo,Instalada
+351,46842,44622,91464,Ecobici,Calle 27,Av. Revolucion,San Pedro de los Pinos,Benito Juarez,19.385751,-99.186297,Arroyo,Instalada
+370,47154,44091,91245,Ecobici,Tlacoquemecatl,Av. Insurgentes,Tlacoquemecatl del Valle,Benito Juarez,19.378827,-99.176944,Arroyo,Instalada
+306,45858,45205,91063,Ecobici,Dakota,Filadelfia,Napoles,Benito Juarez,19.393699,-99.175664,Arroyo,Instalada
+288,47523,43538,91061,Ecobici,11 de Abril,Avenida 2,San Pedro de los Pinos,Benito Juarez,19.396359,-99.183579,Arroyo,Instalada
+419,44122,46338,90460,Ecobici,Actipan,Cadiz,Insurgentes Mixcoac,Benito Juarez,19.370615,-99.181606,Arroyo,Instalada
+268-269,45373,44881,90254,Ecobici,Luis Donaldo Colosio,Jesus Garcia,Buenavista,Cuauhtemoc,19.442467,-99.151658,Arroyo,Instalada
+239,42847,47345,90192,Ecobici,Rincon del Bosque,Ruben Dario,Polanco,Miguel Hidalgo,19.430153,-99.181355,Arroyo,Instalada
+138,43618,46338,89956,Ecobici,Guanajuato,Frontera,Roma Norte,Cuauhtemoc,19.417702,-99.155313,Arroyo,Instalada
+184,45148,44710,89858,Ecobici,General Gomez Pedraza,Gobernador Tiburcio Montiel,San Miguel Chapultepec,Miguel Hidalgo,19.414793,-99.185083,Arroyo,Instalada
+157,47826,41987,89813,Ecobici,Tepic,Tlacotalpan,Roma Sur,Cuauhtemoc,19.406236,-99.166616,Arroyo,Instalada
+326,42170,47579,89749,Ecobici,Eugenia,Nebraska,Ampliacion Napoles,Benito Juarez,19.388978,-99.174811,Arroyo,Instalada
+161,45852,43441,89293,Ecobici,Quintana Roo,Manzanillo,Roma Sur,Cuauhtemoc,19.405533,-99.164913,Arroyo,Instalada
+282,44439,44559,88998,Ecobici,La Morena,Eje 2 Pte. Gabriel Mancera,Del Valle Norte,Benito Juarez,19.398692,-99.161273,Arroyo,Instalada
+544,44357,44515,88872,Ecobici,Salvador Diaz Miron,Nogal,Santa Maria la Ribera,Cuauhtemoc,19.449773,-99.163136,Arroyo,Instalada
+231,44844,43907,88751,Ecobici,Isaac Newton,Aristoteles,Polanco,Miguel Hidalgo,19.42977,-99.19349,Arroyo,Instalada
+097,42838,45893,88731,Ecobici,Republica de Salvador,Jose Maria Pino Suarez,Centro,Cuauhtemoc,19.429189,-99.132759,Camellón,Instalada
+277,43620,44971,88591,Ecobici,Prolongacion Tonala,Obrero Mundial,Narvarte Poniente,Benito Juarez,19.401807,-99.15909,Arroyo,Instalada
+320,45465,42995,88460,Ecobici,Enrique Rebsamen,Luz Saviñon,Narvarte Poniente,Benito Juarez,19.391323,-99.15936,Arroyo,Instalada
+463,43895,43977,87872,Ecobici,Lago Andromaco,Lago Zurich,Ampliacion Granada,Miguel Hidalgo,19.443228,-99.202492,Arroyo,Instalada
+109,42502,45264,87766,Ecobici,Nezahualcoyotl,Isabel la Catolica,Centro,Cuauhtemoc,19.425311,-99.137421,Arroyo,Instalada
+312,46002,41460,87462,Ecobici,Avenida 2,Calle 7,San Pedro de los Pinos,Benito Juarez,19.392634,-99.183737,Arroyo,Instalada
+308,45389,41719,87108,Ecobici,Nueva York,Arizona,Napoles,Benito Juarez,19.393643,-99.178156,Arroyo,Instalada
+248,44587,42451,87038,Ecobici,Shakespeare,Lafayette,Anzures,Miguel Hidalgo,19.43175,-99.177399,Arroyo,Instalada
+218,43111,43898,87009,Ecobici,Hegel,Ibarbourou,Polanco,Miguel Hidalgo,19.432451,-99.188033,Arroyo,Instalada
+486,44157,42682,86839,Ecobici,Izcoatl,Circuito Interior Melchor Ocampo,Tlaxpana,Miguel Hidalgo,19.437334,-99.169573,Arroyo,Instalada
+156,44280,42467,86747,Ecobici,Tepic,Ario,Roma Sur,Cuauhtemoc,19.406959,-99.163021,Arroyo,Instalada
+543,44218,42430,86648,Ecobici,Jaime Torres Bodet,Manuel Carpio,Santa Maria la Ribera,Cuauhtemoc,19.450506,-99.157375,Arroyo,Instalada
+502,44137,42206,86343,Ecobici,Mar Mediterraneo,Callejon de la Zanja,Popotla,Miguel Hidalgo,19.453432,-99.174636,Arroyo,Instalada
+057,43477,42776,86253,Ecobici,Cuernavaca,Juan Escutia,Condesa,Cuauhtemoc,19.414968,-99.174766,Arroyo,Instalada
+171,44699,41205,85904,Ecobici,Comercio,Jose Marti,Escandon,Miguel Hidalgo,19.4025195,-99.1781595,Arroyo,Instalada
+325,43706,42027,85733,Ecobici,Providencia,Avenida Del Valle,Del Valle Centro,Benito Juarez,19.388178,-99.169689,Arroyo,Instalada
+247,39768,45675,85443,Ecobici,Herschel,Rousseau,Anzures,Miguel Hidalgo,19.432276,-99.18064,Arroyo,Instalada
+168,43872,41465,85337,Ecobici,Comercio,Progreso,Escandon,Miguel Hidalgo,19.403997,-99.1776,Arroyo,Instalada
+381,45064,39865,84929,Ecobici,San Lorenzo,Manzanas,Tlacoquemecatl del Valle,Benito Juarez,19.375495,-99.177819,Arroyo,Instalada
+354,41638,42772,84410,Ecobici,Boston,Av. Insurgentes,Noche Buena,Benito Juarez,19.381714,-99.176664,Arroyo,Instalada
+608,41054,43155,84209,Ecobici,Ahorro Postal,Francisco Marquez,Josefa Ortiz de Dominguez,Benito Juarez,19.388373,-99.139746,Arroyo,Instalada
+187,44304,39866,84170,Ecobici,General Cano,Gobernador Gregorio V. Gelati,San Miguel Chapultepec,Miguel Hidalgo,19.411227,-99.185514,Arroyo,Instalada
+472,41214,42581,83795,Ecobici,Bahia  de Santa Barbara,Bahia de Ballenas,Veronica Anzures,Miguel Hidalgo,19.437667,-99.17711,Arroyo,Instalada
+710,46888,36680,83568,Ecobici,Molino del Rey,Glorieta de la Lealtad,San Miguel Chapultepec,Miguel Hidalgo,19.4168415,-99.1925204,Calzada,Instalada
+341,42825,40593,83418,Ecobici,San Borja,Av. Cuauhtemoc,Narvarte Poniente,Benito Juarez,19.382889,-99.158352,Arroyo,Instalada
+334,40904,42090,82994,Ecobici,Nueva York,Av. Insurgentes,Ampliacion Napoles,Benito Juarez,19.3865269,-99.1751519,Arroyo,Instalada
+234,44656,37868,82524,Ecobici,Tres Picos,Arquimedes,Polanco,Miguel Hidalgo,19.42783,-99.191539,Arroyo,Instalada
+575,38521,43483,82004,Ecobici,Fernando Ramirez,Eje Central Lazaro Cardenas,Obrera,Cuauhtemoc,19.413235,-99.143476,Arroyo,Instalada
+394,43354,38628,81982,Ecobici,Doctor Roberto Gayol,Felix Cuevas,Del Valle Sur,Benito Juarez,19.372474,-99.171639,Arroyo,Instalada
+178,42746,39210,81956,Ecobici,Tamaulipas,Francisco Murguia,Hipodromo Condesa,Cuauhtemoc,19.406833,-99.180457,Arroyo,Instalada
+262,38614,43181,81795,Ecobici,Republica de Cuba,Republica de Brasil,Centro,Cuauhtemoc,19.436931,-99.133952,Arroyo,Instalada
+576,39025,42760,81785,Ecobici,Doctor Arce,Jose Maria Vertiz,Doctores,Cuauhtemoc,19.413469,-99.14825,Arroyo,Instalada
+459,44597,36792,81389,Ecobici,Volcan,Montes Urales,Lomas de Chapultepec Seccion III,Miguel Hidalgo,19.429243,-99.207267,Arroyo,Instalada
+688,40826,40449,81275,Ecobici,Panzacola,Av. Miguel Angel de Quevedo,Santa Catarina,Coyoacan,19.346975,-99.178791,Arroyo,Instalada
+209,41367,39891,81258,Ecobici,Solon,Horacio,Polanco,Miguel Hidalgo,19.435478,-99.206359,Arroyo,Instalada
+191,43499,37668,81167,Ecobici,Gobernador Rafael Rebollar,Gobernado Vicente Eguia,San Miguel Chapultepec,Miguel Hidalgo,19.40796,-99.187901,Arroyo,Instalada
+404,42012,39109,81121,Ecobici,Miguel Laurent,Av. Division del Norte,Portales Norte,Benito Juarez,19.373833,-99.157433,Arroyo,Instalada
+507,40226,40744,80970,Ecobici,Mar Mediterraneo,Avenida Azcapotzalco,Tacuba,Miguel Hidalgo,19.460292,-99.188303,Arroyo,Instalada
+470,42013,38908,80921,Ecobici,Bahia  de las Palmas,Bahia de Todos Los Santos,Veronica Anzures,Miguel Hidalgo,19.435039,-99.173879,Arroyo,Instalada
+200,42322,38583,80905,Ecobici,Emerson,Av. Ejercito Nacional,Polanco,Miguel Hidalgo,19.437596,-99.188785,Arroyo,Instalada
+102,39993,40090,80083,Ecobici,Echeveste,Simon Bolivar,Centro,Cuauhtemoc,19.428214,-99.139494,Banqueta,Instalada
+675,45030,34959,79989,Ecobici,Manuel Castro Padilla,Av. Revolucion,Guadalupe Inn,Alvaro Obregon,19.3625527,-99.1889526,Arroyo,Instalada
+221,40799,38873,79672,Ecobici,Emilio Castelar,Presidente Masaryk,Polanco,Miguel Hidalgo,19.431799,-99.201565,Arroyo,Instalada
+106,40124,39547,79671,Ecobici,San Jeronimo,Jose Maria Pino Suarez,Centro,Cuauhtemoc,19.42649,-99.133537,Banqueta,Instalada
+378,39709,39674,79383,Ecobici,Miguel Laurent,Amores,Del Valle Sur,Benito Juarez,19.375865,-99.168219,Arroyo,Instalada
+316,41173,37934,79107,Ecobici,San Francisco,Concepcion Beistegui,Del Valle Norte,Benito Juarez,19.391056,-99.1712,Arroyo,Instalada
+432,37775,40376,78151,Ecobici,Carrillo Puerto,Avenida Mexico-Coyoacan,General Pedro Maria Anaya,Benito Juarez,19.361245,-99.16239,Arroyo,Instalada
+441,37978,40072,78050,Ecobici,Puente Xoco,Real de Mayorazgo,Xoco,Benito Juarez,19.361213,-99.16752,Arroyo,Instalada
+402,40472,37549,78021,Ecobici,Uxmal,Municipio Libre,Santa Cruz Atoyac,Benito Juarez,19.370957,-99.158886,Arroyo,Instalada
+246,39943,37997,77940,Ecobici,Leibnitz,Thiers,Anzures,Miguel Hidalgo,19.434147,-99.179835,Arroyo,Instalada
+088,36218,41309,77527,Ecobici,2da cerrada de 5 de mayo,Palma,Centro,Cuauhtemoc,19.433757,-99.135331,Banqueta,Instalada
+091,36949,40566,77515,Ecobici,Republica de Cuba,Allende,Centro,Cuauhtemoc,19.4374,-99.137571,Arroyo,Instalada
+210,45514,31386,76900,Ecobici,Eugenio Sue,Horacio,Polanco,Miguel Hidalgo,19.434076,-99.194091,Arroyo,Instalada
+478,42082,34016,76098,Ecobici,Laguna de Mayran,Lago Chalco,Anahuac I Seccion,Miguel Hidalgo,19.440818,-99.176961,Arroyo,Instalada
+321,37329,38091,75420,Ecobici,Torres Adalid,Anaxagoras,Narvarte Poniente,Benito Juarez,19.389477,-99.157513,Arroyo,Instalada
+597,37281,38021,75302,Ecobici,Diagonal San Antonio,Icacos,Narvarte,Benito Juarez,19.398858,-99.151211,Arroyo,Instalada
+328,40421,34695,75116,Ecobici,Avenida 1,Calle 7,San Pedro de los Pinos,Benito Juarez,19.392721,-99.184727,Arroyo,Instalada
+401,37435,37009,74444,Ecobici,San Lorenzo,Av. Cuauhtemoc,Santa Cruz Atoyac,Benito Juarez,19.372101,-99.161501,Arroyo,Instalada
+638,37060,37222,74282,Ecobici,Av. Pirineos,Antillas,Portales,Benito Juarez,19.361743,-99.143867,Arroyo,Instalada
+360,38399,35660,74059,Ecobici,Heriberto Frias,Matias Romero,Del Valle Centro,Benito Juarez,19.379435,-99.162794,Arroyo,Instalada
+588,35787,37900,73687,Ecobici,Avenida Fernando,La Coruña,Alamos,Benito Juarez,19.401239,-99.137404,Arroyo,Instalada
+263,39314,34228,73542,Ecobici,Sadi Carnot,Gomez Farias,San Rafael,Cuauhtemoc,19.436274,-99.158425,Arroyo,Instalada
+445-446,35927,37593,73520,Ecobici,Riff,Avenida Rio Churubusco,General Pedro Maria Anaya,Benito Juarez,19.358934,-99.156064,Arroyo,Instalada
+201,37043,35722,72765,Ecobici,Lope de Vega,Av. Ejercito Nacional,Polanco,Miguel Hidalgo,19.437431,-99.187215,Arroyo,Instalada
+278,36381,36321,72702,Ecobici,Mier y Pesado,Obrero Mundial,Del Valle Norte,Benito Juarez,19.40071,-99.163831,Arroyo,Instalada
+547,32506,40028,72534,Ecobici,Doctor Enrique Gonzalez Martinez,Salvador Diaz Miron,Santa Maria la Ribera,Cuauhtemoc,19.44763,-99.1554,Arroyo,Instalada
+293,36662,35827,72489,Ecobici,Mier y Pesado,Eje 4 Sur Xola,Del Valle Norte,Benito Juarez,19.397373,-99.164598,Arroyo,Instalada
+285,38950,33440,72390,Ecobici,12 de Octubre,Mineria,Escandon,Miguel Hidalgo,19.399763,-99.177538,Arroyo,Instalada
+648,32978,39194,72172,Ecobici,Rafael Olivia,20 de Agosto,San Diego Churubusco,Coyoacan,19.354411,-99.147795,Arroyo,Instalada
+287,38581,33491,72072,Ecobici,13 de Septiembre,Puente de la Morena,Escandon,Miguel Hidalgo,19.398946,-99.183254,Arroyo,Instalada
+214,36922,34863,71785,Ecobici,Platon,Horacio,Polanco,Miguel Hidalgo,19.434353,-99.20322,Arroyo,Instalada
+338,36125,35625,71750,Ecobici,Nicolas San Juan,San Borja,Del Valle Centro,Benito Juarez,19.384242,-99.16326,Arroyo,Instalada
+177,38749,32992,71741,Ecobici,Benjamin Hill,Carlos Zetina,Hipodromo Condesa,Cuauhtemoc,19.408841,-99.181692,Arroyo,Instalada
+298,36207,35356,71563,Ecobici,Romero de Terreros,Eje 2 Pte. Gabriel Mancera,Del Valle Norte,Benito Juarez,19.394092,-99.162139,Arroyo,Instalada
+489,36596,34957,71553,Ecobici,Lago Chalco,Laguna Tamiahua,Anahuac,Miguel Hidalgo,19.446449,-99.176028,Arroyo,Instalada
+599,34778,36597,71375,Ecobici,La Morena,Zempoala,Narvarte,Benito Juarez,19.398143,-99.148333,Arroyo,Instalada
+347,36464,34880,71344,Ecobici,Pensilvania,Maximino Avila Camacho,Ciudad de los Deportes,Benito Juarez,19.384474,-99.176084,Arroyo,Instalada
+571,34850,36083,70933,Ecobici,Manuel M. Flores,Calzada San Antonio Abad,Obrera,Cuauhtemoc,19.416221,-99.134909,Arroyo,Instalada
+216,36327,34553,70880,Ecobici,Alejandro Dumas,Horacio,Polanco,Miguel Hidalgo,19.433419,-99.195746,Arroyo,Instalada
+296,36136,34679,70815,Ecobici,Diagonal San Antonio,Enrique Rebsamen,Narvarte Poniente,Benito Juarez,19.394283,-99.158756,Arroyo,Instalada
+304,33942,36869,70811,Ecobici,Montecito,Dakota,Napoles,Benito Juarez,19.395043,-99.173821,Arroyo,Instalada
+392,35844,34898,70742,Ecobici,Patricio Sanz,Felix Cuevas,Tlacoquemecatl del Valle,Benito Juarez,19.373004,-99.174764,Arroyo,Instalada
+249,36841,33705,70546,Ecobici,Shakespeare,Darwin,Anzures,Miguel Hidalgo,19.429877,-99.177569,Arroyo,Instalada
+468,36195,34233,70428,Ecobici,Lago Xochimilco,Av. Ejercito Nacional,Anahuac I Seccion,Miguel Hidalgo,19.43726,-99.179624,Arroyo,Instalada
+153,36733,33674,70407,Ecobici,Manzanillo,Tlaxcala,Roma Sur,Cuauhtemoc,19.407468,-99.165141,Arroyo,Instalada
+301,36914,33245,70159,Ecobici,Luz Saviñon,Magdalena,Del Valle Norte,Benito Juarez,19.393807,-99.171133,Arroyo,Instalada
+539,35986,34022,70008,Ecobici,Naranjo,Av. Ricardo Flores Magón,Atlampa,Cuauhtemoc,19.455189,-99.157644,Arroyo,Instalada
+386,38960,31048,70008,Ecobici,Poussin,Donatello,Insurgentes Mixcoac,Benito Juarez,19.374912,-99.185807,Arroyo,Instalada
+462,35033,34957,69990,Ecobici,Presa Falcon,Presa Danxho,Irrigacion,Miguel Hidalgo,19.442338,-99.205198,Arroyo,Instalada
+089,34425,35420,69845,Ecobici,Republica de Guatemala,Monte de Piedad,Centro,Cuauhtemoc,19.434962,-99.133729,Banqueta,Instalada
+318,35778,33731,69509,Ecobici,Luz Saviñon,Amores,Del Valle Norte,Benito Juarez,19.392195,-99.163987,Arroyo,Instalada
+265,33990,35406,69396,Ecobici,Mina,Jesus Garcia,Buenavista,Cuauhtemoc,19.440839,-99.152265,Arroyo,Instalada
+538,35564,33729,69293,Ecobici,Eligio Ancona,Circuito Interior Instituto Tecnico Industrial,Santa Maria la Ribera,Cuauhtemoc,19.453663,-99.163756,Arroyo,Instalada
+283,35239,33810,69049,Ecobici,Avenida Coyoacan,Rafael Donde,Del Valle Norte,Benito Juarez,19.397923,-99.167248,Arroyo,Instalada
+566,34868,34081,68949,Ecobici,Doctor Jimenez,Doctor Garcia,Doctores,Cuauhtemoc,19.41638,-99.1495,Arroyo,Instalada
+562,35072,33741,68813,Ecobici,Claudio Bernard,Jose Maria Vertiz,Doctores,Cuauhtemoc,19.42037,-99.146818,Arroyo,Instalada
+452,35339,33418,68757,Ecobici,Leibnitz,Av. Ejercito Nacional,Anzures,Miguel Hidalgo,19.435867,-99.179856,Arroyo,Instalada
+230,35279,33382,68661,Ecobici,Edgar Allan Poe,Carlos Dickens,Polanco,Miguel Hidalgo,19.430098,-99.200074,Banqueta,Instalada
+672,33373,35228,68601,Ecobici,Jose Maria Velasco,Damas,San Jose Insurgentes,Benito Juarez,19.36295,-99.183161,Arroyo,Instalada
+189,37493,31101,68594,Ecobici,Gobernador Rafael Rebollar,Gobernador Jose Ceballos,San Miguel Chapultepec,Miguel Hidalgo,19.410036,-99.187978,Arroyo,Instalada
+309,36314,31979,68293,Ecobici,Pensilvania,Arizona,Napoles,Benito Juarez,19.393059,-99.179483,Arroyo,Instalada
+356,34044,33950,67994,Ecobici,Matias Romero,Adolfo Prieto,Del Valle Centro,Benito Juarez,19.381287,-99.1702,Arroyo,Instalada
+669,36708,31042,67750,Ecobici,Los Juarez,Sagredo,San Jose Insurgentes,Benito Juarez,19.37075451,-99.18743854,Arroyo,Instalada
+578,32890,34747,67637,Ecobici,Doctor Jimenez,Doctor Federico Gomez Santos,Doctores,Cuauhtemoc,19.408649,-99.151126,Arroyo,Instalada
+122,34014,33404,67418,Ecobici,Jose Maria Vertiz,Av. Dr. Rio de la Loza,Doctores,Cuauhtemoc,19.425502,-99.146337,Arroyo,Instalada
+105,33332,34024,67356,Ecobici,San Jeronimo,5 de Febrero,Centro,Cuauhtemoc,19.426755,-99.135014,Arroyo,Instalada
+613,33630,33615,67245,Ecobici,Luz Saviñon,Doctor Jose Maria Vertiz,Narvarte,Benito Juarez,19.390019,-99.15111,Arroyo,Instalada
+565,34280,32963,67243,Ecobici,Doctor Martinez del Rio,Doctor Lucio,Doctores,Cuauhtemoc,19.417668,-99.152775,Arroyo,Instalada
+093,30330,36722,67052,Ecobici,Palma Norte,Republica de Cuba,Centro,Cuauhtemoc,19.436741,-99.134811,Arroyo,Instalada
+324,33947,32762,66709,Ecobici,Amores,Avenida Eugenia,Del Valle Centro,Benito Juarez,19.387342,-99.165629,Arroyo,Instalada
+409,31792,34718,66510,Ecobici,Azores,Av. Division del Norte,Santa Cruz Atoyac,Benito Juarez,19.365125,-99.155477,Arroyo,Instalada
+496,34151,32118,66269,Ecobici,Maestro Rural,Jose Parres,Un Hogar para Nosotros,Miguel Hidalgo,19.449039,-99.170246,Arroyo,Instalada
+424,33508,32540,66048,Ecobici,Amores,Eje 8 Sur Jose Maria Rico,Del Valle Sur,Benito Juarez,19.36715,-99.17055,Arroyo,Instalada
+357,33120,32807,65927,Ecobici,Matias Romero,Amores,Del Valle Centro,Benito Juarez,19.380617,-99.167066,Arroyo,Instalada
+363,33637,32227,65864,Ecobici,Holbein,Paulo Ucello,Ciudad de los Deportes,Benito Juarez,19.380839,-99.183932,Arroyo,Instalada
+564,34262,31324,65586,Ecobici,Doctor Carmona y Valle,Doctor Velasco,Doctores,Cuauhtemoc,19.419509,-99.153227,Arroyo,Instalada
+630,32044,33440,65484,Ecobici,Cuicuilco,Motozintla,Letran Valle,Benito Juarez,19.375677,-99.152953,Arroyo,Instalada
+624,30949,34053,65002,Ecobici,Luis Spota,Eje Central Lazaro Cardenas,San Simon Ticumac,Benito Juarez,19.377516,-99.148116,Arroyo,Instalada
+331,36392,28531,64923,Ecobici,Avenida 2,Calle 17,San Pedro de los Pinos,Benito Juarez,19.388748,-99.183924,Arroyo,Instalada
+513,32748,32011,64759,Ecobici,Avenida Aquiles Serdan,Av. Invierno,Angel Zimbron,Azcapotzalco,19.46961,-99.18983,Arroyo,Instalada
+264-275,32553,32161,64714,Ecobici,Heroes Ferrocarrileros,Jesus Garcia,Buenavista,Cuauhtemoc,19.440985,-99.152935,Arroyo,Instalada
+319,33955,30228,64183,Ecobici,Diagonal San Antonio,Luz Saviñon,Del Valle Norte,Benito Juarez,19.391991,-99.162684,Arroyo,Instalada
+336,32443,31721,64164,Ecobici,San Borja,Cda. Dr. J. Bartolache,Del Valle Centro,Benito Juarez,19.385531,-99.169673,Arroyo,Instalada
+352,33617,30241,63858,Ecobici,Tintoreto,Giorgione,Nonoalco,Benito Juarez,19.384146,-99.185491,Arroyo,Instalada
+176,30056,33552,63608,Ecobici,Jesus Garcia,Luis Donaldo Colosio,Buenavista,Cuauhtemoc,19.442717,-99.152262,Arroyo,Instalada
+100,30512,33067,63579,Ecobici,20 de Noviembre,Mesones,Centro,Cuauhtemoc,19.428485,-99.1338,Banqueta,Instalada
+568,31609,31911,63520,Ecobici,Doctor Barragan,Doctor Erazo,Doctores,Cuauhtemoc,19.418013,-99.144598,Arroyo,Instalada
+294,32143,31374,63517,Ecobici,Nicolas San Juan,Eje 4 Sur Xola,Narvarte Poniente,Benito Juarez,19.396513,-99.160924,Arroyo,Instalada
+375,31727,31471,63198,Ecobici,Tenayuca,Av. Division del Norte,Letran Valle,Benito Juarez,19.376997,-99.158779,Arroyo,Instalada
+420,32586,30522,63108,Ecobici,Maria Luz Bringas,Oso,Actipan,Benito Juarez,19.369782,-99.179707,Arroyo,Instalada
+542,31714,31098,62812,Ecobici,Doctor  Enrique Gozalez Martinez,Eligio Ancona,Santa Maria la Ribera,Cuauhtemoc,19.451838,-99.154584,Arroyo,Instalada
+251,32660,29188,61848,Ecobici,Goethe,Darwin,Anzures,Miguel Hidalgo,19.429261,-99.17538,Arroyo,Instalada
+371,31555,30171,61726,Ecobici,Tlacoquemecatl,Capulin,Tlacoquemecatl del Valle,Benito Juarez,19.378546,-99.174297,Arroyo,Instalada
+396,31898,29106,61004,Ecobici,Martin Mendalde,Felix Cuevas,Del Valle Sur,Benito Juarez,19.37165,-99.17015,Arroyo,Instalada
+387,31880,28896,60776,Ecobici,Cadiz,Empresa,Insurgentes Mixcoac,Benito Juarez,19.374267,-99.180546,Arroyo,Instalada
+413,31176,29131,60307,Ecobici,Parroquia,Avenida Coyoacan,Centro Urbano Presidente Aleman,Benito Juarez,19.369823,-99.172164,Arroyo,Instalada
+451,35661,24544,60205,Ecobici,Campos Eliseos,Goldsmith,Polanco,Miguel Hidalgo,19.428847,-99.201299,Arroyo,Instalada
+505,32290,27902,60192,Ecobici,Mar Negro,Eje 4 Poniente,Popotla,Miguel Hidalgo,19.4553348,-99.1814278,Arroyo,Instalada
+659,29918,30202,60120,Ecobici,Madrid,Avenida Mexico,Del Carmen,Coyoacan,19.3564861,-99.16945556,Arroyo,Instalada
+428,30056,30013,60069,Ecobici,Prolongacion Uxmal,Eje 8 Sur Av. Popocatepetl,General Pedro Maria Anaya,Benito Juarez,19.363404,-99.160395,Arroyo,Instalada
+540,30798,29171,59969,Ecobici,Eucalipto,Av. Ricardo Flores Magon,Santa Maria la Ribera,Cuauhtemoc,19.453975,-99.152525,Arroyo,Instalada
+229,32086,27786,59872,Ecobici,Carlos Dickens,Seneca,Polanco,Miguel Hidalgo,19.430515,-99.203331,Banqueta,Instalada
+660,29931,29817,59748,Ecobici,Josefa Ortiz de Dominguez,Circuito Interior,Del Carmen,Coyoacan,19.3580028,-99.17010556,Arroyo,Instalada
+241,32307,27316,59623,Ecobici,Ejercito Nacional,Juan Vazquez de la Mella,Polanco,Miguel Hidalgo,19.438616,-99.207577,Camellón,Instalada
+484,30712,28756,59468,Ecobici,Laguna de Mayran,Lago Cuitzeo,Anahuac,Miguel Hidalgo,19.44046,-99.174564,Arroyo,Instalada
+198,29053,30269,59322,Ecobici,Socrates,Av. Ejercito Nacional,Polanco,Miguel Hidalgo,19.438168,-99.203888,Arroyo,Instalada
+348,31483,27757,59240,Ecobici,Indiana,Eje 5 Sur Av. San Antonio,Ciudad de los Deportes,Benito Juarez,19.38542,-99.17823,Arroyo,Instalada
+711,36873,22339,59212,Ecobici,Molino del Rey,Av. Constituyentes,San Miguel Chapultepec,Miguel Hidalgo,19.4136683,-99.1919528,Calzada,Instalada
+591,28587,30583,59170,Ecobici,Simon Bolivar,La Coruña,Alamos,Benito Juarez,19.402088,-99.142976,Arroyo,Instalada
+215,31201,27587,58788,Ecobici,Edgar Alan Poe,Horacio,Polanco,Miguel Hidalgo,19.43384,-99.19968,Arroyo,Instalada
+625,29081,29696,58777,Ecobici,Zempoala,Eje 6 Sur,Independencia,Benito Juarez,19.379521,-99.150052,Arroyo,Instalada
+358,30119,28371,58490,Ecobici,Nicolas San Juan,Matias Romero,Del Valle Centro,Benito Juarez,19.380087,-99.16427,Arroyo,Instalada
+504,31017,27470,58487,Ecobici,Mar Blanco,Calzada Mexico Tacuba,Popotla,Miguel Hidalgo,19.455343,-99.179056,Arroyo,Instalada
+104,30140,28242,58382,Ecobici,San Jeronimo,Isabel la Catolica,Centro,Cuauhtemoc,19.427059,-99.137116,Banqueta,Instalada
+373,29178,28920,58098,Ecobici,Pilares,Eje 2 Pte. Gabriel Mancera,Del valle Centro,Benito Juarez,19.377932,-99.166594,Arroyo,Instalada
+439,30059,28011,58070,Ecobici,Amores,Avenida Coyoacan,Acacias,Benito Juarez,19.362037,-99.172683,Arroyo,Instalada
+469,29816,27959,57775,Ecobici,Bahia De La Concepcion,Bahia de Todos Los Santos,Veronica Anzures,Miguel Hidalgo,19.434183,-99.173089,Arroyo,Instalada
+430,27932,29799,57731,Ecobici,Tripoli,Eje 8 Sur Av. Popocatepetl,Santa Cruz Atoyac,Benito Juarez,19.36205,-99.154976,Arroyo,Instalada
+709,25613,31897,57510,Ecobici,Inglaterra,Antigua Taxqueña,Parque San Andres,Coyoacan,19.344271,-99.149973,Arroyo,Instalada
+349,31189,26106,57295,Ecobici,Augusto Rodin,Eje 5 Sur Av. San Antonio,Ampliacion Napoles,Benito Juarez,19.385632,-99.180848,Arroyo,Instalada
+626,28919,28363,57282,Ecobici,San Borja,Peten,Vertiz Narvarte,Benito Juarez,19.382115,-99.153988,Arroyo,Instalada
+582,28225,28895,57120,Ecobici,Antonio Solis,Calzada San Antonio Abad,Obrera,Cuauhtemoc,19.409473,-99.135939,Arroyo,Instalada
+335,27914,29116,57030,Ecobici,Magdalena,Ameyalco,Del Valle Centro,Benito Juarez,19.386985,-99.173416,Arroyo,Instalada
+366,29316,26981,56297,Ecobici,Porfirio Diaz,Augusto Rodin,Extremadura Insurgentes,Benito Juarez,19.378423,-99.181891,Arroyo,Instalada
+667,28213,28082,56295,Ecobici,Hermes,Mosqueta,Credito Constructor,Benito Juarez,19.3639778,-99.18091389,Arroyo,Instalada
+623,25965,30092,56057,Ecobici,Fernando Montes de Oca,Antonio Rodriguez,San Simon Ticumac,Benito Juarez,19.375518,-99.144118,Arroyo,Instalada
+497,25560,30319,55879,Ecobici,Manuel Carpio,Plan de Ayala,Santo Tomas,Miguel Hidalgo,19.452688,-99.170157,Arroyo,Instalada
+612,26111,29539,55650,Ecobici,Torres Adalid,Cumbres de Maltrata,Narvarte,Benito Juarez,19.388148,-99.148446,Arroyo,Instalada
+633,27141,28325,55466,Ecobici,Canarias,Calzada Santa Cruz,San Simon Ticumac,Benito Juarez,19.372175,-99.146356,Arroyo,Instalada
+343,28423,26974,55397,Ecobici,Enrique Rebsamen,Av. Division del Norte,Del valle Centro,Benito Juarez,19.383904,-99.160875,Arroyo,Instalada
+414,28721,26519,55240,Ecobici,Parroquia,Jose Ignacio Bartolache,Del Valle Sur,Benito Juarez,19.370221,-99.173862,Arroyo,Instalada
+471,28532,26629,55161,Ecobici,Bahia de Chachalacas,Bahia de Santa Barbara,Veronica Anzures,Miguel Hidalgo,19.436287,-99.174888,Arroyo,Instalada
+196,28795,26184,54979,Ecobici,Lago Tanganica,Av. Ejercito Nacional,Granada,Miguel Hidalgo,19.438349,-99.192904,Arroyo,Instalada
+520,25283,29533,54816,Ecobici,Salonica,Camarones,Sector Naval,Azcapotzalco,19.47072,-99.17835,Camellón,Instalada
+523,26517,28283,54800,Ecobici,Toronjil,Av. Cuitlahuac,Victoria de las Democracias,Azcapotzalco,19.47111,-99.1653,Arroyo,Instalada
+490,27461,26871,54332,Ecobici,Lago Garda,Ferrocarril de Cuernavaca,Anahuac,Miguel Hidalgo,19.448935,-99.179295,Arroyo,Instalada
+313,28879,25325,54204,Ecobici,Pensilvania,Oklahoma,Napoles,Benito Juarez,19.391431,-99.178989,Arroyo,Instalada
+322,27530,26514,54044,Ecobici,Heriberto Frias,Concepcion Beistegui,Narvarte Poniente,Benito Juarez,19.388528,-99.160616,Arroyo,Instalada
+600,27453,26568,54021,Ecobici,Cumbres de Acultzingo,Av. Universidad,Narvarte,Benito Juarez,19.392463,-99.150544,Arroyo,Instalada
+656,25351,28542,53893,Ecobici,Ignacio Allende,Paris,Del Carmen,Coyoacan,19.3543111,-99.16243611,Arroyo,Instalada
+617,26304,27505,53809,Ecobici,Mitla,Eje 5 Sur,Narvarte,Benito Juarez,19.384589,-99.150517,Arroyo,Instalada
+244,28118,25617,53735,Ecobici,Lago Victoria,Blvd. Miguel de Cervantes Saavedra,Granada,Miguel Hidalgo,19.440508,-99.193681,Arroyo,Instalada
+240,28266,25467,53733,Ecobici,Ejercito Nacional,Ferrocarril de Cuernavaca,Polanco,Miguel Hidalgo,19.438551,-99.206298,Camellón,Instalada
+493,27944,25780,53724,Ecobici,Lago Tlahuac,Laguna de Guzman,Anahuac,Miguel Hidalgo,19.445916,-99.170401,Arroyo,Instalada
+590,25801,27904,53705,Ecobici,Avenida Fernando,Isabel la Catolica,Alamos,Benito Juarez,19.399172,-99.140625,Arroyo,Instalada
+440,28202,25302,53504,Ecobici,Martin Mendalde,M. Lopez Cotilla,Acacias,Benito Juarez,19.361699,-99.171387,Arroyo,Instalada
+314,28180,25299,53479,Ecobici,Nueva York,Louisiana,Napoles,Benito Juarez,19.391647,-99.177331,Arroyo,Instalada
+615,26417,26779,53196,Ecobici,Tajin,Av. Universidad,Narvarte,Benito Juarez,19.38748,-99.153876,Arroyo,Instalada
+556,24508,28682,53190,Ecobici,Plaza Tlaxcoaque,Diagonal 20 de Noviembre,Centro,Cuauhtemoc,19.423056,-99.134941,Arroyo,Instalada
+395,26843,26043,52886,Ecobici,San Lorenzo,Martin Mendalde,Del Valle Sur,Benito Juarez,19.373725,-99.169807,Arroyo,Instalada
+479,28545,24015,52560,Ecobici,Lago Muritz,Av. Marina Nacional,Mariano Escobedo,Miguel Hidalgo,19.444433,-99.179664,Arroyo,Instalada
+631,25837,26266,52103,Ecobici,Miguel Laurent,Eje Central Lazaro Cardenas,Portales,Benito Juarez,19.372907,-99.149207,Arroyo,Instalada
+491,27215,24701,51916,Ecobici,Colegio Salesiano,Lago Catemaco,Anahuac,Miguel Hidalgo,19.449405,-99.176635,Arroyo,Instalada
+227,27672,24238,51910,Ecobici,Campos Eliseos,Periferico,Polanco,Miguel Hidalgo,19.431791,-99.207373,Arroyo,Instalada
+279,26362,25033,51395,Ecobici,La Morena,Providencia,Del Valle Norte,Benito Juarez,19.399908,-99.166553,Arroyo,Instalada
+592,25128,26202,51330,Ecobici,Cadiz,Eje Central Lazaro Cardenas,Alamos,Benito Juarez,19.399664,-99.145136,Arroyo,Instalada
+627,26044,25145,51189,Ecobici,San Borja,Av. Universidad,Vertiz Narvarte,Benito Juarez,19.382606,-99.156592,Arroyo,Instalada
+614,25898,25165,51063,Ecobici,Torres Adalid,Av. Cuauhtemoc,Narvarte Poniente,Benito Juarez,19.3893,-99.15633,Arroyo,Instalada
+199,26387,24646,51033,Ecobici,Anatole France,Av. Ejercito Nacional,Polanco,Miguel Hidalgo,19.437934,-99.197241,Arroyo,Instalada
+603,24461,26477,50938,Ecobici,Castilla,Eje 4 Sur Xola,Alamos,Benito Juarez,19.394422,-99.143291,Arroyo,Instalada
+415,26493,24252,50745,Ecobici,San Francisco,Parroquia,Actipan,Benito Juarez,19.37099,-99.176135,Arroyo,Instalada
+610,23540,27090,50630,Ecobici,Av. Victor Hugo,Av. Niños Heroes de Chapultepec,Niños Heroes de Chapultepec,Benito Juarez,19.387174,-99.143708,Arroyo,Instalada
+557,24086,26199,50285,Ecobici,5 de Febrero,Fernando de Alva Ixtlilxochitl,Obrera,Cuauhtemoc,19.41981,-99.135941,Arroyo,Instalada
+604,23675,26458,50133,Ecobici,Andalucia,Carteros,Postal,Benito Juarez,19.390945,-99.142972,Arroyo,Instalada
+561,24766,25161,49927,Ecobici,Doctor  Jimenez,Doctor Lavista,Doctores,Cuauhtemoc,19.423673,-99.147957,Arroyo,Instalada
+641,24577,25323,49900,Ecobici,Sevilla,Av. Presidentes,Portales,Benito Juarez,19.368109,-99.151863,Arroyo,Instalada
+611,23342,26268,49610,Ecobici,Miguel Negrete,Avenida Niños Heroes de Chapultepec,Niños Heroes de Chapultepec,Benito Juarez,19.387506,-99.146338,Arroyo,Instalada
+417,26661,22848,49509,Ecobici,Goya,Augusto Rodin,Insurgentes Mixcoac,Benito Juarez,19.373198,-99.184274,Arroyo,Instalada
+453,29684,19610,49294,Ecobici,Pedregal,Teapa,Lomas de Chapultepec Seccion IV/Lomas Virreyes,Miguel Hidalgo,19.424842,-99.203739,Arroyo,Instalada
+421,25927,23036,48963,Ecobici,Maria Luz Bringas,Oso,Actipan,Benito Juarez,19.36952,-99.179421,Arroyo,Instalada
+454,30265,18408,48673,Ecobici,Montes Urales,Monte Pelvoux,Lomas de Chapultepec Seccion IV/Lomas Virreyes,Miguel Hidalgo,19.425905,-99.204236,Arroyo,Instalada
+663,24182,24377,48559,Ecobici,Hortensia,Av. Universidad,Axotla,Alvaro Obregon,19.3548028,-99.17541944,Arroyo,Instalada
+602,23845,24549,48394,Ecobici,Correspondencia,Eje Central Lazaro Cardenas,Postal,Benito Juarez,19.392523,-99.146194,Arroyo,Instalada
+570,23400,24798,48198,Ecobici,Alfredo Chavero,Simon Bolivar,Obrera,Cuauhtemoc,19.417595,-99.140972,Arroyo,Instalada
+333,27252,20864,48116,Ecobici,Georgia,Carolina,Ampliacion Napoles,Benito Juarez,19.387624,-99.180978,Arroyo,Instalada
+361,25666,22146,47812,Ecobici,Porfirio Diaz,Capulin,Del Valle Centro,Benito Juarez,19.380691,-99.175036,Arroyo,Instalada
+245,25488,22318,47806,Ecobici,Lago Onega,Av. Ejercito Nacional,Granada,Miguel Hidalgo,19.438347,-99.190503,Arroyo,Instalada
+533,23640,24077,47717,Ecobici,Av. Plan de San Luis,Eje 2 Norte Eulalia Guzmán,Nueva Santa Maria,Azcapotzalco,19.46047,-99.16727,Arroyo,Instalada
+380,24761,22787,47548,Ecobici,Moras,San Lorenzo,Tlacoquemecatl del Valle,Benito Juarez,19.374756,-99.173539,Arroyo,Instalada
+683,23973,23470,47443,Ecobici,Pedro Luis Ogazon,Av. Insurgentes,San Angel,Alvaro Obregon,19.3503611,-99.1871111,Arroyo,Instalada
+416,26361,20670,47031,Ecobici,Recreo,Parroquia,Del Valle Sur,Benito Juarez,19.371279,-99.177623,Arroyo,Instalada
+579,21952,24973,46925,Ecobici,Doctor Marquez,Privada Doctor Duran,Doctores,Cuauhtemoc,19.410884,-99.144975,Arroyo,Instalada
+684,23119,23339,46458,Ecobici,Vito Alessio Robles,Tecoyotitla,Guadalupe Chimalistac,Alvaro Obregon,19.351594,-99.184772,Arroyo,Instalada
+501,24016,22280,46296,Ecobici,Plan de Guadalupe /Ferrocarril de Cuernavaca,Eligio Ancona,Nextitla,Miguel Hidalgo,19.454257,-99.172593,Arroyo,Instalada
+202,23436,22846,46282,Ecobici,Calderon de la Barca,Homero,Polanco,Miguel Hidalgo,19.436064,-99.198898,Arroyo,Instalada
+429,23393,22796,46189,Ecobici,Pirineos,Eje 8 Sur Av. Popocatepetl,Santa Cruz Atoyac,Benito Juarez,19.363049,-99.158436,Arroyo,Instalada
+332,25701,20339,46040,Ecobici,Calle 27,Avenida 3,San Pedro de los Pinos,Benito Juarez,19.385494,-99.183744,Arroyo,Instalada
+679,22493,23484,45977,Ecobici,Olivo,Tecoyotitla,Florida,Alvaro Obregon,19.354886,-99.184642,Arroyo,Instalada
+407,23193,22737,45930,Ecobici,Prolongacion Xochicalco,General Emiliano Zapata,Residencial Emperadores,Benito Juarez,19.367209,-99.15872,Arroyo,Instalada
+622,22192,23698,45890,Ecobici,Fernando Montes de Oca,Eje 6 Sur,San Simon Ticumac,Benito Juarez,19.378362,-99.144007,Arroyo,Instalada
+632,22735,23117,45852,Ecobici,Victor Hugo,Sevilla,Portales,Benito Juarez,19.370891,-99.151577,Arroyo,Instalada
+705,21777,23905,45682,Ecobici,Europa,Av. Miguel Angel de Quevedo,Parque San Andres,Coyoacan,19.34406,-99.155983,Arroyo,Instalada
+297,24441,21124,45565,Ecobici,Diagonal San Antonio,Enrique Rebsamen,Narvarte Poniente,Benito Juarez,19.394412,-99.158907,Arroyo,Instalada
+090,22340,23056,45396,Ecobici,Jose Maria Pino Suarez,Corregidora,Centro,Cuauhtemoc,19.43144,-99.132513,Banqueta,Instalada
+339,23698,21357,45055,Ecobici,Enrique Rebsamen,Avenida Eugenia,Narvarte Poniente,Benito Juarez,19.386212,-99.160583,Arroyo,Instalada
+580,22223,22282,44505,Ecobici,Antonio Solis,Simon Bolivar,Obrera,Cuauhtemoc,19.409817,-99.141643,Arroyo,Instalada
+436,22347,22152,44499,Ecobici,Rodriguez Saro,Bufalo,Actipan,Benito Juarez,19.36623,-99.177904,Arroyo,Instalada
+696,20519,23381,43900,Ecobici,Av. Mexico,Malintzin,Del Carmen,Coyoacan,19.35154,-99.164523,Arroyo,Instalada
+456,27195,16632,43827,Ecobici,Alpes,Montes Escandinavos,Lomas de Chapultepec Seccion V,Miguel Hidalgo,19.427517,-99.208412,Arroyo,Instalada
+598,22267,21467,43734,Ecobici,Palenque,Cumbres de Maltrata,Narvarte,Benito Juarez,19.3931,-99.152012,Arroyo,Instalada
+438,22962,20716,43678,Ecobici,Adolfo Prieto,Jose Maria Olloqui,Acacias,Benito Juarez,19.36473,-99.174447,Arroyo,Instalada
+558,21382,22067,43449,Ecobici,Chimalpopoca,Simon Bolivar,Centro,Cuauhtemoc,19.4223,-99.139872,Arroyo,Instalada
+511,21326,22109,43435,Ecobici,Palestina,Egipto,Claveria,Azcapotzalco,19.463865,-99.18229,Arroyo,Instalada
+634,20598,22835,43433,Ecobici,Rumania,Avenida Victor Hugo,Portales,Benito Juarez,19.370133,-99.145866,Arroyo,Instalada
+355,22071,21247,43318,Ecobici,California,Sacramento,Insurgentes San Borja,Benito Juarez,19.382042,-99.173336,Arroyo,Instalada
+345,22529,20677,43206,Ecobici,Patricio Sanz,Miraflores,Insurgentes San Borja,Benito Juarez,19.384447,-99.172039,Arroyo,Instalada
+559,20952,21867,42819,Ecobici,Fernando de Alva Ixtlilxochitl,Diagonal 20 de Noviembre,Obrera,Cuauhtemoc,19.420029,-99.140999,Arroyo,Instalada
+567,22045,20608,42653,Ecobici,Doctor Martinez del Rio,Doctor Jose Terres,Doctores,Cuauhtemoc,19.417133,-99.145649,Arroyo,Instalada
+522,20369,22258,42627,Ecobici,Prolongacion Nueces,Av. Cuitlahuac,Unidad Habitacional Cuitláhuac,Azcapotzalco,19.4705145,-99.1700615,Banqueta,Instalada
+220,22745,19868,42613,Ecobici,Plinio,Presidente Masaryk,Polanco,Miguel Hidalgo,19.432655,-99.205727,Arroyo,Instalada
+444,20962,20938,41900,Ecobici,General Manuel Rincon,Agustin Gutierrez,General Pedro Maria Anaya,Benito Juarez,19.359475,-99.159437,Arroyo,Instalada
+657,20280,21619,41899,Ecobici,Madrid,Centenario,Del Carmen,Coyoacan,19.3574361,-99.16379444,Arroyo,Instalada
+367,22584,19239,41823,Ecobici,Boston,Augusto Rodin,Noche Buena,Benito Juarez,19.379593,-99.181351,Arroyo,Instalada
+601,20158,21570,41728,Ecobici,Navarra,Av. Fernando,Alamos,Benito Juarez,19.395812,-99.145347,Arroyo,Instalada
+094,20426,21030,41456,Ecobici,Lic. Primo de Verdad,Moneda,Centro,Cuauhtemoc,19.433766,-99.130918,Arroyo,Instalada
+514,19940,21390,41330,Ecobici,Jose F. Gutierrez,Avenida Invierno,Angel Zimbron,Azcapotzalco,19.470485,-99.188509,Arroyo,Instalada
+203,22149,18752,40901,Ecobici,Tennyson,Homero,Polanco,Miguel Hidalgo,19.435985,-99.194832,Arroyo,Instalada
+652,19731,20604,40335,Ecobici,Xicotencatl,Av. Division del Norte,Del Carmen,Coyoacan,19.354876,-99.153611,Arroyo,Instalada
+213,22621,17409,40030,Ecobici,Solon,Ciceron,Polanco,Miguel Hidalgo,19.434361,-99.206342,Arroyo,Instalada
+506,20208,19753,39961,Ecobici,Mar Mediterraneo,Mar Arabigo,Tacuba,Miguel Hidalgo,19.459553,-99.185111,Arroyo,Instalada
+330,23473,16319,39792,Ecobici,Calle 15,Avenida Patriotismo,San Pedro de los Pinos,Benito Juarez,19.389358,-99.182606,Arroyo,Instalada
+307,21281,18499,39780,Ecobici,Minnesota,Dakota,Napoles,Benito Juarez,19.393701,-99.175834,Arroyo,Instalada
+487,20393,19377,39770,Ecobici,Atzayacatl,Quetzalcoatl,Tlaxpana,Miguel Hidalgo,19.439741,-99.168901,Arroyo,Instalada
+483,20996,18606,39602,Ecobici,Colegio Salesiano,Av. Marina Nacional,Anahuac,Miguel Hidalgo,19.443092,-99.177612,Arroyo,Instalada
+442,19966,19495,39461,Ecobici,Real de Mayorazgo,Avenida Mexico-Coyoacan,Xoco,Benito Juarez,19.359863,-99.165065,Arroyo,Instalada
+640,19272,20048,39320,Ecobici,Odesa,Bulgaria,Portales,Benito Juarez,19.367465,-99.148786,Arroyo,Instalada
+457,24394,14777,39171,Ecobici,Av. Prado Norte,Explanada,Lomas de Chapultepec Seccion V,Miguel Hidalgo,19.42703,-99.212845,Arroyo,Instalada
+503,19720,19393,39113,Ecobici,Nextitla,Mar Egeo,Nextitla,Miguel Hidalgo,19.455531,-99.175222,Arroyo,Instalada
+692,18792,20208,39000,Ecobici,Presidente Carranza,Francisco Sosa,Santa Catarina,Coyoacan,19.349149,-99.169646,Arroyo,Instalada
+362,21224,17557,38781,Ecobici,Augusto Rodin,Alberto Balderas,Ciudad de los Deportes,Benito Juarez,19.382109,-99.181056,Arroyo,Instalada
+510,19667,18765,38432,Ecobici,Egipto,Calle Norte 79 A,Claveria,Azcapotzalco,19.462152,-99.178291,Arroyo,Instalada
+589,19268,18839,38107,Ecobici,Cadiz,Calzada de Tlalpan,Alamos,Benito Juarez,19.39859,-99.137732,Arroyo,Instalada
+482,19927,17961,37888,Ecobici,Lago Xochimilco,Laguna de San Cristobal,Anahuac,Miguel Hidalgo,19.444826,-99.178393,Arroyo,Instalada
+573,18522,19341,37863,Ecobici,Fernando Ramirez,Isabel la Catolica,Obrera,Cuauhtemoc,19.412853,-99.138723,Arroyo,Instalada
+606,18498,19330,37828,Ecobici,Alfonso XIII,Aragon,Alamos,Benito Juarez,19.39489,-99.1389,Arroyo,Instalada
+700,17956,19849,37805,Ecobici,Abasolo,Avenida Miguel Hidalgo,Del Carmen,Coyoacan,19.350062,-99.160024,Arroyo,Instalada
+695,18927,18876,37803,Ecobici,Malintzin,Allende,Del Carmen,Coyoacan,19.352143,-99.162096,Arroyo,Instalada
+536,19356,17596,36952,Ecobici,Fresno,Eje 2 Norte Eulalia Guzmán,Atlampa,Cuauhtemoc,19.458881,-99.159215,Arroyo,Instalada
+437,18740,18205,36945,Ecobici,Moras,Comunal,Acacias,Benito Juarez,19.364916,-99.175985,Arroyo,Instalada
+569,18607,18314,36921,Ecobici,Gutierrez Najera,Simon Bolivar,Obrera,Cuauhtemoc,19.415713,-99.141227,Arroyo,Instalada
+645,18589,18308,36897,Ecobici,Saratoga,Ajusco,Portales,Benito Juarez,19.358634,-99.152732,Arroyo,Instalada
+423,19300,17451,36751,Ecobici,Moras,Eje 8 Sur Jose Maria Rico,Acacias,Benito Juarez,19.367816,-99.175269,Arroyo,Instalada
+708,16230,20518,36748,Ecobici,Irlanda,Canada,Parque San Andres,Coyoacan,19.346489,-99.145828,Arroyo,Instalada
+572,17768,18977,36745,Ecobici,Manuel J. Othon,5 de Febrero,Obrera,Cuauhtemoc,19.414595,-99.135886,Arroyo,Instalada
+620,17449,18939,36388,Ecobici,Fernando Montes de Oca,Priv. Lago,Americas Unidas,Benito Juarez,19.381804,-99.142997,Arroyo,Instalada
+585,17438,18917,36355,Ecobici,Jose Toribio Medina,Manuel Navarrete,Algarin,Cuauhtemoc,19.405358,-99.14316,Arroyo,Instalada
+609,16854,19476,36330,Ecobici,Romero,Calzada de Tlalpan,Americas Unidas,Benito Juarez,19.384623,-99.139817,Arroyo,Instalada
+577,17534,18451,35985,Ecobici,Doctor Marquez,Doctor Jimenez,Doctores,Cuauhtemoc,19.411609,-99.15314,Arroyo,Instalada
+458,21076,14894,35970,Ecobici,Montes Urales,Volcan,Lomas de Chapultepec Seccion III,Miguel Hidalgo,19.428679,-99.206605,Arroyo,Instalada
+537,18631,17269,35900,Ecobici,Fresno,Clavel,Atlampa,Cuauhtemoc,19.457594,-99.159455,Arroyo,Instalada
+531,18314,17457,35771,Ecobici,Norte 67,Poniente 44,San Salvador Xochimanca,Azcapotzalco,19.460356,-99.174283,Arroyo,Instalada
+342,18421,17136,35557,Ecobici,Pitagoras,Av. Division del Norte,Narvarte Poniente,Benito Juarez,19.382328,-99.159877,Arroyo,Instalada
+639,17149,18367,35516,Ecobici,Bulgaria,Rumania,Portales,Benito Juarez,19.364528,-99.146988,Arroyo,Instalada
+353,19197,15937,35134,Ecobici,Carolina,Holbein,Ciudad de los Deportes,Benito Juarez,19.38213,-99.178814,Arroyo,Instalada
+653,16974,18114,35088,Ecobici,Londres,Av. Division del Norte,Del Carmen,Coyoacan,19.35674,-99.15309,Arroyo,Instalada
+528,17225,17831,35056,Ecobici,Tlatilco,Av. Jardin,Tlatilco,Azcapotzalco,19.464966,-99.160413,Arroyo,Instalada
+488,18345,16679,35024,Ecobici,Huetzin,Laguna de Guzman,Anahuac,Miguel Hidalgo,19.44484,-99.17049,Arroyo,Instalada
+346,17160,17742,34902,Ecobici,San Francisco,Santa Margarita,Insurgentes San Borja,Benito Juarez,19.385039,-99.174018,Arroyo,Instalada
+697,15349,19479,34828,Ecobici,Francisco Sosa,Tres Cruces,Villa Coyoacan,Coyoacan,19.349277,-99.164921,Arroyo,Instalada
+649,17613,17061,34674,Ecobici,Heroes del 47,J. Aguilar y Lopez,San Mateo,Coyoacan,19.35072,-99.146786,Arroyo,Instalada
+616,17469,17005,34474,Ecobici,Peten,Eje 5 Sur,Vertiz Narvarte,Benito Juarez,19.38483,-99.15363,Arroyo,Instalada
+642,17161,17310,34471,Ecobici,Avenida Republicas,Monrovia,Portales,Benito Juarez,19.364001,-99.150422,Arroyo,Instalada
+689,17692,16750,34442,Ecobici,G. Perez Valenzuela,Tlapancalco,Santa Catarina,Coyoacan,19.351426,-99.175455,Arroyo,Instalada
+703,17091,17346,34437,Ecobici,Avenida Miguel Hidalgo,Calzada General Anaya,Del Carmen,Coyoacan,19.350776,-99.155379,Arroyo,Instalada
+605,16391,18045,34436,Ecobici,5 de Febrero,Alfonso XIII,Alamos,Benito Juarez,19.39516,-99.139532,Arroyo,Instalada
+512,17143,17278,34421,Ecobici,Avenida Claveria,Floresta,Claveria,Azcapotzalco,19.465636,-99.186342,Arroyo,Instalada
+500,17298,17085,34383,Ecobici,Ferrocarril de Cuernavaca,Juan Sarabia,Plutarco Elias Calles,Miguel Hidalgo,19.456546,-99.169344,Arroyo,Instalada
+646,16004,18281,34285,Ecobici,Rumania,Eje 8 Sur Av. Popocatepetl,Portales,Benito Juarez,19.36053,-99.1475,Arroyo,Instalada
+619,16621,17265,33886,Ecobici,Kiff,Rafael Solana Verduguillo,Independencia,Benito Juarez,19.381277,-99.145804,Arroyo,Instalada
+529,16581,17273,33854,Ecobici,Avenida Plan de San Luis,Clavelinas,Nueva Santa Maria,Azcapotzalco,19.465552,-99.166851,Arroyo,Instalada
+530,16229,17625,33854,Ecobici,Membrillo,Cda. de Nueces,Nueva Santa Maria,Azcapotzalco,19.464564,-99.169496,Arroyo,Instalada
+658,16623,17174,33797,Ecobici,Vicente Guerrero,Berlin,Del Carmen,Coyoacan,19.355339,-99.165613,Arroyo,Instalada
+473,18377,15374,33751,Ecobici,Bahia  del Espiritu Santo,Bahia de Banderas,Veronica Anzures,Miguel Hidalgo,19.438143,-99.17519,Arroyo,Instalada
+434,18039,15483,33522,Ecobici,Jose Maria Olloqui,Amores,Del Valle Sur,Benito Juarez,19.363741,-99.171268,Arroyo,Instalada
+637,16595,16866,33461,Ecobici,Ajusco,Emperadores,Portales,Benito Juarez,19.36576,-99.144413,Arroyo,Instalada
+636,16260,17175,33435,Ecobici,Ajusco,Antillas,Portales,Benito Juarez,19.367131,-99.142838,Arroyo,Instalada
+433,18064,15310,33374,Ecobici,Jose Maria Olloqui,M. Lopez Cotilla,Del Valle Sur,Benito Juarez,19.363548,-99.170766,Arroyo,Instalada
+651,16713,15618,32331,Ecobici,Heroes del 47,Av. Division del Norte,San Mateo,Coyoacan,19.351578,-99.150941,Arroyo,Instalada
+586,15615,16180,31795,Ecobici,Bernardo Couto,Juan E. Hernandez y Davalos,Algarin,Cuauhtemoc,19.406458,-99.138735,Arroyo,Instalada
+629,16235,15256,31491,Ecobici,Tajin,Chichen Itza,Letran Valle,Benito Juarez,19.376367,-99.155872,Arroyo,Instalada
+670,18132,13334,31466,Ecobici,Felix Parra,Flamencos,San Jose Insurgentes,Benito Juarez,19.3676,-99.18499167,Arroyo,Instalada
+519,15192,15547,30739,Ecobici,Poniente 58,Avenida Cuitlahuac,Obrero Popular,Azcapotzalco,19.464891,-99.177242,Arroyo,Instalada
+678,17005,13588,30593,Ecobici,Francia,Tecoyotitla,Florida,Alvaro Obregon,19.35886344,-99.18292974,Arroyo,Instalada
+583,14221,16276,30497,Ecobici,Angel del Campo,5 de Febrero,Obrera,Cuauhtemoc,19.408087,-99.137763,Arroyo,Instalada
+517,15351,14944,30295,Ecobici,Ignacio Allende,Avenida Claveria,Claveria,Azcapotzalco,19.465377,-99.179197,Arroyo,Instalada
+673,18053,11894,29947,Ecobici,Miguel Noreña,Jose Maria Ibarraran,San Jose Insurgentes,Benito Juarez,19.363153,-99.186963,Arroyo,Instalada
+702,14096,14995,29091,Ecobici,Fernandez Leal,Plaza de la Conchita,Barrio la Concepcion,Coyoacan,19.347246,-99.15857,Arroyo,Instalada
+671,16568,12436,29004,Ecobici,Plateros,Jose Maria Velasco,San Jose Insurgentes,Benito Juarez,19.364577,-99.186288,Arroyo,Instalada
+532,14690,14274,28964,Ecobici,Biologo Maximino Martinez,Calzada Camarones,San Salvador Xochimanca,Azcapotzalco,19.4608519,-99.1711992,Arroyo,Instalada
+535,14266,14296,28562,Ecobici,Av. Jardin,Orquídea,Tlatilco,Azcapotzalco,19.46173,-99.16225,Arroyo,Instalada
+521,13858,14654,28512,Ecobici,Yuca,Clavelinas,Nueva Santa Maria,Azcapotzalco,19.466423,-99.173061,Arroyo,Instalada
+643,13956,14465,28421,Ecobici,Filipinas,Av. Pirineos,Portales,Benito Juarez,19.362323,-99.148805,Arroyo,Instalada
+518,14001,14092,28093,Ecobici,Avenida Heliopolis,Norte 79A,Claveria,Azcapotzalco,19.468315,-99.177386,Arroyo,Instalada
+534,14424,13651,28075,Ecobici,Tlatilco,Jazmin,Tlatilco,Azcapotzalco,19.45883,-99.164513,Arroyo,Instalada
+701,13409,13932,27341,Ecobici,Cuauhtemoc,Morelos,Del Carmen,Coyoacan,19.352052,-99.157981,Arroyo,Instalada
+443,13722,13455,27177,Ecobici,Bruno Traven,Golondrinas,General Pedro Maria Anaya,Benito Juarez,19.359583,-99.162085,Arroyo,Instalada
+691,13381,13658,27039,Ecobici,Melchor Ocampo,Dulce Olivia,Santa Catarina,Coyoacan,19.347283,-99.170834,Arroyo,Instalada
+682,14263,12375,26638,Ecobici,Manuel M Ponce,Fernando M Villalpando,Guadalupe Inn,Alvaro Obregon,19.35355,-99.189519,Arroyo,Instalada
+654,13265,13229,26494,Ecobici,Londres,San Pedro,Del Carmen,Coyoacan,19.355942,-99.157461,Arroyo,Instalada
+587,13252,13193,26445,Ecobici,Jose Toribio Medina,Marcelino Davalos,Algarin,Cuauhtemoc,19.404654,-99.136966,Arroyo,Instalada
+706,12557,13754,26311,Ecobici,Canada,Acolotitla,Barrio San Lucas,Coyoacan,19.347503,-99.15244,Arroyo,Instalada
+525,12687,13535,26222,Ecobici,Boldo,Tila,Hogar y Seguridad,Azcapotzalco,19.468293,-99.16557,Arroyo,Instalada
+686,13744,12449,26193,Ecobici,Avenida Vito Alessio Robles,Av. Universidad,Agricola,Alvaro Obregon,19.352203,-99.178393,Arroyo,Instalada
+509,13680,12422,26102,Ecobici,Benito Juarez,Venecia,San Alvaro,Azcapotzalco,19.45968,-99.1818,Arroyo,Instalada
+704,11703,14203,25906,Ecobici,Pacifico,Asia,Barrio la Concepcion,Coyoacan,19.344976,-99.157824,Arroyo,Instalada
+674,15410,10378,25788,Ecobici,Macedonio Alcala,Silvestre Revueltas,Guadalupe Inn,Alvaro Obregon,19.361845,-99.186887,Banqueta,Instalada
+508,12859,12907,25766,Ecobici,Libertad,Jose Sanchez Trujillo,San Alvaro,Azcapotzalco,19.462421,-99.183614,Banqueta,Instalada
+677,13716,11872,25588,Ecobici,Juan Pablo II,Av. Insurgentes,Guadalupe Inn,Alvaro Obregon,19.359053,-99.184317,Arroyo,Instalada
+655,12262,13116,25378,Ecobici,Gomez Farias,Viena,Del Carmen,Coyoacan,19.357076,-99.160189,Arroyo,Instalada
+698,12144,12319,24463,Ecobici,Cda. Alberto Zamora,Av. Miguel Angel de Quevedo,Villa Coyoacan,Coyoacan,19.344855,-99.163575,Arroyo,Instalada
+515,12061,11992,24053,Ecobici,Tebas,Salonica,Del Recreo,Azcapotzalco,19.46969,-99.18405,Arroyo,Instalada
+699,11281,11575,22856,Ecobici,San Gregorio,Felipe Carrillo Puerto,Villa Coyoacan,Coyoacan,19.346895,-99.163868,Arroyo,Instalada
+680,13638,8972,22610,Ecobici,Diego Becerra,Av. Revolucion,San Jose Insurgentes,Benito Juarez,19.36672,-99.188409,Arroyo,Instalada
+574,11303,11246,22549,Ecobici,Jose Maria Roa Barcenas,Simon Bolivar,Obrera,Cuauhtemoc,19.41175,-99.14096,Arroyo,Instalada
+422,12536,9868,22404,Ecobici,Bufalo,Eje 8 Sur Jose Maria Rico,Actipan,Benito Juarez,19.368403,-99.177472,Arroyo,Instalada
+647,10633,11590,22223,Ecobici,Alhambra,Avenida Nevado,Portales,Benito Juarez,19.359093,-99.145247,Arroyo,Instalada
+581,10116,11559,21675,Ecobici,Jose Maria Roa Barcenas,Calzada San Antonio Abad,Obrera,Cuauhtemoc,19.411323,-99.135626,Arroyo,Instalada
+607,10978,10565,21543,Ecobici,Union Postal,Calzada de Tlalpan,Postal,Benito Juarez,19.390924,-99.13895,Arroyo,Instalada
+524,10672,10787,21459,Ecobici,Malvon,Juan Sarabia,Hogar y Seguridad,Azcapotzalco,19.468246,-99.168165,Arroyo,Instalada
+526,10292,10578,20870,Ecobici,Toronjil,Mejorana,Ignacio Allende,Azcapotzalco,19.466937,-99.162948,Arroyo,Instalada
+527,10245,10524,20769,Ecobici,Boldo,Alcanfores,Nueva Santa Maria,Azcapotzalco,19.464826,-99.163177,Arroyo,Instalada
+690,10423,10197,20620,Ecobici,Tata Vasco,Av. Miguel Angel de Quevedo,Santa Catarina,Coyoacan,19.3459701,-99.17296,Arroyo,Instalada
+650,8406,10189,18595,Ecobici,Xicotencatl,Prolongacion Xicotencatl,San Diego Churubusco,Coyoacan,19.355945,-99.149258,Arroyo,Instalada
+516,9302,9173,18475,Ecobici,Texcoco,Nilo,Claveria,Azcapotzalco,19.46669,-99.180302,Arroyo,Instalada
+661,9245,8298,17543,Ecobici,Madrid,Av. Universidad,Del Carmen,Coyoacan,19.35675,-99.171769,Arroyo,Instalada
+694,7989,8017,16006,Ecobici,Ignacio Aldama,Centenario,Del Carmen,Coyoacan,19.353243,-99.163753,Arroyo,Instalada
+676,9343,6641,15984,Ecobici,Ricardo Palmerin,Abundio Martinez,Guadalupe Inn,Alvaro Obregon,19.358262,-99.18809,Arroyo,Instalada
+693,7713,7523,15236,Ecobici,Xicotencatl,Vicente Guerrero,Del Carmen,Coyoacan,19.352531,-99.164913,Arroyo,Instalada
+707,6842,6838,13680,Ecobici,Irlanda,Av. Division del Norte,Parque San Andres,Coyoacan,19.348076,-99.14906,Arroyo,Instalada
+681,7414,5885,13299,Ecobici,Guty Cardenas,Ricardo Castro,Guadalupe Inn,Alvaro Obregon,19.355817,-99.189142,Arroyo,Instalada
+666,6634,6131,12765,Ecobici,Moras,Naranjo,Florida,Alvaro Obregon,19.3614885,-99.17743249,Arroyo,Instalada
+662,5318,5006,10324,Ecobici,Manzano,Circuito Interior,Axotla,Alvaro Obregon,19.362041,-99.175158,Arroyo,Instalada
+687,5665,4175,9840,Ecobici,Av. Francisco Sosa,Panzacola,Santa Catarina,Coyoacan,19.349348,-99.179015,Arroyo,Instalada
+665,5339,4468,9807,Ecobici,Moras,Mango,Florida,Alvaro Obregon,19.3589028,-99.17799722,Arroyo,Instalada
+664,5716,3215,8931,Ecobici,Hortensia,2da cerrrada de Minerva,Florida,Alvaro Obregon,19.355544,-99.178992,Arroyo,Instalada
+1000,163,1011,1174,,,,,,,,,
+Temporal 1,565,589,1154,,,,,,,,,
+Temporal - 2da Sección Bosque Chapultepec,399,373,772,,,,,,,,,
+4422222,323,342,665,,,,,,,,,
+Temporal 2,119,145,264,,,,,,,,,
+Temporal 3,16,29,45,,,,,,,,,
+Temporal 4,6,25,31,,,,,,,,,
+kiosco100-FallaRTC,5,5,10,,,,,,,,,
+Tag ID defectuosa,1,2,3,,,,,,,,,
+Kiosco 150177,1,1,2,,,,,,,,,
+Tag ID defectuosa NS 1649 (Kiosco478),1,0,1,,,,,,,,,

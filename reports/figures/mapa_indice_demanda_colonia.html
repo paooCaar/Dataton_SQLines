@@ -1,0 +1,2574 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2d47228420a178760505800533f81a5b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; bottom: 30px; left: 30px; z-index: 9999;
+                background: white; padding: 10px 14px; border: 1px solid #999;
+                border-radius: 6px; font-size: 13px; font-family: sans-serif;">
+      <b>Tendencia del indice de demanda compuesto</b><br>
+      <span style="color:#1a9850;">&#9679;</span> Creciente<br>
+      <span style="color:#4575b4;">&#9679;</span> Estable<br>
+      <span style="color:#d73027;">&#9679;</span> Decreciente<br>
+      <span style="color:#999999;">&#9679;</span> Datos insuficientes<br>
+      <i>Tamano del circulo = nivel del indice compuesto</i>
+    </div>
+    
+    
+            <div class="folium-map" id="map_2d47228420a178760505800533f81a5b" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_2d47228420a178760505800533f81a5b = L.map(
+                "map_2d47228420a178760505800533f81a5b",
+                {
+                    center: [19.391, -99.165],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8d97eac12fd1bc1d9201a1ccdd59e0ef = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_8d97eac12fd1bc1d9201a1ccdd59e0ef.addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+            var circle_marker_16e6fbc266bf6dd4a2df7cf37f165371 = L.circleMarker(
+                [19.418485137837838, -99.1628676945946],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 26.0, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_7bea0770d62190ccc9fb79367d2b33de = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2a6227090d8eedb55b311ee48c8f2726 = $(`<div id="html_2a6227090d8eedb55b311ee48c8f2726" style="width: 100.0%; height: 100.0%;"><b>Roma Norte</b> (Cuauhtemoc)<br>Indice de demanda compuesto (promedio): 2.31<br>&nbsp;&nbsp;- uso Ecobici: 5.43<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0011)<br>Viajes totales acumulados: 6,550,585<br>Ciclovia en la colonia: 18.1 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 22<br>Poblacion de la alcaldia (2020): 545,884<br>Periodos con datos: 25</div>`)[0];
+                popup_7bea0770d62190ccc9fb79367d2b33de.setContent(html_2a6227090d8eedb55b311ee48c8f2726);
+            
+        
+
+        circle_marker_16e6fbc266bf6dd4a2df7cf37f165371.bindPopup(popup_7bea0770d62190ccc9fb79367d2b33de)
+        ;
+
+        
+    
+    
+            var circle_marker_c694191c80439b8318dae4c5d9a9cf42 = L.circleMarker(
+                [19.43157913548387, -99.1390105451613],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 23.790769626683833, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_480020b768c9816ec3d9220b2b7e19c5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_83348b2ca11d77a189aa52ec7961432e = $(`<div id="html_83348b2ca11d77a189aa52ec7961432e" style="width: 100.0%; height: 100.0%;"><b>Centro</b> (Cuauhtemoc)<br>Indice de demanda compuesto (promedio): 2.00<br>&nbsp;&nbsp;- uso Ecobici: 2.97<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0019)<br>Viajes totales acumulados: 3,860,983<br>Ciclovia en la colonia: 5.9 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 203<br>Poblacion de la alcaldia (2020): 545,884<br>Periodos con datos: 25</div>`)[0];
+                popup_480020b768c9816ec3d9220b2b7e19c5.setContent(html_83348b2ca11d77a189aa52ec7961432e);
+            
+        
+
+        circle_marker_c694191c80439b8318dae4c5d9a9cf42.bindPopup(popup_480020b768c9816ec3d9220b2b7e19c5)
+        ;
+
+        
+    
+    
+            var circle_marker_b5c1e5f781c3fe06f4488c4eada2a643 = L.circleMarker(
+                [19.426927091666666, -99.16252575416667],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20.621846686895402, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_40385db2c865f6369719e6c12ba1abd0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e62eabb8247acddeeaa38761c3851906 = $(`<div id="html_e62eabb8247acddeeaa38761c3851906" style="width: 100.0%; height: 100.0%;"><b>Juarez</b> (Cuauhtemoc)<br>Indice de demanda compuesto (promedio): 1.54<br>&nbsp;&nbsp;- uso Ecobici: 3.64<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0032)<br>Viajes totales acumulados: 4,587,465<br>Ciclovia en la colonia: 11.9 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 545,884<br>Periodos con datos: 25</div>`)[0];
+                popup_40385db2c865f6369719e6c12ba1abd0.setContent(html_e62eabb8247acddeeaa38761c3851906);
+            
+        
+
+        circle_marker_b5c1e5f781c3fe06f4488c4eada2a643.bindPopup(popup_40385db2c865f6369719e6c12ba1abd0)
+        ;
+
+        
+    
+    
+            var circle_marker_64b897ce1d92a2fd997373270f3040e3 = L.circleMarker(
+                [19.428548892222224, -99.16835502222222],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20.548579163103987, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_9390f9f31ce9217be3928c35063c2267 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5e8b5b11b89b9761f67d7791a5ae4ae9 = $(`<div id="html_5e8b5b11b89b9761f67d7791a5ae4ae9" style="width: 100.0%; height: 100.0%;"><b>Cuauhtemoc</b> (Cuauhtemoc)<br>Indice de demanda compuesto (promedio): 1.53<br>&nbsp;&nbsp;- uso Ecobici: 2.89<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0061)<br>Viajes totales acumulados: 3,758,341<br>Ciclovia en la colonia: 6.7 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 2<br>Poblacion de la alcaldia (2020): 545,884<br>Periodos con datos: 25</div>`)[0];
+                popup_9390f9f31ce9217be3928c35063c2267.setContent(html_5e8b5b11b89b9761f67d7791a5ae4ae9);
+            
+        
+
+        circle_marker_64b897ce1d92a2fd997373270f3040e3.bindPopup(popup_9390f9f31ce9217be3928c35063c2267)
+        ;
+
+        
+    
+    
+            var circle_marker_1bcb8671a15344d5ef91ae48ef3f7373 = L.circleMarker(
+                [19.409034189473683, -99.17132668421053],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.48785908719085, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_e82638ec5fd1f54f3b0ae12b154e1b33 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_85e64cae13173c8648c6fa9394503896 = $(`<div id="html_85e64cae13173c8648c6fa9394503896" style="width: 100.0%; height: 100.0%;"><b>Hipodromo</b> (Cuauhtemoc)<br>Indice de demanda compuesto (promedio): 1.10<br>&nbsp;&nbsp;- uso Ecobici: 2.46<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0078)<br>Viajes totales acumulados: 3,270,942<br>Ciclovia en la colonia: 8.7 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 545,884<br>Periodos con datos: 25</div>`)[0];
+                popup_e82638ec5fd1f54f3b0ae12b154e1b33.setContent(html_85e64cae13173c8648c6fa9394503896);
+            
+        
+
+        circle_marker_1bcb8671a15344d5ef91ae48ef3f7373.bindPopup(popup_e82638ec5fd1f54f3b0ae12b154e1b33)
+        ;
+
+        
+    
+    
+            var circle_marker_953490b4ff01127ba4442bca5e1e7d11 = L.circleMarker(
+                [19.433189227272727, -99.19554593181819],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.416769638404066, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_fde8701050192a93a177714b3a140478 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1010b24cfd017281631009cad442bbb8 = $(`<div id="html_1010b24cfd017281631009cad442bbb8" style="width: 100.0%; height: 100.0%;"><b>Polanco</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): 1.09<br>&nbsp;&nbsp;- uso Ecobici: 3.52<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0061)<br>Viajes totales acumulados: 4,497,080<br>Ciclovia en la colonia: 22.7 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 25</div>`)[0];
+                popup_fde8701050192a93a177714b3a140478.setContent(html_1010b24cfd017281631009cad442bbb8);
+            
+        
+
+        circle_marker_953490b4ff01127ba4442bca5e1e7d11.bindPopup(popup_fde8701050192a93a177714b3a140478)
+        ;
+
+        
+    
+    
+            var circle_marker_155af694dc04dd7a6ec4966983f9c36d = L.circleMarker(
+                [19.44744927352941, -99.15840227588235],
+                {"bubblingMouseEvents": true, "color": "#1a9850", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.723538708635179, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_35bac0e7b6881411c8f865646e7dd848 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_69a3efcf2d32f3835317dc80ec5178f4 = $(`<div id="html_69a3efcf2d32f3835317dc80ec5178f4" style="width: 100.0%; height: 100.0%;"><b>Santa Maria la Ribera</b> (Cuauhtemoc)<br>Indice de demanda compuesto (promedio): 0.85<br>&nbsp;&nbsp;- uso Ecobici: 1.23<br>Tendencia: <b>Creciente</b> (pendiente Theil-Sen: 0.0212)<br>Viajes totales acumulados: 2,079,824<br>Ciclovia en la colonia: 4.2 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 545,884<br>Periodos con datos: 25</div>`)[0];
+                popup_35bac0e7b6881411c8f865646e7dd848.setContent(html_69a3efcf2d32f3835317dc80ec5178f4);
+            
+        
+
+        circle_marker_155af694dc04dd7a6ec4966983f9c36d.bindPopup(popup_35bac0e7b6881411c8f865646e7dd848)
+        ;
+
+        
+    
+    
+            var circle_marker_21cd023ce712c84af70a0a5a4d815654 = L.circleMarker(
+                [19.44249, -99.15238971428572],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.074037074360918, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_1b0d79180809a6adc42424fcede61ed4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_322867eb094f3fc744998f85962b5177 = $(`<div id="html_322867eb094f3fc744998f85962b5177" style="width: 100.0%; height: 100.0%;"><b>Buenavista</b> (Cuauhtemoc)<br>Indice de demanda compuesto (promedio): 0.75<br>&nbsp;&nbsp;- uso Ecobici: 0.90<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0054)<br>Viajes totales acumulados: 1,585,338<br>Ciclovia en la colonia: 7.5 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 4<br>Poblacion de la alcaldia (2020): 545,884<br>Periodos con datos: 25</div>`)[0];
+                popup_1b0d79180809a6adc42424fcede61ed4.setContent(html_322867eb094f3fc744998f85962b5177);
+            
+        
+
+        circle_marker_21cd023ce712c84af70a0a5a4d815654.bindPopup(popup_1b0d79180809a6adc42424fcede61ed4)
+        ;
+
+        
+    
+    
+            var circle_marker_cedc0c11abe35e3e6351cfff4b8b99f5 = L.circleMarker(
+                [19.414863776923077, -99.17548886153847],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.016889480016127, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_6f093ed2af0ba3c98e194a219e5e558e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ef6d89c3b63e815db256844fb99bb170 = $(`<div id="html_ef6d89c3b63e815db256844fb99bb170" style="width: 100.0%; height: 100.0%;"><b>Condesa</b> (Cuauhtemoc)<br>Indice de demanda compuesto (promedio): 0.75<br>&nbsp;&nbsp;- uso Ecobici: 1.29<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0062)<br>Viajes totales acumulados: 2,013,862<br>Ciclovia en la colonia: 2.3 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 4<br>Poblacion de la alcaldia (2020): 545,884<br>Periodos con datos: 25</div>`)[0];
+                popup_6f093ed2af0ba3c98e194a219e5e558e.setContent(html_ef6d89c3b63e815db256844fb99bb170);
+            
+        
+
+        circle_marker_cedc0c11abe35e3e6351cfff4b8b99f5.bindPopup(popup_6f093ed2af0ba3c98e194a219e5e558e)
+        ;
+
+        
+    
+    
+            var circle_marker_794dcd4f697e3f571c4822cac7e71e1e = L.circleMarker(
+                [19.407182666666664, -99.16243493333333],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.983247205352214, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_3e98931d457873a7f9eb64ec1d8d9de4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_93c8302e1c03ca5629516b1d67b4834d = $(`<div id="html_93c8302e1c03ca5629516b1d67b4834d" style="width: 100.0%; height: 100.0%;"><b>Roma Sur</b> (Cuauhtemoc)<br>Indice de demanda compuesto (promedio): 0.74<br>&nbsp;&nbsp;- uso Ecobici: 1.45<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0025)<br>Viajes totales acumulados: 2,224,350<br>Ciclovia en la colonia: 6.4 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 13<br>Poblacion de la alcaldia (2020): 545,884<br>Periodos con datos: 25</div>`)[0];
+                popup_3e98931d457873a7f9eb64ec1d8d9de4.setContent(html_93c8302e1c03ca5629516b1d67b4834d);
+            
+        
+
+        circle_marker_794dcd4f697e3f571c4822cac7e71e1e.bindPopup(popup_3e98931d457873a7f9eb64ec1d8d9de4)
+        ;
+
+        
+    
+    
+            var circle_marker_390920253ca3a01a8526e89eae837a34 = L.circleMarker(
+                [19.437416916666667, -99.16223883333333],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.630208642901307, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_7aa71574719c3aa8ab63507e3c0eb91d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_65070fc21ee809a70ace0b8b93a1d901 = $(`<div id="html_65070fc21ee809a70ace0b8b93a1d901" style="width: 100.0%; height: 100.0%;"><b>San Rafael</b> (Cuauhtemoc)<br>Indice de demanda compuesto (promedio): 0.69<br>&nbsp;&nbsp;- uso Ecobici: 1.12<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0022)<br>Viajes totales acumulados: 1,846,179<br>Ciclovia en la colonia: 0.1 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 7<br>Poblacion de la alcaldia (2020): 545,884<br>Periodos con datos: 25</div>`)[0];
+                popup_7aa71574719c3aa8ab63507e3c0eb91d.setContent(html_65070fc21ee809a70ace0b8b93a1d901);
+            
+        
+
+        circle_marker_390920253ca3a01a8526e89eae837a34.bindPopup(popup_7aa71574719c3aa8ab63507e3c0eb91d)
+        ;
+
+        
+    
+    
+            var circle_marker_604c3a13bb20bd8b795567e0b950b091 = L.circleMarker(
+                [19.394962335294117, -99.1661818117647],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.804851299820523, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_c71fdc5ce1020bff79447db8b3399fe9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c6a8d471588a8354ce0546e1ad5f6d03 = $(`<div id="html_c6a8d471588a8354ce0546e1ad5f6d03" style="width: 100.0%; height: 100.0%;"><b>Del Valle Norte</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): 0.43<br>&nbsp;&nbsp;- uso Ecobici: 0.84<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0004)<br>Viajes totales acumulados: 1,561,066<br>Ciclovia en la colonia: sin dato<br>Establecimientos DENUE relacionados (bici/mensajeria): 8<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 25</div>`)[0];
+                popup_c71fdc5ce1020bff79447db8b3399fe9.setContent(html_c6a8d471588a8354ce0546e1ad5f6d03);
+            
+        
+
+        circle_marker_604c3a13bb20bd8b795567e0b950b091.bindPopup(popup_c71fdc5ce1020bff79447db8b3399fe9)
+        ;
+
+        
+    
+    
+            var circle_marker_8f1bb12f49c857eb8179a3176e09a19d = L.circleMarker(
+                [19.419010666666665, -99.14827066666666],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.572941984560053, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_9f8f1c54c5dc80330b6843bbd54f8fd5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_27fceb80363beb6e27432cec206ae9ae = $(`<div id="html_27fceb80363beb6e27432cec206ae9ae" style="width: 100.0%; height: 100.0%;"><b>Doctores</b> (Cuauhtemoc)<br>Indice de demanda compuesto (promedio): 0.40<br>&nbsp;&nbsp;- uso Ecobici: 0.77<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0158)<br>Viajes totales acumulados: 1,548,337<br>Ciclovia en la colonia: 11.3 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 10<br>Poblacion de la alcaldia (2020): 545,884<br>Periodos con datos: 25</div>`)[0];
+                popup_9f8f1c54c5dc80330b6843bbd54f8fd5.setContent(html_27fceb80363beb6e27432cec206ae9ae);
+            
+        
+
+        circle_marker_8f1bb12f49c857eb8179a3176e09a19d.bindPopup(popup_9f8f1c54c5dc80330b6843bbd54f8fd5)
+        ;
+
+        
+    
+    
+            var circle_marker_498df57d8ed333eb92108d0294fd96ce = L.circleMarker(
+                [19.402315323076923, -99.17851246923077],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.492846880346598, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_c5c511747f8df2a35b9346a251c7c139 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_922d82a9fcf5710ea33b4a3b3f21eaa2 = $(`<div id="html_922d82a9fcf5710ea33b4a3b3f21eaa2" style="width: 100.0%; height: 100.0%;"><b>Escandon</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): 0.39<br>&nbsp;&nbsp;- uso Ecobici: 0.91<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0013)<br>Viajes totales acumulados: 1,624,040<br>Ciclovia en la colonia: 6.1 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 25</div>`)[0];
+                popup_c5c511747f8df2a35b9346a251c7c139.setContent(html_922d82a9fcf5710ea33b4a3b3f21eaa2);
+            
+        
+
+        circle_marker_498df57d8ed333eb92108d0294fd96ce.bindPopup(popup_c5c511747f8df2a35b9346a251c7c139)
+        ;
+
+        
+    
+    
+            var circle_marker_a7086350afc707eb716a449466564997 = L.circleMarker(
+                [19.39256549375, -99.15846769375],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.159140348428647, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_e7558f9d197b306cc533e9c271d6f034 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ecbe37a0332d4cb44229e6d826aa71d1 = $(`<div id="html_ecbe37a0332d4cb44229e6d826aa71d1" style="width: 100.0%; height: 100.0%;"><b>Narvarte Poniente</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): 0.34<br>&nbsp;&nbsp;- uso Ecobici: 0.65<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0040)<br>Viajes totales acumulados: 1,337,169<br>Ciclovia en la colonia: sin dato<br>Establecimientos DENUE relacionados (bici/mensajeria): 12<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 25</div>`)[0];
+                popup_e7558f9d197b306cc533e9c271d6f034.setContent(html_ecbe37a0332d4cb44229e6d826aa71d1);
+            
+        
+
+        circle_marker_a7086350afc707eb716a449466564997.bindPopup(popup_e7558f9d197b306cc533e9c271d6f034)
+        ;
+
+        
+    
+    
+            var circle_marker_040f583015e79c0845ba0b75bd798af4 = L.circleMarker(
+                [19.3711118, -99.16949953333332],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.847570314823827, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_7c91576a7df17b680a31916cb4970c29 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cf8ce27b5676c526fe4312c3f18ec13e = $(`<div id="html_cf8ce27b5676c526fe4312c3f18ec13e" style="width: 100.0%; height: 100.0%;"><b>Del Valle Sur</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): 0.29<br>&nbsp;&nbsp;- uso Ecobici: 0.56<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0022)<br>Viajes totales acumulados: 1,249,846<br>Ciclovia en la colonia: sin dato<br>Establecimientos DENUE relacionados (bici/mensajeria): 4<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 25</div>`)[0];
+                popup_7c91576a7df17b680a31916cb4970c29.setContent(html_cf8ce27b5676c526fe4312c3f18ec13e);
+            
+        
+
+        circle_marker_040f583015e79c0845ba0b75bd798af4.bindPopup(popup_7c91576a7df17b680a31916cb4970c29)
+        ;
+
+        
+    
+    
+            var circle_marker_c7d7599f86fef89cf6919bfa0226370d = L.circleMarker(
+                [19.41388469230769, -99.13877415384614],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.415067970540033, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_ae07d50b4c416b7c5dbb7787ebe89656 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5c52cc559c74a461324b7d3077b69e12 = $(`<div id="html_5c52cc559c74a461324b7d3077b69e12" style="width: 100.0%; height: 100.0%;"><b>Obrera</b> (Cuauhtemoc)<br>Indice de demanda compuesto (promedio): 0.23<br>&nbsp;&nbsp;- uso Ecobici: 0.09<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0040)<br>Viajes totales acumulados: 582,114<br>Ciclovia en la colonia: 6.4 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 18<br>Poblacion de la alcaldia (2020): 545,884<br>Periodos con datos: 17</div>`)[0];
+                popup_ae07d50b4c416b7c5dbb7787ebe89656.setContent(html_5c52cc559c74a461324b7d3077b69e12);
+            
+        
+
+        circle_marker_c7d7599f86fef89cf6919bfa0226370d.bindPopup(popup_ae07d50b4c416b7c5dbb7787ebe89656)
+        ;
+
+        
+    
+    
+            var circle_marker_9998daf37dcc0c3ac338a5b5758c18fd = L.circleMarker(
+                [19.390743666666665, -99.18389922222222],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.413837235195714, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_466eda4d3e3890de01b3ebaa243ed1b8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_efdf0db4070a4d9c04d261656cd36411 = $(`<div id="html_efdf0db4070a4d9c04d261656cd36411" style="width: 100.0%; height: 100.0%;"><b>San Pedro de los Pinos</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): 0.23<br>&nbsp;&nbsp;- uso Ecobici: 0.08<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0033)<br>Viajes totales acumulados: 719,837<br>Ciclovia en la colonia: 2.6 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 3<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 25</div>`)[0];
+                popup_466eda4d3e3890de01b3ebaa243ed1b8.setContent(html_efdf0db4070a4d9c04d261656cd36411);
+            
+        
+
+        circle_marker_9998daf37dcc0c3ac338a5b5758c18fd.bindPopup(popup_466eda4d3e3890de01b3ebaa243ed1b8)
+        ;
+
+        
+    
+    
+            var circle_marker_8c2b8d40b75dd638c4d4deeb5028b9c9 = L.circleMarker(
+                [19.434899714285713, -99.15471042857143],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.265056345762037, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_806f351abd71e70bbf015748d9845d8f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0e4c67853636022cd22efa3ed329ef58 = $(`<div id="html_0e4c67853636022cd22efa3ed329ef58" style="width: 100.0%; height: 100.0%;"><b>Tabacalera</b> (Cuauhtemoc)<br>Indice de demanda compuesto (promedio): 0.21<br>&nbsp;&nbsp;- uso Ecobici: 0.55<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0018)<br>Viajes totales acumulados: 1,219,936<br>Ciclovia en la colonia: 5.9 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 3<br>Poblacion de la alcaldia (2020): 545,884<br>Periodos con datos: 25</div>`)[0];
+                popup_806f351abd71e70bbf015748d9845d8f.setContent(html_0e4c67853636022cd22efa3ed329ef58);
+            
+        
+
+        circle_marker_8c2b8d40b75dd638c4d4deeb5028b9c9.bindPopup(popup_806f351abd71e70bbf015748d9845d8f)
+        ;
+
+        
+    
+    
+            var circle_marker_d1106b3dde407ef3a73a0af5a6c44495 = L.circleMarker(
+                [19.408856399999998, -99.17880299999999],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.004356446425092, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_c198ca67b0becc6da6a2c703f59aa50e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b58c92d2fca827908d5ed5fbc9d1a1a2 = $(`<div id="html_b58c92d2fca827908d5ed5fbc9d1a1a2" style="width: 100.0%; height: 100.0%;"><b>Hipodromo Condesa</b> (Cuauhtemoc)<br>Indice de demanda compuesto (promedio): 0.17<br>&nbsp;&nbsp;- uso Ecobici: 0.06<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0031)<br>Viajes totales acumulados: 678,207<br>Ciclovia en la colonia: 0.6 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 1<br>Poblacion de la alcaldia (2020): 545,884<br>Periodos con datos: 25</div>`)[0];
+                popup_c198ca67b0becc6da6a2c703f59aa50e.setContent(html_b58c92d2fca827908d5ed5fbc9d1a1a2);
+            
+        
+
+        circle_marker_d1106b3dde407ef3a73a0af5a6c44495.bindPopup(popup_c198ca67b0becc6da6a2c703f59aa50e)
+        ;
+
+        
+    
+    
+            var circle_marker_6450d0c27cbeb336f2f8529b9d181b29 = L.circleMarker(
+                [19.3653253125, -99.147689],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.0035945204861, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_54e1868049d26c32a13536ca8328c2f0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ac8a1c3da2fe6862609f6432786b69ce = $(`<div id="html_ac8a1c3da2fe6862609f6432786b69ce" style="width: 100.0%; height: 100.0%;"><b>Portales</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): 0.17<br>&nbsp;&nbsp;- uso Ecobici: 0.31<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0098)<br>Viajes totales acumulados: 763,449<br>Ciclovia en la colonia: 7.0 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 17</div>`)[0];
+                popup_54e1868049d26c32a13536ca8328c2f0.setContent(html_ac8a1c3da2fe6862609f6432786b69ce);
+            
+        
+
+        circle_marker_6450d0c27cbeb336f2f8529b9d181b29.bindPopup(popup_54e1868049d26c32a13536ca8328c2f0)
+        ;
+
+        
+    
+    
+            var circle_marker_b9c02f7b9f6f8fba9050756c84e91efa = L.circleMarker(
+                [19.393266454545454, -99.151291],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.003504475110944, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_25e0b8aa3a3a7ff60fd9e6b0582baff4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0b113ed1ad87a61313684695839b8fc3 = $(`<div id="html_0b113ed1ad87a61313684695839b8fc3" style="width: 100.0%; height: 100.0%;"><b>Narvarte</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): 0.17<br>&nbsp;&nbsp;- uso Ecobici: 0.30<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0063)<br>Viajes totales acumulados: 753,506<br>Ciclovia en la colonia: 8.8 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 17</div>`)[0];
+                popup_25e0b8aa3a3a7ff60fd9e6b0582baff4.setContent(html_0b113ed1ad87a61313684695839b8fc3);
+            
+        
+
+        circle_marker_b9c02f7b9f6f8fba9050756c84e91efa.bindPopup(popup_25e0b8aa3a3a7ff60fd9e6b0582baff4)
+        ;
+
+        
+    
+    
+            var circle_marker_a931583fb2ab9bada39319d5c82333d0 = L.circleMarker(
+                [19.393546615384615, -99.175754],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.930651511374837, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_582ad53ad083ff3c543ff42f255ea289 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_50e78cc16e10eb4a910ec71297f64492 = $(`<div id="html_50e78cc16e10eb4a910ec71297f64492" style="width: 100.0%; height: 100.0%;"><b>Napoles</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): 0.16<br>&nbsp;&nbsp;- uso Ecobici: 0.48<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0058)<br>Viajes totales acumulados: 1,137,443<br>Ciclovia en la colonia: 6.9 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 1<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 25</div>`)[0];
+                popup_582ad53ad083ff3c543ff42f255ea289.setContent(html_50e78cc16e10eb4a910ec71297f64492);
+            
+        
+
+        circle_marker_a931583fb2ab9bada39319d5c82333d0.bindPopup(popup_582ad53ad083ff3c543ff42f255ea289)
+        ;
+
+        
+    
+    
+            var circle_marker_c0e5002166a51b2a7e4e26b45c3c94d3 = L.circleMarker(
+                [19.445155399999997, -99.1749556],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.923631082501455, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_93d86df1fc47d7ddb6e94c874910d7e8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_36a656efe869bf95912d378ec8fa2b65 = $(`<div id="html_36a656efe869bf95912d378ec8fa2b65" style="width: 100.0%; height: 100.0%;"><b>Anahuac</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): 0.16<br>&nbsp;&nbsp;- uso Ecobici: 0.06<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0072)<br>Viajes totales acumulados: 652,377<br>Ciclovia en la colonia: 3.9 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 1<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 21</div>`)[0];
+                popup_93d86df1fc47d7ddb6e94c874910d7e8.setContent(html_36a656efe869bf95912d378ec8fa2b65);
+            
+        
+
+        circle_marker_c0e5002166a51b2a7e4e26b45c3c94d3.bindPopup(popup_93d86df1fc47d7ddb6e94c874910d7e8)
+        ;
+
+        
+    
+    
+            var circle_marker_f2e91735c66c133e5ea1fd915d0227a4 = L.circleMarker(
+                [19.383214583333334, -99.16743633333334],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.565043328380069, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_63a487f0d39de8e422d03de96cbac049 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b5e89729b47a6166208cec63e71a6576 = $(`<div id="html_b5e89729b47a6166208cec63e71a6576" style="width: 100.0%; height: 100.0%;"><b>Del Valle Centro</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): 0.11<br>&nbsp;&nbsp;- uso Ecobici: 0.20<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0033)<br>Viajes totales acumulados: 846,433<br>Ciclovia en la colonia: sin dato<br>Establecimientos DENUE relacionados (bici/mensajeria): 6<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 25</div>`)[0];
+                popup_63a487f0d39de8e422d03de96cbac049.setContent(html_b5e89729b47a6166208cec63e71a6576);
+            
+        
+
+        circle_marker_f2e91735c66c133e5ea1fd915d0227a4.bindPopup(popup_63a487f0d39de8e422d03de96cbac049)
+        ;
+
+        
+    
+    
+            var circle_marker_5ab272a4d5cd0a1ccad7f16152b3e36b = L.circleMarker(
+                [19.430683400000003, -99.17840425555556],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.539366927612262, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_0c5b8470400a9d01013a3dabe2d7e680 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ecda4598ba16cc867c280635c33e24f2 = $(`<div id="html_ecda4598ba16cc867c280635c33e24f2" style="width: 100.0%; height: 100.0%;"><b>Anzures</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): 0.11<br>&nbsp;&nbsp;- uso Ecobici: 0.16<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0004)<br>Viajes totales acumulados: 799,365<br>Ciclovia en la colonia: 0.4 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 9<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 25</div>`)[0];
+                popup_0c5b8470400a9d01013a3dabe2d7e680.setContent(html_ecda4598ba16cc867c280635c33e24f2);
+            
+        
+
+        circle_marker_5ab272a4d5cd0a1ccad7f16152b3e36b.bindPopup(popup_0c5b8470400a9d01013a3dabe2d7e680)
+        ;
+
+        
+    
+    
+            var circle_marker_d750c18dae58c79ca64dbb7d45adc747 = L.circleMarker(
+                [19.42502, -99.18542333333333],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.940627890995613, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_a5e3353282132485555543fb29b1ab14 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_50d5f76af3462e5d3065ea0efa96cbfa = $(`<div id="html_50d5f76af3462e5d3065ea0efa96cbfa" style="width: 100.0%; height: 100.0%;"><b>Bosque de Chapultepec</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): 0.02<br>&nbsp;&nbsp;- uso Ecobici: 0.12<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0008)<br>Viajes totales acumulados: 758,649<br>Ciclovia en la colonia: sin dato<br>Establecimientos DENUE relacionados (bici/mensajeria): 1<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 25</div>`)[0];
+                popup_a5e3353282132485555543fb29b1ab14.setContent(html_50d5f76af3462e5d3065ea0efa96cbfa);
+            
+        
+
+        circle_marker_d750c18dae58c79ca64dbb7d45adc747.bindPopup(popup_a5e3353282132485555543fb29b1ab14)
+        ;
+
+        
+    
+    
+            var circle_marker_da80f83ebd5696a50241e4ef50a1ff10 = L.circleMarker(
+                [19.41210448, -99.18762002],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.918908936283016, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_a44603cf0cf962d5cf2c066c1d74339d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ab68b845d19929037972af3ff607da00 = $(`<div id="html_ab68b845d19929037972af3ff607da00" style="width: 100.0%; height: 100.0%;"><b>San Miguel Chapultepec</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): 0.02<br>&nbsp;&nbsp;- uso Ecobici: 0.34<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0034)<br>Viajes totales acumulados: 1,013,166<br>Ciclovia en la colonia: 5.8 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 25</div>`)[0];
+                popup_a44603cf0cf962d5cf2c066c1d74339d.setContent(html_ab68b845d19929037972af3ff607da00);
+            
+        
+
+        circle_marker_da80f83ebd5696a50241e4ef50a1ff10.bindPopup(popup_a44603cf0cf962d5cf2c066c1d74339d)
+        ;
+
+        
+    
+    
+            var circle_marker_2929bd607a11b8de1e27591895845ab0 = L.circleMarker(
+                [19.36661442857143, -99.15951714285714],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.536229467419663, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_41aae0558ea257db7b355661306c2e02 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e938ac38f592c576bdb0722383ba5a65 = $(`<div id="html_e938ac38f592c576bdb0722383ba5a65" style="width: 100.0%; height: 100.0%;"><b>Santa Cruz Atoyac</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.04<br>&nbsp;&nbsp;- uso Ecobici: -0.10<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0031)<br>Viajes totales acumulados: 531,362<br>Ciclovia en la colonia: sin dato<br>Establecimientos DENUE relacionados (bici/mensajeria): 3<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 25</div>`)[0];
+                popup_41aae0558ea257db7b355661306c2e02.setContent(html_e938ac38f592c576bdb0722383ba5a65);
+            
+        
+
+        circle_marker_2929bd607a11b8de1e27591895845ab0.bindPopup(popup_41aae0558ea257db7b355661306c2e02)
+        ;
+
+        
+    
+    
+            var circle_marker_3a312b17f577bdb349ce7981d90ec918 = L.circleMarker(
+                [19.397893, -99.1412158888889],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.528158409991175, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_35c763b4653f89cb7f5263036fe4bcfd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d6f4bbfcbfd728fde57293a8d11ed4a6 = $(`<div id="html_d6f4bbfcbfd728fde57293a8d11ed4a6" style="width: 100.0%; height: 100.0%;"><b>Alamos</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.04<br>&nbsp;&nbsp;- uso Ecobici: -0.08<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0058)<br>Viajes totales acumulados: 440,929<br>Ciclovia en la colonia: 4.1 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 4<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 17</div>`)[0];
+                popup_35c763b4653f89cb7f5263036fe4bcfd.setContent(html_d6f4bbfcbfd728fde57293a8d11ed4a6);
+            
+        
+
+        circle_marker_3a312b17f577bdb349ce7981d90ec918.bindPopup(popup_35c763b4653f89cb7f5263036fe4bcfd)
+        ;
+
+        
+    
+    
+            var circle_marker_885b0867bdd918cd398974d1cb83e717 = L.circleMarker(
+                [19.40586, -99.14067275],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.42785598288204, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_bd8b873253bcafdb9765ca455efd3bc4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_08c922d38f7117be2b9fb7e3bf1df2ae = $(`<div id="html_08c922d38f7117be2b9fb7e3bf1df2ae" style="width: 100.0%; height: 100.0%;"><b>Algarin</b> (Cuauhtemoc)<br>Indice de demanda compuesto (promedio): -0.05<br>&nbsp;&nbsp;- uso Ecobici: -0.36<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0059)<br>Viajes totales acumulados: 199,238<br>Ciclovia en la colonia: 1.3 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 545,884<br>Periodos con datos: 16</div>`)[0];
+                popup_bd8b873253bcafdb9765ca455efd3bc4.setContent(html_08c922d38f7117be2b9fb7e3bf1df2ae);
+            
+        
+
+        circle_marker_885b0867bdd918cd398974d1cb83e717.bindPopup(popup_bd8b873253bcafdb9765ca455efd3bc4)
+        ;
+
+        
+    
+    
+            var circle_marker_dab6e513cef20f90215c8110cd633c95 = L.circleMarker(
+                [19.374014428571428, -99.18326628571428],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.427519640840934, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_99ded8d0887bfb9089f02a935215762e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_351958bbeeb70878c4703a2863111758 = $(`<div id="html_351958bbeeb70878c4703a2863111758" style="width: 100.0%; height: 100.0%;"><b>Insurgentes Mixcoac</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.05<br>&nbsp;&nbsp;- uso Ecobici: 0.03<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0018)<br>Viajes totales acumulados: 665,130<br>Ciclovia en la colonia: 3.9 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 5<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 25</div>`)[0];
+                popup_99ded8d0887bfb9089f02a935215762e.setContent(html_351958bbeeb70878c4703a2863111758);
+            
+        
+
+        circle_marker_dab6e513cef20f90215c8110cd633c95.bindPopup(popup_99ded8d0887bfb9089f02a935215762e)
+        ;
+
+        
+    
+    
+            var circle_marker_c4f39781a9b10a0b9290133322fb1f0e = L.circleMarker(
+                [19.440142166666664, -99.19069366666668],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.37607499487035, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_bdca2ddc360786d6e3118590456d071d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f7595b94b9a090f627d7acb04c30236b = $(`<div id="html_f7595b94b9a090f627d7acb04c30236b" style="width: 100.0%; height: 100.0%;"><b>Granada</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): -0.06<br>&nbsp;&nbsp;- uso Ecobici: -0.07<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0005)<br>Viajes totales acumulados: 552,490<br>Ciclovia en la colonia: 5.9 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 4<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 25</div>`)[0];
+                popup_bdca2ddc360786d6e3118590456d071d.setContent(html_f7595b94b9a090f627d7acb04c30236b);
+            
+        
+
+        circle_marker_c4f39781a9b10a0b9290133322fb1f0e.bindPopup(popup_bdca2ddc360786d6e3118590456d071d)
+        ;
+
+        
+    
+    
+            var circle_marker_7256772793b6acd14e27c3ad12529deb = L.circleMarker(
+                [19.4394432, -99.17938840000001],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.306581821803947, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_f0d84fa6cae516a391b9bbed84e80336 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c11b9ed2ae9958f7d381af2841e69488 = $(`<div id="html_c11b9ed2ae9958f7d381af2841e69488" style="width: 100.0%; height: 100.0%;"><b>Anahuac I Seccion</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): -0.07<br>&nbsp;&nbsp;- uso Ecobici: -0.06<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0010)<br>Viajes totales acumulados: 567,008<br>Ciclovia en la colonia: sin dato<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 25</div>`)[0];
+                popup_f0d84fa6cae516a391b9bbed84e80336.setContent(html_c11b9ed2ae9958f7d381af2841e69488);
+            
+        
+
+        circle_marker_7256772793b6acd14e27c3ad12529deb.bindPopup(popup_f0d84fa6cae516a391b9bbed84e80336)
+        ;
+
+        
+    
+    
+            var circle_marker_728d0c41a6ba2a5a679631e072a30137 = L.circleMarker(
+                [19.360528199999997, -99.1600742],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.275332524532544, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_446e889422f445e58c2797681404b66e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_11a0f226dbf5e06c4cf8f0f457d83197 = $(`<div id="html_11a0f226dbf5e06c4cf8f0f457d83197" style="width: 100.0%; height: 100.0%;"><b>General Pedro Maria Anaya</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.07<br>&nbsp;&nbsp;- uso Ecobici: -0.31<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0047)<br>Viajes totales acumulados: 280,817<br>Ciclovia en la colonia: 0.6 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 25</div>`)[0];
+                popup_446e889422f445e58c2797681404b66e.setContent(html_11a0f226dbf5e06c4cf8f0f457d83197);
+            
+        
+
+        circle_marker_728d0c41a6ba2a5a679631e072a30137.bindPopup(popup_446e889422f445e58c2797681404b66e)
+        ;
+
+        
+    
+    
+            var circle_marker_c4b063f80d5128239ea50c98cdf7b6e6 = L.circleMarker(
+                [19.36971816666667, -99.17813533333333],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.259299495816135, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_00c3a32e06b8bc36412ece33935922e6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_94f2369c45230f50717848f639ee9ade = $(`<div id="html_94f2369c45230f50717848f639ee9ade" style="width: 100.0%; height: 100.0%;"><b>Actipan</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.08<br>&nbsp;&nbsp;- uso Ecobici: -0.16<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0047)<br>Viajes totales acumulados: 445,332<br>Ciclovia en la colonia: 2.0 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 1<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 25</div>`)[0];
+                popup_00c3a32e06b8bc36412ece33935922e6.setContent(html_94f2369c45230f50717848f639ee9ade);
+            
+        
+
+        circle_marker_c4b063f80d5128239ea50c98cdf7b6e6.bindPopup(popup_00c3a32e06b8bc36412ece33935922e6)
+        ;
+
+        
+    
+    
+            var circle_marker_7e96a846d17398803965c91240714695 = L.circleMarker(
+                [19.36618235857143, -99.18556831571428],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.095133105569385, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_7d099327e7c395ed74e76166f84f36a4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ac5d66e9b9b1b7d8972a2af67f757866 = $(`<div id="html_ac5d66e9b9b1b7d8972a2af67f757866" style="width: 100.0%; height: 100.0%;"><b>San Jose Insurgentes</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.10<br>&nbsp;&nbsp;- uso Ecobici: -0.23<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0013)<br>Viajes totales acumulados: 390,773<br>Ciclovia en la colonia: 1.9 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 25</div>`)[0];
+                popup_7d099327e7c395ed74e76166f84f36a4.setContent(html_ac5d66e9b9b1b7d8972a2af67f757866);
+            
+        
+
+        circle_marker_7e96a846d17398803965c91240714695.bindPopup(popup_7d099327e7c395ed74e76166f84f36a4)
+        ;
+
+        
+    
+    
+            var circle_marker_7ee657992faef1ba0d3a62f8991b1c4a = L.circleMarker(
+                [19.450757, -99.16645],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.039585315586098, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_cac991366eaf3b91c68509dc518b5bd3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4d8a2eec9e333a397452d5d79c2d1911 = $(`<div id="html_4d8a2eec9e333a397452d5d79c2d1911" style="width: 100.0%; height: 100.0%;"><b>Agricultura</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): -0.11<br>&nbsp;&nbsp;- uso Ecobici: -0.30<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0016)<br>Viajes totales acumulados: 286,457<br>Ciclovia en la colonia: 0.2 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 21</div>`)[0];
+                popup_cac991366eaf3b91c68509dc518b5bd3.setContent(html_4d8a2eec9e333a397452d5d79c2d1911);
+            
+        
+
+        circle_marker_7ee657992faef1ba0d3a62f8991b1c4a.bindPopup(popup_cac991366eaf3b91c68509dc518b5bd3)
+        ;
+
+        
+    
+    
+            var circle_marker_6ef289bde6421d79d17340baba4cd21e = L.circleMarker(
+                [19.38284375, -99.153074],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.026500880936227, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_dec3aa59dfdfb1bc7065d345ccac2606 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_574f7f920668f71c4f29e540ab2f0c73 = $(`<div id="html_574f7f920668f71c4f29e540ab2f0c73" style="width: 100.0%; height: 100.0%;"><b>Vertiz Narvarte</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.11<br>&nbsp;&nbsp;- uso Ecobici: -0.30<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0023)<br>Viajes totales acumulados: 257,084<br>Ciclovia en la colonia: 0.6 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 17</div>`)[0];
+                popup_dec3aa59dfdfb1bc7065d345ccac2606.setContent(html_574f7f920668f71c4f29e540ab2f0c73);
+            
+        
+
+        circle_marker_6ef289bde6421d79d17340baba4cd21e.bindPopup(popup_dec3aa59dfdfb1bc7065d345ccac2606)
+        ;
+
+        
+    
+    
+            var circle_marker_db0d56c6b0587ea991b83bf848948293 = L.circleMarker(
+                [19.440376, -99.16863433333333],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.968391302104823, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_3ff72522863ee633cb2f0ea7aa96dbef = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8d1c05ba2cb8c1927b46e4a46808b521 = $(`<div id="html_8d1c05ba2cb8c1927b46e4a46808b521" style="width: 100.0%; height: 100.0%;"><b>Tlaxpana</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): -0.12<br>&nbsp;&nbsp;- uso Ecobici: -0.28<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0033)<br>Viajes totales acumulados: 302,440<br>Ciclovia en la colonia: 0.4 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 2<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 20</div>`)[0];
+                popup_3ff72522863ee633cb2f0ea7aa96dbef.setContent(html_8d1c05ba2cb8c1927b46e4a46808b521);
+            
+        
+
+        circle_marker_db0d56c6b0587ea991b83bf848948293.bindPopup(popup_3ff72522863ee633cb2f0ea7aa96dbef)
+        ;
+
+        
+    
+    
+            var circle_marker_f507f80904da4907ea6d3c770bd51873 = L.circleMarker(
+                [19.4362638, -99.1748312],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.91101873922528, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_9ab6e9688dbb495234a98efebbf69c1f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_91d2b75099d1b8ab1f878c24013034f5 = $(`<div id="html_91d2b75099d1b8ab1f878c24013034f5" style="width: 100.0%; height: 100.0%;"><b>Veronica Anzures</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): -0.13<br>&nbsp;&nbsp;- uso Ecobici: -0.29<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0001)<br>Viajes totales acumulados: 311,403<br>Ciclovia en la colonia: 0.0 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 25</div>`)[0];
+                popup_9ab6e9688dbb495234a98efebbf69c1f.setContent(html_91d2b75099d1b8ab1f878c24013034f5);
+            
+        
+
+        circle_marker_f507f80904da4907ea6d3c770bd51873.bindPopup(popup_9ab6e9688dbb495234a98efebbf69c1f)
+        ;
+
+        
+    
+    
+            var circle_marker_ac06290d67c6e4b6e593769cb256c156 = L.circleMarker(
+                [19.457221333333333, -99.15877133333333],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.900776307153205, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_d51a54b25c1179ea14d2c0f98b6308e7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0a14be8f71e0d6474adcd772254bf96c = $(`<div id="html_0a14be8f71e0d6474adcd772254bf96c" style="width: 100.0%; height: 100.0%;"><b>Atlampa</b> (Cuauhtemoc)<br>Indice de demanda compuesto (promedio): -0.13<br>&nbsp;&nbsp;- uso Ecobici: -0.45<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0022)<br>Viajes totales acumulados: 142,860<br>Ciclovia en la colonia: 3.7 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 2<br>Poblacion de la alcaldia (2020): 545,884<br>Periodos con datos: 21</div>`)[0];
+                popup_d51a54b25c1179ea14d2c0f98b6308e7.setContent(html_0a14be8f71e0d6474adcd772254bf96c);
+            
+        
+
+        circle_marker_ac06290d67c6e4b6e593769cb256c156.bindPopup(popup_d51a54b25c1179ea14d2c0f98b6308e7)
+        ;
+
+        
+    
+    
+            var circle_marker_24c0221b5dfc729d8084c69a225c1157 = L.circleMarker(
+                [19.375655833333337, -99.17497233333334],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.882988546722721, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_f75692c7306949c31911940a8bf7ecfa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_401fd1e083bca61bba23980c6eb77d51 = $(`<div id="html_401fd1e083bca61bba23980c6eb77d51" style="width: 100.0%; height: 100.0%;"><b>Tlacoquemecatl del Valle</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.13<br>&nbsp;&nbsp;- uso Ecobici: -0.16<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0036)<br>Viajes totales acumulados: 453,401<br>Ciclovia en la colonia: 3.3 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 25</div>`)[0];
+                popup_f75692c7306949c31911940a8bf7ecfa.setContent(html_401fd1e083bca61bba23980c6eb77d51);
+            
+        
+
+        circle_marker_24c0221b5dfc729d8084c69a225c1157.bindPopup(popup_f75692c7306949c31911940a8bf7ecfa)
+        ;
+
+        
+    
+    
+            var circle_marker_73b3f78bbbbead6282f71dc66daede1a = L.circleMarker(
+                [19.465339166666666, -99.18063466666666],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.83313824090285, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_b44387c18749a635d71bded5bab2423e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_14c082c8851c0e64e14dffcaae6b1636 = $(`<div id="html_14c082c8851c0e64e14dffcaae6b1636" style="width: 100.0%; height: 100.0%;"><b>Claveria</b> (Azcapotzalco)<br>Indice de demanda compuesto (promedio): -0.14<br>&nbsp;&nbsp;- uso Ecobici: -0.37<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0007)<br>Viajes totales acumulados: 193,151<br>Ciclovia en la colonia: 1.0 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 432,205<br>Periodos con datos: 16</div>`)[0];
+                popup_b44387c18749a635d71bded5bab2423e.setContent(html_14c082c8851c0e64e14dffcaae6b1636);
+            
+        
+
+        circle_marker_73b3f78bbbbead6282f71dc66daede1a.bindPopup(popup_b44387c18749a635d71bded5bab2423e)
+        ;
+
+        
+    
+    
+            var circle_marker_099b1a642c84fda4d6f6d9ed9024c185 = L.circleMarker(
+                [19.3829944, -99.17962320000001],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.814934604982094, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_7fa4b67bb72b9ace7912db8e394628e4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_30270e776c97d2d0e87ed736ff6300e1 = $(`<div id="html_30270e776c97d2d0e87ed736ff6300e1" style="width: 100.0%; height: 100.0%;"><b>Ciudad de los Deportes</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.14<br>&nbsp;&nbsp;- uso Ecobici: -0.33<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0040)<br>Viajes totales acumulados: 270,363<br>Ciclovia en la colonia: 1.2 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 2<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 25</div>`)[0];
+                popup_7fa4b67bb72b9ace7912db8e394628e4.setContent(html_30270e776c97d2d0e87ed736ff6300e1);
+            
+        
+
+        circle_marker_099b1a642c84fda4d6f6d9ed9024c185.bindPopup(popup_7fa4b67bb72b9ace7912db8e394628e4)
+        ;
+
+        
+    
+    
+            var circle_marker_980c7a02dc7643b7243eef41106c4979 = L.circleMarker(
+                [19.3642396, -99.1739542],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.782742639495305, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_d58884a3fd51b2686d8d0f3c29b1d3be = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a2c629c5ace98e6e36c6f2a89f33d04e = $(`<div id="html_a2c629c5ace98e6e36c6f2a89f33d04e" style="width: 100.0%; height: 100.0%;"><b>Acacias</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.14<br>&nbsp;&nbsp;- uso Ecobici: -0.36<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0034)<br>Viajes totales acumulados: 228,948<br>Ciclovia en la colonia: 1.3 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 1<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 25</div>`)[0];
+                popup_d58884a3fd51b2686d8d0f3c29b1d3be.setContent(html_a2c629c5ace98e6e36c6f2a89f33d04e);
+            
+        
+
+        circle_marker_980c7a02dc7643b7243eef41106c4979.bindPopup(popup_d58884a3fd51b2686d8d0f3c29b1d3be)
+        ;
+
+        
+    
+    
+            var circle_marker_6b95f878b350a7b6bb6739b6ec3dd7c7 = L.circleMarker(
+                [19.387190225, -99.177947225],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.734042454028883, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_7e9f4df097effb8cbb6969e66427c0a8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b50609fdbf646948b4ec1dccc1f6aa11 = $(`<div id="html_b50609fdbf646948b4ec1dccc1f6aa11" style="width: 100.0%; height: 100.0%;"><b>Ampliacion Napoles</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.15<br>&nbsp;&nbsp;- uso Ecobici: -0.32<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0028)<br>Viajes totales acumulados: 278,154<br>Ciclovia en la colonia: sin dato<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 25</div>`)[0];
+                popup_7e9f4df097effb8cbb6969e66427c0a8.setContent(html_b50609fdbf646948b4ec1dccc1f6aa11);
+            
+        
+
+        circle_marker_6b95f878b350a7b6bb6739b6ec3dd7c7.bindPopup(popup_7e9f4df097effb8cbb6969e66427c0a8)
+        ;
+
+        
+    
+    
+            var circle_marker_3225c19aa05f7579c4a2b971d902475a = L.circleMarker(
+                [19.3826345, -99.1860805],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.730284227750808, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_f6a4541202e6cea74fdac8d5c4fdbe80 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8c430778e745185741c456c082b703de = $(`<div id="html_8c430778e745185741c456c082b703de" style="width: 100.0%; height: 100.0%;"><b>Nonoalco</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.15<br>&nbsp;&nbsp;- uso Ecobici: -0.43<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0036)<br>Viajes totales acumulados: 159,946<br>Ciclovia en la colonia: 1.0 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 25</div>`)[0];
+                popup_f6a4541202e6cea74fdac8d5c4fdbe80.setContent(html_8c430778e745185741c456c082b703de);
+            
+        
+
+        circle_marker_3225c19aa05f7579c4a2b971d902475a.bindPopup(popup_f6a4541202e6cea74fdac8d5c4fdbe80)
+        ;
+
+        
+    
+    
+            var circle_marker_66a3472bbf0d874a49445a07d05258a7 = L.circleMarker(
+                [19.37589275, -99.14564925],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.71375373137969, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_9cbe02b42e6bb6d5d14cddb05505409c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_669665f27a685b01c60fe92e4ef42f02 = $(`<div id="html_669665f27a685b01c60fe92e4ef42f02" style="width: 100.0%; height: 100.0%;"><b>San Simon Ticumac</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.15<br>&nbsp;&nbsp;- uso Ecobici: -0.34<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0028)<br>Viajes totales acumulados: 222,415<br>Ciclovia en la colonia: 2.2 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 17</div>`)[0];
+                popup_9cbe02b42e6bb6d5d14cddb05505409c.setContent(html_669665f27a685b01c60fe92e4ef42f02);
+            
+        
+
+        circle_marker_66a3472bbf0d874a49445a07d05258a7.bindPopup(popup_9cbe02b42e6bb6d5d14cddb05505409c)
+        ;
+
+        
+    
+    
+            var circle_marker_ebe7a86493578ec1de0374f91db9f6f3 = L.circleMarker(
+                [19.348358516666668, -99.17445016666666],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.688362885341764, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_bb4ac8bc30b27b6ba95e2dd67a094fb1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_06095d849e4a3b1070f615741c798844 = $(`<div id="html_06095d849e4a3b1070f615741c798844" style="width: 100.0%; height: 100.0%;"><b>Santa Catarina</b> (Coyoacan)<br>Indice de demanda compuesto (promedio): -0.16<br>&nbsp;&nbsp;- uso Ecobici: -0.36<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0033)<br>Viajes totales acumulados: 212,216<br>Ciclovia en la colonia: 0.0 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 2<br>Poblacion de la alcaldia (2020): 614,447<br>Periodos con datos: 17</div>`)[0];
+                popup_bb4ac8bc30b27b6ba95e2dd67a094fb1.setContent(html_06095d849e4a3b1070f615741c798844);
+            
+        
+
+        circle_marker_ebe7a86493578ec1de0374f91db9f6f3.bindPopup(popup_bb4ac8bc30b27b6ba95e2dd67a094fb1)
+        ;
+
+        
+    
+    
+            var circle_marker_c10f5f5c7ba5b59e4887f0891f808ecf = L.circleMarker(
+                [19.44205, -99.202472],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.64804058728465, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_b362b7d7ddf28a54b7a4b5d2b1e9d35f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_79fe18623380387c798d5e098cc5da5a = $(`<div id="html_79fe18623380387c798d5e098cc5da5a" style="width: 100.0%; height: 100.0%;"><b>Ampliacion Granada</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): -0.16<br>&nbsp;&nbsp;- uso Ecobici: -0.25<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0027)<br>Viajes totales acumulados: 369,379<br>Ciclovia en la colonia: sin dato<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 25</div>`)[0];
+                popup_b362b7d7ddf28a54b7a4b5d2b1e9d35f.setContent(html_79fe18623380387c798d5e098cc5da5a);
+            
+        
+
+        circle_marker_c10f5f5c7ba5b59e4887f0891f808ecf.bindPopup(popup_b362b7d7ddf28a54b7a4b5d2b1e9d35f)
+        ;
+
+        
+    
+    
+            var circle_marker_173a4dfd62dfb1d8ea7c8a3736bda875 = L.circleMarker(
+                [19.453369199999997, -99.1793952],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.628127149214949, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_7cd9d2b9118dfb05de36fff8508fc81d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_96301943f994e4c84c16782dd78c6fe0 = $(`<div id="html_96301943f994e4c84c16782dd78c6fe0" style="width: 100.0%; height: 100.0%;"><b>Popotla</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): -0.17<br>&nbsp;&nbsp;- uso Ecobici: -0.27<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0017)<br>Viajes totales acumulados: 308,002<br>Ciclovia en la colonia: 3.1 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 6<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 20</div>`)[0];
+                popup_7cd9d2b9118dfb05de36fff8508fc81d.setContent(html_96301943f994e4c84c16782dd78c6fe0);
+            
+        
+
+        circle_marker_173a4dfd62dfb1d8ea7c8a3736bda875.bindPopup(popup_7cd9d2b9118dfb05de36fff8508fc81d)
+        ;
+
+        
+    
+    
+            var circle_marker_e5c0564ee6470d669d30712bf702c009 = L.circleMarker(
+                [19.37958466666667, -99.16284966666667],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.608564574404685, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_9840ab52efac6516f87fbc5757258cf9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9d8414da4ee991641d6cd845bccb4261 = $(`<div id="html_9d8414da4ee991641d6cd845bccb4261" style="width: 100.0%; height: 100.0%;"><b>Del valle Centro</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.17<br>&nbsp;&nbsp;- uso Ecobici: -0.36<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0034)<br>Viajes totales acumulados: 230,777<br>Ciclovia en la colonia: sin dato<br>Establecimientos DENUE relacionados (bici/mensajeria): 6<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 25</div>`)[0];
+                popup_9840ab52efac6516f87fbc5757258cf9.setContent(html_9d8414da4ee991641d6cd845bccb4261);
+            
+        
+
+        circle_marker_e5c0564ee6470d669d30712bf702c009.bindPopup(popup_9840ab52efac6516f87fbc5757258cf9)
+        ;
+
+        
+    
+    
+            var circle_marker_4e53a62de66daa730e71f21c5c37c365 = L.circleMarker(
+                [19.3806535, -99.17900750000001],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.607408599723463, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_0395f8dddb7f8784c0792feb4dcb12b4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7886a8e822670c4c5b68ba5efb2a12e1 = $(`<div id="html_7886a8e822670c4c5b68ba5efb2a12e1" style="width: 100.0%; height: 100.0%;"><b>Noche Buena</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.17<br>&nbsp;&nbsp;- uso Ecobici: -0.45<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0052)<br>Viajes totales acumulados: 126,233<br>Ciclovia en la colonia: 0.8 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 25</div>`)[0];
+                popup_0395f8dddb7f8784c0792feb4dcb12b4.setContent(html_7886a8e822670c4c5b68ba5efb2a12e1);
+            
+        
+
+        circle_marker_4e53a62de66daa730e71f21c5c37c365.bindPopup(popup_0395f8dddb7f8784c0792feb4dcb12b4)
+        ;
+
+        
+    
+    
+            var circle_marker_6931312fae02da91ecb49fdf1d8e03c0 = L.circleMarker(
+                [19.3721943, -99.15704983500001],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.597382739399716, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_5136e85386f22c146d4c3be93419f28a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6c1c0c1b5c99f99e506a8153f046143e = $(`<div id="html_6c1c0c1b5c99f99e506a8153f046143e" style="width: 100.0%; height: 100.0%;"><b>Portales Norte</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.17<br>&nbsp;&nbsp;- uso Ecobici: -0.36<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0038)<br>Viajes totales acumulados: 227,219<br>Ciclovia en la colonia: sin dato<br>Establecimientos DENUE relacionados (bici/mensajeria): 7<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 25</div>`)[0];
+                popup_5136e85386f22c146d4c3be93419f28a.setContent(html_6c1c0c1b5c99f99e506a8153f046143e);
+            
+        
+
+        circle_marker_6931312fae02da91ecb49fdf1d8e03c0.bindPopup(popup_5136e85386f22c146d4c3be93419f28a)
+        ;
+
+        
+    
+    
+            var circle_marker_4def8c2988726340d40e484ae724887d = L.circleMarker(
+                [19.354429770588236, -99.16212903941175],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.557402635037368, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_f2b910f5b49b63047bfe26de7391696d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8cc4434dbd36b7f44dc3e9b755fdb154 = $(`<div id="html_8cc4434dbd36b7f44dc3e9b755fdb154" style="width: 100.0%; height: 100.0%;"><b>Del Carmen</b> (Coyoacan)<br>Indice de demanda compuesto (promedio): -0.18<br>&nbsp;&nbsp;- uso Ecobici: -0.04<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0068)<br>Viajes totales acumulados: 606,823<br>Ciclovia en la colonia: 4.9 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 6<br>Poblacion de la alcaldia (2020): 614,447<br>Periodos con datos: 24</div>`)[0];
+                popup_f2b910f5b49b63047bfe26de7391696d.setContent(html_8cc4434dbd36b7f44dc3e9b755fdb154);
+            
+        
+
+        circle_marker_4def8c2988726340d40e484ae724887d.bindPopup(popup_f2b910f5b49b63047bfe26de7391696d)
+        ;
+
+        
+    
+    
+            var circle_marker_25646239021a019b7b6e72130c93c323 = L.circleMarker(
+                [19.387340000000002, -99.14502300000001],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.539598000747418, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_bf2e98a3c97e5cd9c7f7c04ed07e76a3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b2ab287664da2e02cb668e2d055db2ca = $(`<div id="html_b2ab287664da2e02cb668e2d055db2ca" style="width: 100.0%; height: 100.0%;"><b>Niños Heroes de Chapultepec</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.18<br>&nbsp;&nbsp;- uso Ecobici: -0.49<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0005)<br>Viajes totales acumulados: 100,240<br>Ciclovia en la colonia: 0.9 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 17</div>`)[0];
+                popup_bf2e98a3c97e5cd9c7f7c04ed07e76a3.setContent(html_b2ab287664da2e02cb668e2d055db2ca);
+            
+        
+
+        circle_marker_25646239021a019b7b6e72130c93c323.bindPopup(popup_bf2e98a3c97e5cd9c7f7c04ed07e76a3)
+        ;
+
+        
+    
+    
+            var circle_marker_52fd98aedfc85193df464bda7efa976e = L.circleMarker(
+                [19.379182, -99.17955749999999],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.524703057230244, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_3822b77969230988afd5843d0a284e9a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b8ebfe336b3011d4cb5470a491bafeb9 = $(`<div id="html_b8ebfe336b3011d4cb5470a491bafeb9" style="width: 100.0%; height: 100.0%;"><b>Extremadura Insurgentes</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.18<br>&nbsp;&nbsp;- uso Ecobici: -0.40<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0028)<br>Viajes totales acumulados: 192,060<br>Ciclovia en la colonia: 1.3 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 23</div>`)[0];
+                popup_3822b77969230988afd5843d0a284e9a.setContent(html_b8ebfe336b3011d4cb5470a491bafeb9);
+            
+        
+
+        circle_marker_52fd98aedfc85193df464bda7efa976e.bindPopup(popup_3822b77969230988afd5843d0a284e9a)
+        ;
+
+        
+    
+    
+            var circle_marker_427d67520bc712b7bec5b57fc6cd2149 = L.circleMarker(
+                [19.402277, -99.153294],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.4749306074832, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_bbc3901329fa2e8dd60b5aed797ee30d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e8228a565ef123cb46667bc4733ffe9f = $(`<div id="html_e8228a565ef123cb46667bc4733ffe9f" style="width: 100.0%; height: 100.0%;"><b>Piedad Narvarte</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.19<br>&nbsp;&nbsp;- uso Ecobici: -0.40<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0009)<br>Viajes totales acumulados: 168,836<br>Ciclovia en la colonia: 1.0 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 1<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 16</div>`)[0];
+                popup_bbc3901329fa2e8dd60b5aed797ee30d.setContent(html_e8228a565ef123cb46667bc4733ffe9f);
+            
+        
+
+        circle_marker_427d67520bc712b7bec5b57fc6cd2149.bindPopup(popup_bbc3901329fa2e8dd60b5aed797ee30d)
+        ;
+
+        
+    
+    
+            var circle_marker_5ef548e75e93ed34aaa7a2d4bbc226b2 = L.circleMarker(
+                [19.383842666666666, -99.17313100000001],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.460886015942952, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_03f1da89cdb1700699228a43420c9dc9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e5ffe4ffa4477d1f2335850c3be26f48 = $(`<div id="html_e5ffe4ffa4477d1f2335850c3be26f48" style="width: 100.0%; height: 100.0%;"><b>Insurgentes San Borja</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.19<br>&nbsp;&nbsp;- uso Ecobici: -0.46<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0037)<br>Viajes totales acumulados: 121,426<br>Ciclovia en la colonia: 0.3 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 1<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 25</div>`)[0];
+                popup_03f1da89cdb1700699228a43420c9dc9.setContent(html_e5ffe4ffa4477d1f2335850c3be26f48);
+            
+        
+
+        circle_marker_5ef548e75e93ed34aaa7a2d4bbc226b2.bindPopup(popup_03f1da89cdb1700699228a43420c9dc9)
+        ;
+
+        
+    
+    
+            var circle_marker_f92fecfa12d16c80fa6fd5892b29ec41 = L.circleMarker(
+                [19.441222, -99.2076145],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.45888240727285, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_985d4671a6000ee4216c20d64255e05d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d3958464b56ef68f44664491891f3ee7 = $(`<div id="html_d3958464b56ef68f44664491891f3ee7" style="width: 100.0%; height: 100.0%;"><b>Irrigacion</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): -0.19<br>&nbsp;&nbsp;- uso Ecobici: -0.41<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0004)<br>Viajes totales acumulados: 173,868<br>Ciclovia en la colonia: 0.0 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 25</div>`)[0];
+                popup_985d4671a6000ee4216c20d64255e05d.setContent(html_d3958464b56ef68f44664491891f3ee7);
+            
+        
+
+        circle_marker_f92fecfa12d16c80fa6fd5892b29ec41.bindPopup(popup_985d4671a6000ee4216c20d64255e05d)
+        ;
+
+        
+    
+    
+            var circle_marker_12759d84008977bc095063ccb1489b48 = L.circleMarker(
+                [19.459922499999998, -99.18670700000001],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.442436357937687, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_f23a11b4c7d79f4f2696e6529895e956 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_87685406d070c55a79345770e3f33c23 = $(`<div id="html_87685406d070c55a79345770e3f33c23" style="width: 100.0%; height: 100.0%;"><b>Tacuba</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): -0.19<br>&nbsp;&nbsp;- uso Ecobici: -0.47<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0003)<br>Viajes totales acumulados: 120,931<br>Ciclovia en la colonia: 1.4 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 3<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 20</div>`)[0];
+                popup_f23a11b4c7d79f4f2696e6529895e956.setContent(html_87685406d070c55a79345770e3f33c23);
+            
+        
+
+        circle_marker_12759d84008977bc095063ccb1489b48.bindPopup(popup_f23a11b4c7d79f4f2696e6529895e956)
+        ;
+
+        
+    
+    
+            var circle_marker_5e415779c061a2e0bc9b2363b9474e5e = L.circleMarker(
+                [19.360538, -99.1662925],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.401459232228532, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_95583558d117738da394f89ea3dced19 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f18832ae07bad3fb4f6d20267249266e = $(`<div id="html_f18832ae07bad3fb4f6d20267249266e" style="width: 100.0%; height: 100.0%;"><b>Xoco</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.20<br>&nbsp;&nbsp;- uso Ecobici: -0.47<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0014)<br>Viajes totales acumulados: 117,511<br>Ciclovia en la colonia: 0.5 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 1<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 21</div>`)[0];
+                popup_95583558d117738da394f89ea3dced19.setContent(html_f18832ae07bad3fb4f6d20267249266e);
+            
+        
+
+        circle_marker_5e415779c061a2e0bc9b2363b9474e5e.bindPopup(popup_95583558d117738da394f89ea3dced19)
+        ;
+
+        
+    
+    
+            var circle_marker_7d33895dd40272612d80d1794656a4ab = L.circleMarker(
+                [19.3768305, -99.1565035],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.398926554727328, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_50053b6060aebad1d0acd80ade413fc5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_50d10a2d6cb9a38a386ca2e913a5f0f0 = $(`<div id="html_50d10a2d6cb9a38a386ca2e913a5f0f0" style="width: 100.0%; height: 100.0%;"><b>Letran Valle</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.20<br>&nbsp;&nbsp;- uso Ecobici: -0.35<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0009)<br>Viajes totales acumulados: 252,448<br>Ciclovia en la colonia: 3.8 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 25</div>`)[0];
+                popup_50053b6060aebad1d0acd80ade413fc5.setContent(html_50d10a2d6cb9a38a386ca2e913a5f0f0);
+            
+        
+
+        circle_marker_7d33895dd40272612d80d1794656a4ab.bindPopup(popup_50053b6060aebad1d0acd80ade413fc5)
+        ;
+
+        
+    
+    
+            var circle_marker_e352d0dac134fdc0551483ac0440f8b9 = L.circleMarker(
+                [19.391464, -99.14270533333332],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.351046792141606, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_b5072969278d2e4fb6dab37d6e8b1183 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0d63c46cdbb94133b26aa6b52363ec02 = $(`<div id="html_0d63c46cdbb94133b26aa6b52363ec02" style="width: 100.0%; height: 100.0%;"><b>Postal</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.21<br>&nbsp;&nbsp;- uso Ecobici: -0.47<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0010)<br>Viajes totales acumulados: 120,070<br>Ciclovia en la colonia: 0.5 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 17</div>`)[0];
+                popup_b5072969278d2e4fb6dab37d6e8b1183.setContent(html_0d63c46cdbb94133b26aa6b52363ec02);
+            
+        
+
+        circle_marker_e352d0dac134fdc0551483ac0440f8b9.bindPopup(popup_b5072969278d2e4fb6dab37d6e8b1183)
+        ;
+
+        
+    
+    
+            var circle_marker_8d4e27a3ca8a94d1b675a01a1f71f9a5 = L.circleMarker(
+                [19.381961666666665, -99.14125233333333],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.33258926830268, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_bacd16508bb0cc861fff8620f08ca01c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a72834c1a3fe4f17ab741eb1409dd27a = $(`<div id="html_a72834c1a3fe4f17ab741eb1409dd27a" style="width: 100.0%; height: 100.0%;"><b>Americas Unidas</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.21<br>&nbsp;&nbsp;- uso Ecobici: -0.39<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0021)<br>Viajes totales acumulados: 182,217<br>Ciclovia en la colonia: sin dato<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 17</div>`)[0];
+                popup_bacd16508bb0cc861fff8620f08ca01c.setContent(html_a72834c1a3fe4f17ab741eb1409dd27a);
+            
+        
+
+        circle_marker_8d4e27a3ca8a94d1b675a01a1f71f9a5.bindPopup(popup_bacd16508bb0cc861fff8620f08ca01c)
+        ;
+
+        
+    
+    
+            var circle_marker_e68e7d58e237a7f5581497cbfcb43fcf = L.circleMarker(
+                [19.369823, -99.172164],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.284299347697111, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_2ca4d757013e5ed73289346de5ce7c82 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_65e3e6b7fceb18cabe9a6b17d2691a64 = $(`<div id="html_65e3e6b7fceb18cabe9a6b17d2691a64" style="width: 100.0%; height: 100.0%;"><b>Centro Urbano Presidente Aleman</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.21<br>&nbsp;&nbsp;- uso Ecobici: -0.51<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0042)<br>Viajes totales acumulados: 60,307<br>Ciclovia en la colonia: 0.2 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 25</div>`)[0];
+                popup_2ca4d757013e5ed73289346de5ce7c82.setContent(html_65e3e6b7fceb18cabe9a6b17d2691a64);
+            
+        
+
+        circle_marker_e68e7d58e237a7f5581497cbfcb43fcf.bindPopup(popup_2ca4d757013e5ed73289346de5ce7c82)
+        ;
+
+        
+    
+    
+            var circle_marker_ece0b7101388c3c738b52ebd8a31aa8f = L.circleMarker(
+                [19.445039, -99.194078],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.24018994088578, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_0cc3fba3d8e9cdd779664baaae112dc6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c745b7f7834e08a498dd85a9b740b37a = $(`<div id="html_c745b7f7834e08a498dd85a9b740b37a" style="width: 100.0%; height: 100.0%;"><b>Cuauhtemoc Pensil</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): -0.22<br>&nbsp;&nbsp;- uso Ecobici: -0.45<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0002)<br>Viajes totales acumulados: 141,845<br>Ciclovia en la colonia: 0.6 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 25</div>`)[0];
+                popup_0cc3fba3d8e9cdd779664baaae112dc6.setContent(html_c745b7f7834e08a498dd85a9b740b37a);
+            
+        
+
+        circle_marker_ece0b7101388c3c738b52ebd8a31aa8f.bindPopup(popup_0cc3fba3d8e9cdd779664baaae112dc6)
+        ;
+
+        
+    
+    
+            var circle_marker_f7d1352f323e6e6aece07887f1fa0e03 = L.circleMarker(
+                [19.380399, -99.14792800000001],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.219758376285423, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_a95382cdc2b7dfaaf166e35e63fb4726 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_19e02600cbb2fa8136881f7744fcee1f = $(`<div id="html_19e02600cbb2fa8136881f7744fcee1f" style="width: 100.0%; height: 100.0%;"><b>Independencia</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.22<br>&nbsp;&nbsp;- uso Ecobici: -0.50<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0007)<br>Viajes totales acumulados: 92,663<br>Ciclovia en la colonia: 1.1 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 6<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 17</div>`)[0];
+                popup_a95382cdc2b7dfaaf166e35e63fb4726.setContent(html_19e02600cbb2fa8136881f7744fcee1f);
+            
+        
+
+        circle_marker_f7d1352f323e6e6aece07887f1fa0e03.bindPopup(popup_a95382cdc2b7dfaaf166e35e63fb4726)
+        ;
+
+        
+    
+    
+            var circle_marker_1d38e151259248dbbd92c073bc594eb8 = L.circleMarker(
+                [19.4610505, -99.182707],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.219394057115794, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_0f11150aa5f6bb469bb932296f41f767 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a9a8314d25c2c9738598e5c0a5240f50 = $(`<div id="html_a9a8314d25c2c9738598e5c0a5240f50" style="width: 100.0%; height: 100.0%;"><b>San Alvaro</b> (Azcapotzalco)<br>Indice de demanda compuesto (promedio): -0.22<br>&nbsp;&nbsp;- uso Ecobici: -0.56<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0003)<br>Viajes totales acumulados: 51,868<br>Ciclovia en la colonia: 0.3 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 432,205<br>Periodos con datos: 15</div>`)[0];
+                popup_0f11150aa5f6bb469bb932296f41f767.setContent(html_a9a8314d25c2c9738598e5c0a5240f50);
+            
+        
+
+        circle_marker_1d38e151259248dbbd92c073bc594eb8.bindPopup(popup_0f11150aa5f6bb469bb932296f41f767)
+        ;
+
+        
+    
+    
+            var circle_marker_bf100b8f0dabadaf5bd58d896f3c3c6a = L.circleMarker(
+                [19.4700475, -99.18916949999999],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.219248789282975, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_fcd3f9b3bea1291af5fc4659550f8b1b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a656fd9ac4fc35880c0b3ab0847eda4d = $(`<div id="html_a656fd9ac4fc35880c0b3ab0847eda4d" style="width: 100.0%; height: 100.0%;"><b>Angel Zimbron</b> (Azcapotzalco)<br>Indice de demanda compuesto (promedio): -0.22<br>&nbsp;&nbsp;- uso Ecobici: -0.49<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0012)<br>Viajes totales acumulados: 106,089<br>Ciclovia en la colonia: 0.0 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 432,205<br>Periodos con datos: 16</div>`)[0];
+                popup_fcd3f9b3bea1291af5fc4659550f8b1b.setContent(html_a656fd9ac4fc35880c0b3ab0847eda4d);
+            
+        
+
+        circle_marker_bf100b8f0dabadaf5bd58d896f3c3c6a.bindPopup(popup_fcd3f9b3bea1291af5fc4659550f8b1b)
+        ;
+
+        
+    
+    
+            var circle_marker_a857da01cbb5eac2cdd06acfaa2ca87c = L.circleMarker(
+                [19.464367, -99.167971],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.19756887562459, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_592c2906903ab9b327f23ed599129b1b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_47894eaef7bcba85487eb3d97adaf392 = $(`<div id="html_47894eaef7bcba85487eb3d97adaf392" style="width: 100.0%; height: 100.0%;"><b>Nueva Santa Maria</b> (Azcapotzalco)<br>Indice de demanda compuesto (promedio): -0.23<br>&nbsp;&nbsp;- uso Ecobici: -0.41<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0002)<br>Viajes totales acumulados: 164,706<br>Ciclovia en la colonia: 2.9 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 432,205<br>Periodos con datos: 16</div>`)[0];
+                popup_592c2906903ab9b327f23ed599129b1b.setContent(html_47894eaef7bcba85487eb3d97adaf392);
+            
+        
+
+        circle_marker_a857da01cbb5eac2cdd06acfaa2ca87c.bindPopup(popup_592c2906903ab9b327f23ed599129b1b)
+        ;
+
+        
+    
+    
+            var circle_marker_3085c1fd1421cae1240ba87c44a7a1ac = L.circleMarker(
+                [19.47111, -99.1653],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.165277261281858, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_9ee0a2ac085e021453df1b6befa9b4e1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_44387be5e3a19bebbff0ee56e2a2245c = $(`<div id="html_44387be5e3a19bebbff0ee56e2a2245c" style="width: 100.0%; height: 100.0%;"><b>Victoria de las Democracias</b> (Azcapotzalco)<br>Indice de demanda compuesto (promedio): -0.23<br>&nbsp;&nbsp;- uso Ecobici: -0.55<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0001)<br>Viajes totales acumulados: 54,800<br>Ciclovia en la colonia: 0.0 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 432,205<br>Periodos con datos: 15</div>`)[0];
+                popup_9ee0a2ac085e021453df1b6befa9b4e1.setContent(html_44387be5e3a19bebbff0ee56e2a2245c);
+            
+        
+
+        circle_marker_3085c1fd1421cae1240ba87c44a7a1ac.bindPopup(popup_9ee0a2ac085e021453df1b6befa9b4e1)
+        ;
+
+        
+    
+    
+            var circle_marker_8b4b771ebbc1b0cadc5c5cd1a12d0123 = L.circleMarker(
+                [19.367209, -99.15872],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.15473188566201, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_8bf4c51a8ae9dcaf30de5672c6d10119 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d46ffcd7b38ae856ea5f8b122acb7b55 = $(`<div id="html_d46ffcd7b38ae856ea5f8b122acb7b55" style="width: 100.0%; height: 100.0%;"><b>Residencial Emperadores</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.23<br>&nbsp;&nbsp;- uso Ecobici: -0.53<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0038)<br>Viajes totales acumulados: 45,930<br>Ciclovia en la colonia: 0.5 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 25</div>`)[0];
+                popup_8bf4c51a8ae9dcaf30de5672c6d10119.setContent(html_d46ffcd7b38ae856ea5f8b122acb7b55);
+            
+        
+
+        circle_marker_8b4b771ebbc1b0cadc5c5cd1a12d0123.bindPopup(popup_8bf4c51a8ae9dcaf30de5672c6d10119)
+        ;
+
+        
+    
+    
+            var circle_marker_3c3b7042ea783332f9472b3ebcd2c12b = L.circleMarker(
+                [19.388373, -99.139746],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.126715993190006, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_d7944ddd60c18234101bf59058911256 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dd00cb4220effaf75f2d99aa4cbe5fde = $(`<div id="html_dd00cb4220effaf75f2d99aa4cbe5fde" style="width: 100.0%; height: 100.0%;"><b>Josefa Ortiz de Dominguez</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.24<br>&nbsp;&nbsp;- uso Ecobici: -0.51<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0017)<br>Viajes totales acumulados: 84,209<br>Ciclovia en la colonia: 0.2 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 16</div>`)[0];
+                popup_d7944ddd60c18234101bf59058911256.setContent(html_dd00cb4220effaf75f2d99aa4cbe5fde);
+            
+        
+
+        circle_marker_3c3b7042ea783332f9472b3ebcd2c12b.bindPopup(popup_d7944ddd60c18234101bf59058911256)
+        ;
+
+        
+    
+    
+            var circle_marker_4ee61cdf68d4443030d7b1d922fb9bbf = L.circleMarker(
+                [19.445253, -99.18065899999999],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.11624501179651, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_09c1d4030288093671b4efab0490b4a8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a15ef89577447c322e1838824ade15dc = $(`<div id="html_a15ef89577447c322e1838824ade15dc" style="width: 100.0%; height: 100.0%;"><b>Mariano Escobedo</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): -0.24<br>&nbsp;&nbsp;- uso Ecobici: -0.40<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0013)<br>Viajes totales acumulados: 184,955<br>Ciclovia en la colonia: sin dato<br>Establecimientos DENUE relacionados (bici/mensajeria): 3<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 25</div>`)[0];
+                popup_09c1d4030288093671b4efab0490b4a8.setContent(html_a15ef89577447c322e1838824ade15dc);
+            
+        
+
+        circle_marker_4ee61cdf68d4443030d7b1d922fb9bbf.bindPopup(popup_09c1d4030288093671b4efab0490b4a8)
+        ;
+
+        
+    
+    
+            var circle_marker_b3dec136d6feb4b503c5144ec1802039 = L.circleMarker(
+                [19.347009, -99.16412133333334],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.097555501232383, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_f1400434b82a1431a6f45a25b8617791 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1abc8a0ec5cdd5f514895cc38787e6be = $(`<div id="html_1abc8a0ec5cdd5f514895cc38787e6be" style="width: 100.0%; height: 100.0%;"><b>Villa Coyoacan</b> (Coyoacan)<br>Indice de demanda compuesto (promedio): -0.24<br>&nbsp;&nbsp;- uso Ecobici: -0.52<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0027)<br>Viajes totales acumulados: 82,147<br>Ciclovia en la colonia: 0.0 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 614,447<br>Periodos con datos: 16</div>`)[0];
+                popup_f1400434b82a1431a6f45a25b8617791.setContent(html_1abc8a0ec5cdd5f514895cc38787e6be);
+            
+        
+
+        circle_marker_b3dec136d6feb4b503c5144ec1802039.bindPopup(popup_f1400434b82a1431a6f45a25b8617791)
+        ;
+
+        
+    
+    
+            var circle_marker_4a8ccd74886a3221d1b78facfb0d381f = L.circleMarker(
+                [19.357936948, -99.18039868999999],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.085711525936569, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_c1222560899782d54108925ac9bc69bc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e40eb8b06d72d09edb397843eb89e8ad = $(`<div id="html_e40eb8b06d72d09edb397843eb89e8ad" style="width: 100.0%; height: 100.0%;"><b>Florida</b> (Alvaro Obregon)<br>Indice de demanda compuesto (promedio): -0.24<br>&nbsp;&nbsp;- uso Ecobici: -0.48<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0031)<br>Viajes totales acumulados: 108,073<br>Ciclovia en la colonia: 1.4 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 5<br>Poblacion de la alcaldia (2020): 759,137<br>Periodos con datos: 16</div>`)[0];
+                popup_c1222560899782d54108925ac9bc69bc.setContent(html_e40eb8b06d72d09edb397843eb89e8ad);
+            
+        
+
+        circle_marker_4a8ccd74886a3221d1b78facfb0d381f.bindPopup(popup_c1222560899782d54108925ac9bc69bc)
+        ;
+
+        
+    
+    
+            var circle_marker_264e12155f7806c0221ac72b73bcbda2 = L.circleMarker(
+                [19.454894, -99.17390750000001],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.066811269901473, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_1664a45c22e5f1af32fd90c3225365cd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ac5582a04ee455003924902289abd2de = $(`<div id="html_ac5582a04ee455003924902289abd2de" style="width: 100.0%; height: 100.0%;"><b>Nextitla</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): -0.25<br>&nbsp;&nbsp;- uso Ecobici: -0.51<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0007)<br>Viajes totales acumulados: 85,409<br>Ciclovia en la colonia: 0.0 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 20</div>`)[0];
+                popup_1664a45c22e5f1af32fd90c3225365cd.setContent(html_ac5582a04ee455003924902289abd2de);
+            
+        
+
+        circle_marker_264e12155f7806c0221ac72b73bcbda2.bindPopup(popup_1664a45c22e5f1af32fd90c3225365cd)
+        ;
+
+        
+    
+    
+            var circle_marker_ab80579a182ee3cee1b0e29791ec1e73 = L.circleMarker(
+                [19.3496435, -99.185899],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.000247184519145, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_e577dd0f8dbe340fd8a40f964debdd72 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e5d6dd2432f67daf939c262859ab7fc0 = $(`<div id="html_e5d6dd2432f67daf939c262859ab7fc0" style="width: 100.0%; height: 100.0%;"><b>Guadalupe Chimalistac</b> (Alvaro Obregon)<br>Indice de demanda compuesto (promedio): -0.26<br>&nbsp;&nbsp;- uso Ecobici: -0.42<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0036)<br>Viajes totales acumulados: 160,048<br>Ciclovia en la colonia: sin dato<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 759,137<br>Periodos con datos: 16</div>`)[0];
+                popup_e577dd0f8dbe340fd8a40f964debdd72.setContent(html_e5d6dd2432f67daf939c262859ab7fc0);
+            
+        
+
+        circle_marker_ab80579a182ee3cee1b0e29791ec1e73.bindPopup(popup_e577dd0f8dbe340fd8a40f964debdd72)
+        ;
+
+        
+    
+    
+            var circle_marker_9695dda6d574a933ad6dc15f93eaa588 = L.circleMarker(
+                [19.461842, -99.162392],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.9932048307289705, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_74ae9559d447a02c2de31a454159e51c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_84e8d25d45289bb35832ef81889cfde1 = $(`<div id="html_84e8d25d45289bb35832ef81889cfde1" style="width: 100.0%; height: 100.0%;"><b>Tlatilco</b> (Azcapotzalco)<br>Indice de demanda compuesto (promedio): -0.26<br>&nbsp;&nbsp;- uso Ecobici: -0.50<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0004)<br>Viajes totales acumulados: 91,693<br>Ciclovia en la colonia: 1.2 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 1<br>Poblacion de la alcaldia (2020): 432,205<br>Periodos con datos: 15</div>`)[0];
+                popup_74ae9559d447a02c2de31a454159e51c.setContent(html_84e8d25d45289bb35832ef81889cfde1);
+            
+        
+
+        circle_marker_9695dda6d574a933ad6dc15f93eaa588.bindPopup(popup_74ae9559d447a02c2de31a454159e51c)
+        ;
+
+        
+    
+    
+            var circle_marker_649899de85aeba3af739bf78be06216d = L.circleMarker(
+                [19.4548715, -99.167897],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.987258115098352, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_f2633d5ccdf0066c65ac5951ae967266 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0e270a572a029758005e895d8e7c017b = $(`<div id="html_0e270a572a029758005e895d8e7c017b" style="width: 100.0%; height: 100.0%;"><b>Plutarco Elias Calles</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): -0.26<br>&nbsp;&nbsp;- uso Ecobici: -0.44<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0001)<br>Viajes totales acumulados: 153,863<br>Ciclovia en la colonia: 1.4 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 20</div>`)[0];
+                popup_f2633d5ccdf0066c65ac5951ae967266.setContent(html_0e270a572a029758005e895d8e7c017b);
+            
+        
+
+        circle_marker_649899de85aeba3af739bf78be06216d.bindPopup(popup_f2633d5ccdf0066c65ac5951ae967266)
+        ;
+
+        
+    
+    
+            var circle_marker_0ae2bd6ddf691c246755125d9d335e87 = L.circleMarker(
+                [19.3639778, -99.18091389],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.983566159527567, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_661abc690ddc4d2fae1e2771825e4ef4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2ea42cc5fe413a05ff4fbf59dd86af2d = $(`<div id="html_2ea42cc5fe413a05ff4fbf59dd86af2d" style="width: 100.0%; height: 100.0%;"><b>Credito Constructor</b> (Benito Juarez)<br>Indice de demanda compuesto (promedio): -0.26<br>&nbsp;&nbsp;- uso Ecobici: -0.52<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0043)<br>Viajes totales acumulados: 56,295<br>Ciclovia en la colonia: 1.2 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 434,153<br>Periodos con datos: 24</div>`)[0];
+                popup_661abc690ddc4d2fae1e2771825e4ef4.setContent(html_2ea42cc5fe413a05ff4fbf59dd86af2d);
+            
+        
+
+        circle_marker_0ae2bd6ddf691c246755125d9d335e87.bindPopup(popup_661abc690ddc4d2fae1e2771825e4ef4)
+        ;
+
+        
+    
+    
+            var circle_marker_ebee6a251061630edaa1d150007ee73e = L.circleMarker(
+                [19.44269, -99.19083],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.947643380403708, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_b8652321b907ff7e7c9b92528623c27f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_847dae4feb1b717e71cbd8e87886c2cb = $(`<div id="html_847dae4feb1b717e71cbd8e87886c2cb" style="width: 100.0%; height: 100.0%;"><b>Modelo Pensil</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): -0.26<br>&nbsp;&nbsp;- uso Ecobici: -0.48<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0003)<br>Viajes totales acumulados: 105,285<br>Ciclovia en la colonia: 0.7 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 1<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 25</div>`)[0];
+                popup_b8652321b907ff7e7c9b92528623c27f.setContent(html_847dae4feb1b717e71cbd8e87886c2cb);
+            
+        
+
+        circle_marker_ebee6a251061630edaa1d150007ee73e.bindPopup(popup_b8652321b907ff7e7c9b92528623c27f)
+        ;
+
+        
+    
+    
+            var circle_marker_888b58b2d7e6a3a11fd2d30a1920b2d2 = L.circleMarker(
+                [19.351149, -99.1488635],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.928657516766453, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_fe9555d60d4a485eb29e3c1ed12b2efd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_af5ad12a34d927c9bd60b8cac6b45c2c = $(`<div id="html_af5ad12a34d927c9bd60b8cac6b45c2c" style="width: 100.0%; height: 100.0%;"><b>San Mateo</b> (Coyoacan)<br>Indice de demanda compuesto (promedio): -0.27<br>&nbsp;&nbsp;- uso Ecobici: -0.53<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0021)<br>Viajes totales acumulados: 67,005<br>Ciclovia en la colonia: 0.3 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 614,447<br>Periodos con datos: 17</div>`)[0];
+                popup_fe9555d60d4a485eb29e3c1ed12b2efd.setContent(html_af5ad12a34d927c9bd60b8cac6b45c2c);
+            
+        
+
+        circle_marker_888b58b2d7e6a3a11fd2d30a1920b2d2.bindPopup(popup_fe9555d60d4a485eb29e3c1ed12b2efd)
+        ;
+
+        
+    
+    
+            var circle_marker_ea9a2a8e2581c3def279ed15247b2656 = L.circleMarker(
+                [19.452688, -99.170157],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.898793757556975, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_e7c37f4a18094208b0628e75eb602116 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6406646eb09ec3f8a3cf0c8b215c2df3 = $(`<div id="html_6406646eb09ec3f8a3cf0c8b215c2df3" style="width: 100.0%; height: 100.0%;"><b>Santo Tomas</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): -0.27<br>&nbsp;&nbsp;- uso Ecobici: -0.54<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0017)<br>Viajes totales acumulados: 55,879<br>Ciclovia en la colonia: 1.0 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 20</div>`)[0];
+                popup_e7c37f4a18094208b0628e75eb602116.setContent(html_6406646eb09ec3f8a3cf0c8b215c2df3);
+            
+        
+
+        circle_marker_ea9a2a8e2581c3def279ed15247b2656.bindPopup(popup_e7c37f4a18094208b0628e75eb602116)
+        ;
+
+        
+    
+    
+            var circle_marker_e375b1a71d47b2828b9efbf5ba555d19 = L.circleMarker(
+                [19.428961, -99.206936],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.890529718925223, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_23915681a656d3b184b9b119b6e00fe6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a89b2708df835fed19087dff7dc49d3a = $(`<div id="html_a89b2708df835fed19087dff7dc49d3a" style="width: 100.0%; height: 100.0%;"><b>Lomas de Chapultepec Seccion III</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): -0.27<br>&nbsp;&nbsp;- uso Ecobici: -0.46<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0008)<br>Viajes totales acumulados: 117,359<br>Ciclovia en la colonia: sin dato<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 25</div>`)[0];
+                popup_23915681a656d3b184b9b119b6e00fe6.setContent(html_a89b2708df835fed19087dff7dc49d3a);
+            
+        
+
+        circle_marker_e375b1a71d47b2828b9efbf5ba555d19.bindPopup(popup_23915681a656d3b184b9b119b6e00fe6)
+        ;
+
+        
+    
+    
+            var circle_marker_f4f3866bf98f5faf2569c9095c8c0236 = L.circleMarker(
+                [19.46060395, -99.1727411],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.879330917645113, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_4f55bcf852e48b34f3864463bebb3b4e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9943a73281c4f6abbd4b08282f33c783 = $(`<div id="html_9943a73281c4f6abbd4b08282f33c783" style="width: 100.0%; height: 100.0%;"><b>San Salvador Xochimanca</b> (Azcapotzalco)<br>Indice de demanda compuesto (promedio): -0.27<br>&nbsp;&nbsp;- uso Ecobici: -0.54<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0023)<br>Viajes totales acumulados: 64,735<br>Ciclovia en la colonia: 1.1 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 432,205<br>Periodos con datos: 16</div>`)[0];
+                popup_4f55bcf852e48b34f3864463bebb3b4e.setContent(html_9943a73281c4f6abbd4b08282f33c783);
+            
+        
+
+        circle_marker_f4f3866bf98f5faf2569c9095c8c0236.bindPopup(popup_4f55bcf852e48b34f3864463bebb3b4e)
+        ;
+
+        
+    
+    
+            var circle_marker_2f022366dce8ab9a37533426f8f2d623 = L.circleMarker(
+                [19.46969, -99.18405],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.876139475730116, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_be45aacd8da5773d38268ef48e310464 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bcf8a7ddb7e27646854d39e6c11ab827 = $(`<div id="html_bcf8a7ddb7e27646854d39e6c11ab827" style="width: 100.0%; height: 100.0%;"><b>Del Recreo</b> (Azcapotzalco)<br>Indice de demanda compuesto (promedio): -0.27<br>&nbsp;&nbsp;- uso Ecobici: -0.60<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0005)<br>Viajes totales acumulados: 24,053<br>Ciclovia en la colonia: 1.8 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 2<br>Poblacion de la alcaldia (2020): 432,205<br>Periodos con datos: 15</div>`)[0];
+                popup_be45aacd8da5773d38268ef48e310464.setContent(html_bcf8a7ddb7e27646854d39e6c11ab827);
+            
+        
+
+        circle_marker_2f022366dce8ab9a37533426f8f2d623.bindPopup(popup_be45aacd8da5773d38268ef48e310464)
+        ;
+
+        
+    
+    
+            var circle_marker_f267bc9be1c1afec8ed82dbf6dc5c7a2 = L.circleMarker(
+                [19.47072, -99.17835],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.849912487317358, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_eaa052a0397ef51c23129c25c4b110fa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ae48b7bc9a1acc9569ef3e8532a66020 = $(`<div id="html_ae48b7bc9a1acc9569ef3e8532a66020" style="width: 100.0%; height: 100.0%;"><b>Sector Naval</b> (Azcapotzalco)<br>Indice de demanda compuesto (promedio): -0.28<br>&nbsp;&nbsp;- uso Ecobici: -0.55<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0000)<br>Viajes totales acumulados: 54,816<br>Ciclovia en la colonia: 0.4 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 1<br>Poblacion de la alcaldia (2020): 432,205<br>Periodos con datos: 15</div>`)[0];
+                popup_eaa052a0397ef51c23129c25c4b110fa.setContent(html_ae48b7bc9a1acc9569ef3e8532a66020);
+            
+        
+
+        circle_marker_f267bc9be1c1afec8ed82dbf6dc5c7a2.bindPopup(popup_eaa052a0397ef51c23129c25c4b110fa)
+        ;
+
+        
+    
+    
+            var circle_marker_6d544462efc29888fa613cb173cf7e34 = L.circleMarker(
+                [19.437014, -99.207932],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.841081736840051, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_d3cebbf31d21659c394dc8d68f04b973 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fa1a54575a0fc32cf5262faf711f3c29 = $(`<div id="html_fa1a54575a0fc32cf5262faf711f3c29" style="width: 100.0%; height: 100.0%;"><b>Polanco Seccion I/ Los Morales</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): -0.28<br>&nbsp;&nbsp;- uso Ecobici: -0.48<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0013)<br>Viajes totales acumulados: 100,139<br>Ciclovia en la colonia: sin dato<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 25</div>`)[0];
+                popup_d3cebbf31d21659c394dc8d68f04b973.setContent(html_fa1a54575a0fc32cf5262faf711f3c29);
+            
+        
+
+        circle_marker_6d544462efc29888fa613cb173cf7e34.bindPopup(popup_d3cebbf31d21659c394dc8d68f04b973)
+        ;
+
+        
+    
+    
+            var circle_marker_d270308dbe04056119777c23154dd9d6 = L.circleMarker(
+                [19.355178, -99.1485265],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.826619659795884, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_5ab7f4f8d7604534157b7ab8f9e1fa60 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2b595ea0cf44341b83b2f64c382cce17 = $(`<div id="html_2b595ea0cf44341b83b2f64c382cce17" style="width: 100.0%; height: 100.0%;"><b>San Diego Churubusco</b> (Coyoacan)<br>Indice de demanda compuesto (promedio): -0.28<br>&nbsp;&nbsp;- uso Ecobici: -0.51<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0028)<br>Viajes totales acumulados: 90,767<br>Ciclovia en la colonia: 0.5 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 2<br>Poblacion de la alcaldia (2020): 614,447<br>Periodos con datos: 16</div>`)[0];
+                popup_5ab7f4f8d7604534157b7ab8f9e1fa60.setContent(html_2b595ea0cf44341b83b2f64c382cce17);
+            
+        
+
+        circle_marker_d270308dbe04056119777c23154dd9d6.bindPopup(popup_5ab7f4f8d7604534157b7ab8f9e1fa60)
+        ;
+
+        
+    
+    
+            var circle_marker_253ea4ea1d207d01744466e41d678d86 = L.circleMarker(
+                [19.4253735, -99.2039875],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.821309315696567, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_1500b9ad49c701f691a9a17477ca967a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_70de89c8459aaeda2a56fdb1f4fe90da = $(`<div id="html_70de89c8459aaeda2a56fdb1f4fe90da" style="width: 100.0%; height: 100.0%;"><b>Lomas de Chapultepec Seccion IV/Lomas Virreyes</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): -0.28<br>&nbsp;&nbsp;- uso Ecobici: -0.48<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0005)<br>Viajes totales acumulados: 97,967<br>Ciclovia en la colonia: sin dato<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 25</div>`)[0];
+                popup_1500b9ad49c701f691a9a17477ca967a.setContent(html_70de89c8459aaeda2a56fdb1f4fe90da);
+            
+        
+
+        circle_marker_253ea4ea1d207d01744466e41d678d86.bindPopup(popup_1500b9ad49c701f691a9a17477ca967a)
+        ;
+
+        
+    
+    
+            var circle_marker_b9c4bcc4f88c3fd9703bd3c604fdda05 = L.circleMarker(
+                [19.358421900000003, -99.17528872],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.803520504626705, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_ae081d5fdcdcf06f8238e6ee82c0b931 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ff99a6bac45de2e5abf2332f775708c0 = $(`<div id="html_ff99a6bac45de2e5abf2332f775708c0" style="width: 100.0%; height: 100.0%;"><b>Axotla</b> (Alvaro Obregon)<br>Indice de demanda compuesto (promedio): -0.28<br>&nbsp;&nbsp;- uso Ecobici: -0.55<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0028)<br>Viajes totales acumulados: 58,883<br>Ciclovia en la colonia: 0.0 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 759,137<br>Periodos con datos: 16</div>`)[0];
+                popup_ae081d5fdcdcf06f8238e6ee82c0b931.setContent(html_ff99a6bac45de2e5abf2332f775708c0);
+            
+        
+
+        circle_marker_b9c4bcc4f88c3fd9703bd3c604fdda05.bindPopup(popup_ae081d5fdcdcf06f8238e6ee82c0b931)
+        ;
+
+        
+    
+    
+            var circle_marker_5f11ee5f9c67596b5b670eefbc288299 = L.circleMarker(
+                [19.4272735, -99.2106285],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.783380992788567, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_6cbc68697cd5b8589aaa60b4b1c8f9b4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ca5f1e172023014d660955299c201ea2 = $(`<div id="html_ca5f1e172023014d660955299c201ea2" style="width: 100.0%; height: 100.0%;"><b>Lomas de Chapultepec Seccion V</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): -0.29<br>&nbsp;&nbsp;- uso Ecobici: -0.49<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0010)<br>Viajes totales acumulados: 82,998<br>Ciclovia en la colonia: sin dato<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 25</div>`)[0];
+                popup_6cbc68697cd5b8589aaa60b4b1c8f9b4.setContent(html_ca5f1e172023014d660955299c201ea2);
+            
+        
+
+        circle_marker_5f11ee5f9c67596b5b670eefbc288299.bindPopup(popup_6cbc68697cd5b8589aaa60b4b1c8f9b4)
+        ;
+
+        
+    
+    
+            var circle_marker_a758683ec9451fa141064e955dfd2947 = L.circleMarker(
+                [19.466937, -99.162948],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.771699299100387, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_fe6d6d73a7a519673154a528ae8f9cdc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4bb435260359ce1acbe262416958beb6 = $(`<div id="html_4bb435260359ce1acbe262416958beb6" style="width: 100.0%; height: 100.0%;"><b>Ignacio Allende</b> (Azcapotzalco)<br>Indice de demanda compuesto (promedio): -0.29<br>&nbsp;&nbsp;- uso Ecobici: -0.60<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0005)<br>Viajes totales acumulados: 20,870<br>Ciclovia en la colonia: 0.0 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 432,205<br>Periodos con datos: 15</div>`)[0];
+                popup_fe6d6d73a7a519673154a528ae8f9cdc.setContent(html_4bb435260359ce1acbe262416958beb6);
+            
+        
+
+        circle_marker_a758683ec9451fa141064e955dfd2947.bindPopup(popup_fe6d6d73a7a519673154a528ae8f9cdc)
+        ;
+
+        
+    
+    
+            var circle_marker_4db04e8fb69d6fbd8901a70f323c6e52 = L.circleMarker(
+                [19.358513283333334, -99.18781793333333],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.750990621897588, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_99355e34167f4a5eaa7d6d03eb38dbd6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_24673ea85a2e5fe04807fe223b4f6efa = $(`<div id="html_24673ea85a2e5fe04807fe223b4f6efa" style="width: 100.0%; height: 100.0%;"><b>Guadalupe Inn</b> (Alvaro Obregon)<br>Indice de demanda compuesto (promedio): -0.29<br>&nbsp;&nbsp;- uso Ecobici: -0.38<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0045)<br>Viajes totales acumulados: 187,286<br>Ciclovia en la colonia: 3.2 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 5<br>Poblacion de la alcaldia (2020): 759,137<br>Periodos con datos: 16</div>`)[0];
+                popup_99355e34167f4a5eaa7d6d03eb38dbd6.setContent(html_24673ea85a2e5fe04807fe223b4f6efa);
+            
+        
+
+        circle_marker_4db04e8fb69d6fbd8901a70f323c6e52.bindPopup(popup_99355e34167f4a5eaa7d6d03eb38dbd6)
+        ;
+
+        
+    
+    
+            var circle_marker_b2f3d6645485f0e3e8af8c1cb7eeeee4 = L.circleMarker(
+                [19.345723999999997, -99.150211],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.746533946693475, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_0001e324ba1f4043064ad19e6d100984 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3d3aa751b1c06644677e613fd2821f5b = $(`<div id="html_3d3aa751b1c06644677e613fd2821f5b" style="width: 100.0%; height: 100.0%;"><b>Parque San Andres</b> (Coyoacan)<br>Indice de demanda compuesto (promedio): -0.29<br>&nbsp;&nbsp;- uso Ecobici: -0.43<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0033)<br>Viajes totales acumulados: 153,620<br>Ciclovia en la colonia: 1.5 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 614,447<br>Periodos con datos: 19</div>`)[0];
+                popup_0001e324ba1f4043064ad19e6d100984.setContent(html_3d3aa751b1c06644677e613fd2821f5b);
+            
+        
+
+        circle_marker_b2f3d6645485f0e3e8af8c1cb7eeeee4.bindPopup(popup_0001e324ba1f4043064ad19e6d100984)
+        ;
+
+        
+    
+    
+            var circle_marker_cc6458550f371be4d1f7e9b8a66d19a2 = L.circleMarker(
+                [19.464891, -99.177242],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.731460467331045, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_b3379364df39516509ead14731c55db9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_98a961ac2feeb4612168bf25a5868800 = $(`<div id="html_98a961ac2feeb4612168bf25a5868800" style="width: 100.0%; height: 100.0%;"><b>Obrero Popular</b> (Azcapotzalco)<br>Indice de demanda compuesto (promedio): -0.29<br>&nbsp;&nbsp;- uso Ecobici: -0.58<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0019)<br>Viajes totales acumulados: 30,739<br>Ciclovia en la colonia: 1.2 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 432,205<br>Periodos con datos: 16</div>`)[0];
+                popup_b3379364df39516509ead14731c55db9.setContent(html_98a961ac2feeb4612168bf25a5868800);
+            
+        
+
+        circle_marker_cc6458550f371be4d1f7e9b8a66d19a2.bindPopup(popup_b3379364df39516509ead14731c55db9)
+        ;
+
+        
+    
+    
+            var circle_marker_59e3adddeee7c86e422b9a0bcfafe210 = L.circleMarker(
+                [19.468269499999998, -99.1668675],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.704632179706344, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_bc7ce5c3a60ae4ddefbe8bcf0a6c0d51 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_27214c2eb282127d41a57ba7cb86cdec = $(`<div id="html_27214c2eb282127d41a57ba7cb86cdec" style="width: 100.0%; height: 100.0%;"><b>Hogar y Seguridad</b> (Azcapotzalco)<br>Indice de demanda compuesto (promedio): -0.30<br>&nbsp;&nbsp;- uso Ecobici: -0.56<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0016)<br>Viajes totales acumulados: 47,681<br>Ciclovia en la colonia: sin dato<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 432,205<br>Periodos con datos: 16</div>`)[0];
+                popup_bc7ce5c3a60ae4ddefbe8bcf0a6c0d51.setContent(html_27214c2eb282127d41a57ba7cb86cdec);
+            
+        
+
+        circle_marker_59e3adddeee7c86e422b9a0bcfafe210.bindPopup(popup_bc7ce5c3a60ae4ddefbe8bcf0a6c0d51)
+        ;
+
+        
+    
+    
+            var circle_marker_a1ba28bb42e10400b80cddf637f04a54 = L.circleMarker(
+                [19.449039, -99.170246],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.6754934302207545, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_4dd0d0394bc321d97e971d994b35c51d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6b6bc1ec3a34dad8cd706565b3add05d = $(`<div id="html_6b6bc1ec3a34dad8cd706565b3add05d" style="width: 100.0%; height: 100.0%;"><b>Un Hogar para Nosotros</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): -0.30<br>&nbsp;&nbsp;- uso Ecobici: -0.53<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0015)<br>Viajes totales acumulados: 66,269<br>Ciclovia en la colonia: 1.4 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 20</div>`)[0];
+                popup_4dd0d0394bc321d97e971d994b35c51d.setContent(html_6b6bc1ec3a34dad8cd706565b3add05d);
+            
+        
+
+        circle_marker_a1ba28bb42e10400b80cddf637f04a54.bindPopup(popup_4dd0d0394bc321d97e971d994b35c51d)
+        ;
+
+        
+    
+    
+            var circle_marker_81a1a6aa0c3b470e3d4c79c17008e0cc = L.circleMarker(
+                [19.4705145, -99.1700615],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.621318073491925, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_549c75f02ca170746dafdc77019531cd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6facb445e560afa1d7242931f5d25424 = $(`<div id="html_6facb445e560afa1d7242931f5d25424" style="width: 100.0%; height: 100.0%;"><b>Unidad Habitacional Cuitláhuac</b> (Azcapotzalco)<br>Indice de demanda compuesto (promedio): -0.31<br>&nbsp;&nbsp;- uso Ecobici: -0.57<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0000)<br>Viajes totales acumulados: 42,627<br>Ciclovia en la colonia: sin dato<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 432,205<br>Periodos con datos: 15</div>`)[0];
+                popup_549c75f02ca170746dafdc77019531cd.setContent(html_6facb445e560afa1d7242931f5d25424);
+            
+        
+
+        circle_marker_81a1a6aa0c3b470e3d4c79c17008e0cc.bindPopup(popup_549c75f02ca170746dafdc77019531cd)
+        ;
+
+        
+    
+    
+            var circle_marker_d09a0ff70ff7a6f03fe205ba39ee122a = L.circleMarker(
+                [19.346111, -99.158197],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.509953877337755, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_8294fa24b1e908e8e6d9b2b317cf04f4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bfb0eb2d7d6708118df2ea71abb64973 = $(`<div id="html_bfb0eb2d7d6708118df2ea71abb64973" style="width: 100.0%; height: 100.0%;"><b>Barrio la Concepcion</b> (Coyoacan)<br>Indice de demanda compuesto (promedio): -0.33<br>&nbsp;&nbsp;- uso Ecobici: -0.54<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0010)<br>Viajes totales acumulados: 54,997<br>Ciclovia en la colonia: sin dato<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 614,447<br>Periodos con datos: 19</div>`)[0];
+                popup_8294fa24b1e908e8e6d9b2b317cf04f4.setContent(html_bfb0eb2d7d6708118df2ea71abb64973);
+            
+        
+
+        circle_marker_d09a0ff70ff7a6f03fe205ba39ee122a.bindPopup(popup_8294fa24b1e908e8e6d9b2b317cf04f4)
+        ;
+
+        
+    
+    
+            var circle_marker_7783b4cf0dcf348712fa76eb6b2d2c09 = L.circleMarker(
+                [19.347503, -99.15244],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.398519305954938, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_4c513d4ba12bb5aa92ddd88ccb56a490 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_82445b3d3188c6717f9c0b4aebb6a164 = $(`<div id="html_82445b3d3188c6717f9c0b4aebb6a164" style="width: 100.0%; height: 100.0%;"><b>Barrio San Lucas</b> (Coyoacan)<br>Indice de demanda compuesto (promedio): -0.34<br>&nbsp;&nbsp;- uso Ecobici: -0.57<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0012)<br>Viajes totales acumulados: 26,311<br>Ciclovia en la colonia: sin dato<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 614,447<br>Periodos con datos: 19</div>`)[0];
+                popup_4c513d4ba12bb5aa92ddd88ccb56a490.setContent(html_82445b3d3188c6717f9c0b4aebb6a164);
+            
+        
+
+        circle_marker_7783b4cf0dcf348712fa76eb6b2d2c09.bindPopup(popup_4c513d4ba12bb5aa92ddd88ccb56a490)
+        ;
+
+        
+    
+    
+            var circle_marker_d5c718088dbd9a2bdaeea4690f2607e9 = L.circleMarker(
+                [19.352203, -99.178393],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.3930239314582895, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_e0b39ef7fb04a0838a3b388319fd39a1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ba15489e013746c167dd4836eebf82a0 = $(`<div id="html_ba15489e013746c167dd4836eebf82a0" style="width: 100.0%; height: 100.0%;"><b>Agricola</b> (Alvaro Obregon)<br>Indice de demanda compuesto (promedio): -0.34<br>&nbsp;&nbsp;- uso Ecobici: -0.59<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0029)<br>Viajes totales acumulados: 26,193<br>Ciclovia en la colonia: sin dato<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 759,137<br>Periodos con datos: 16</div>`)[0];
+                popup_e0b39ef7fb04a0838a3b388319fd39a1.setContent(html_ba15489e013746c167dd4836eebf82a0);
+            
+        
+
+        circle_marker_d5c718088dbd9a2bdaeea4690f2607e9.bindPopup(popup_e0b39ef7fb04a0838a3b388319fd39a1)
+        ;
+
+        
+    
+    
+            var circle_marker_52895b363d36d48b7f383730099f1cfa = L.circleMarker(
+                [19.3503611, -99.1871111],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.341672151168111, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_f33a66eee13cc2915b5abd639907d59e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_76f5a5c8b7f2726cbce6ae2e59ee6a67 = $(`<div id="html_76f5a5c8b7f2726cbce6ae2e59ee6a67" style="width: 100.0%; height: 100.0%;"><b>San Angel</b> (Alvaro Obregon)<br>Indice de demanda compuesto (promedio): -0.35<br>&nbsp;&nbsp;- uso Ecobici: -0.56<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: 0.0020)<br>Viajes totales acumulados: 47,443<br>Ciclovia en la colonia: 2.6 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 0<br>Poblacion de la alcaldia (2020): 759,137<br>Periodos con datos: 15</div>`)[0];
+                popup_f33a66eee13cc2915b5abd639907d59e.setContent(html_76f5a5c8b7f2726cbce6ae2e59ee6a67);
+            
+        
+
+        circle_marker_52895b363d36d48b7f383730099f1cfa.bindPopup(popup_f33a66eee13cc2915b5abd639907d59e)
+        ;
+
+        
+    
+    
+            var circle_marker_629f73aede04f1bdc10f261f17b9fa91 = L.circleMarker(
+                [19.426308, -99.2033],
+                {"bubblingMouseEvents": true, "color": "#4575b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4575b4", "fillOpacity": 0.65, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 1}
+            ).addTo(map_2d47228420a178760505800533f81a5b);
+        
+    
+        var popup_6b9202426985c089557b33ed9e7e53e6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_412324835572284ccd0611bfca55b1c1 = $(`<div id="html_412324835572284ccd0611bfca55b1c1" style="width: 100.0%; height: 100.0%;"><b>Molino del Rey</b> (Miguel Hidalgo)<br>Indice de demanda compuesto (promedio): -0.54<br>&nbsp;&nbsp;- uso Ecobici: -0.47<br>Tendencia: <b>Estable</b> (pendiente Theil-Sen: -0.0012)<br>Viajes totales acumulados: 106,481<br>Ciclovia en la colonia: 8.0 km<br>Establecimientos DENUE relacionados (bici/mensajeria): 1<br>Poblacion de la alcaldia (2020): 414,470<br>Periodos con datos: 25</div>`)[0];
+                popup_6b9202426985c089557b33ed9e7e53e6.setContent(html_412324835572284ccd0611bfca55b1c1);
+            
+        
+
+        circle_marker_629f73aede04f1bdc10f261f17b9fa91.bindPopup(popup_6b9202426985c089557b33ed9e7e53e6)
+        ;
+
+        
+    
+</script>
+</html>
