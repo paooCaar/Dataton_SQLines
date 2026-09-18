@@ -1,0 +1,13 @@
+{
+  "schema_version": "1",
+  "approved_aliases": [
+    {
+      "alcaldia": "Benito Juarez",
+      "alias": "Del valle Centro",
+      "canonical": "Del Valle Centro",
+      "expected_alias_station_ids": ["343", "373", "374"],
+      "expected_canonical_station_ids": ["324", "325", "335", "336", "337", "338", "356", "357", "358", "359", "360", "361"],
+      "evidence": "Same alcaldia and name differing only by case; same DEL VALLE CENTRO DENUE crosswalk key; disjoint station IDs spatially interspersed. Neither spelling has an IECM polygon, so polygon equivalence is NOT asserted. No fuzzy matching or merging Del Valle Norte/Sur."
+    }
+  ]
+}
