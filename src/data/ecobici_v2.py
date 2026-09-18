@@ -130,12 +130,18 @@ def count_chunk(chunk: pd.DataFrame, station_zones: pd.Series, source_period: st
     invalid = departure.isna() | arrival.isna()
     reversed_dates = (departure > arrival).fillna(False)
     valid = ~invalid & ~reversed_dates
-    arrival_period = arrival.dt.strftime("%Y-%m")
-    departure_period = departure.dt.strftime("%Y-%m")
+    # Numeric YYYYMM keys avoid the comparatively expensive strftime call on
+    # tens of millions of rows. Convert only the retained group keys back to
+    # YYYY-MM strings below; the date semantics are unchanged.
+    arrival_period = arrival.dt.year.mul(100).add(arrival.dt.month).astype("Int64")
+    departure_period = departure.dt.year.mul(100).add(departure.dt.month).astype("Int64")
+    source_period_num = int(source_period.replace("-", ""))
+    start_num = int(start.replace("-", ""))
+    end_num = int(end.replace("-", ""))
     report = {"rows": len(chunk), "invalid_dates": int(invalid.sum()),
               "reversed_dates": int(reversed_dates.sum()),
               "cross_month_trips": int((valid & (departure_period != arrival_period)).sum()),
-              "arrival_outside_file_month": int((arrival.notna() & (arrival_period != source_period)).sum()),
+              "arrival_outside_file_month": int((arrival.notna() & (arrival_period != source_period_num)).sum()),
               "duration_over_1_day": int(((arrival - departure).dt.days > 1).sum())}
     if report["arrival_outside_file_month"]:
         raise ValueError(f"Arrival partition assumption violated in {source_period}")
@@ -145,11 +151,13 @@ def count_chunk(chunk: pd.DataFrame, station_zones: pd.Series, source_period: st
         ("destino", "Ciclo_EstacionArribo", arrival_period),
     ]:
         zones = chunk[station_column].str.strip().map(station_zones)
-        in_window = periods.ge(start) & periods.le(end)
+        in_window = periods.ge(start_num) & periods.le(end_num)
         report[f"unmapped_{label}"] = int((valid & zones.isna()).sum())
         report[f"outside_window_{label}"] = int((valid & ~in_window).sum())
         keep = valid & zones.notna() & in_window
-        frame = pd.DataFrame({"zone_id": zones[keep], "periodo": periods[keep]})
+        frame = pd.DataFrame({"zone_id": zones[keep], "periodo_num": periods[keep]})
+        frame["periodo"] = (frame["periodo_num"] // 100).astype(str) + "-" + (frame["periodo_num"] % 100).astype(str).str.zfill(2)
+        frame = frame.drop(columns="periodo_num")
         frame = frame.groupby(["zone_id", "periodo"]).size().rename("count").reset_index()
         frame["event"] = label
         frame["source_period"] = source_period

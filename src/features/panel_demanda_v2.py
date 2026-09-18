@@ -214,7 +214,16 @@ def main() -> None:
     counts, reports, manifests = [], [], []
     for period, path in files.items():
         report = {"periodo": period, "archivo": path.name}
-        for chunk in pd.read_csv(path, dtype=str, chunksize=args.chunksize):
+        header = pd.read_csv(path, nrows=0)
+        arrival_columns = [c for c in ["Fecha Arribo", "Fecha_Arribo"] if c in header.columns]
+        if len(arrival_columns) != 1:
+            raise ValueError(f"Expected exactly one arrival date column in {path.name}")
+        for chunk in pd.read_csv(
+            path,
+            dtype=str,
+            usecols=["Ciclo_Estacion_Retiro", "Ciclo_EstacionArribo", "Fecha_Retiro", arrival_columns[0]],
+            chunksize=args.chunksize,
+        ):
             frame, quality = count_chunk(chunk, station_zones, period, START, max(files))
             counts.append(frame)
             for key, value in quality.items():
