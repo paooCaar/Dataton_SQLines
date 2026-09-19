@@ -1,0 +1,57 @@
+{
+  "pipeline_version": "2.0-phase5-policy",
+  "created_at": "2026-09-19T02:32:56.471610+00:00",
+  "source_policy": "Phase 2/4 persisted outputs; no model fitting, tuning, or new features",
+  "candidate_models": [
+    "PERSISTENCE",
+    "SEASONAL_NAIVE",
+    "THEIL_SEN",
+    "LGBM_TEMPORAL"
+  ],
+  "spatial_model": "LGBM_TEMPORAL_SPATIAL",
+  "spatial_model_role": "EXPLORATORY_ONLY",
+  "horizons": [
+    1,
+    3,
+    6,
+    12
+  ],
+  "selection_universe": "EVALUATION_ALL for operational primary; comparable subset only as contextual evidence",
+  "priority_order": [
+    "MAE",
+    "RMSE",
+    "cut stability",
+    "coverage",
+    "directional_accuracy secondary"
+  ],
+  "directional_accuracy_threshold": 0.0,
+  "direction_threshold_version": "v2_zero_endpoint_threshold",
+  "long_horizon_policy": {
+    "12": "validated_with_caution; limited but real retrospective support",
+    "36": "SCENARIO_ONLY; excluded from operational CSV",
+    "60": "SCENARIO_ONLY; excluded from operational CSV"
+  },
+  "source_sha256": {
+    "data/processed/baseline_metrics_v2.csv": "56b76cc23e755b9c913050723c6d2a677e3b0b65bb8d04b008a7758212d8caa2",
+    "data/processed/lightgbm_compare_metrics_v2.csv": "7ede3ef64a6ee4bc57c66fe777e10e2b411ab44dbf367795711537d3463c5e6f",
+    "data/processed/lightgbm_compare_cut_metrics_v2.csv": "6b95f7ff5e6114b97cc3840cbd13b1f58bbe349d13d0dd3fd0d7dc6912d8e0fa",
+    "data/processed/lightgbm_compare_spatial_value_v2.csv": "731eeb5a26edc8d6631d2a30348cf6687fcc305ecb9558fd45e313a6d25be414",
+    "data/processed/lightgbm_compare_zone_metrics_v2.csv": "02e0cf5c62dffc588240b1b35e0b1b2f8dbf355fb821ea3ab2b69dfcf3bfca57",
+    "data/processed/lightgbm_compare_overfitting_v2.csv": "67c11206493cc72b2a7f8d28f15e99075df061d8290e4aaa86fbacecbb8b8b97",
+    "data/processed/rolling_splits_v2.csv": "39417b2417b07e39b828f0072a00abcdd55f7a8095eebff9f8e78273a2f53279",
+    "data/processed/lightgbm_compare_predictions_v2.csv": "adf11ddd7ccdb9263f2d9aa44849346f3eef66fbd998ec5b2b7d875094e158a2",
+    "data/processed/panel_demanda_v2.csv": "5c5e05d2bb851528db785e46c58b87fe52953823e7fd2b785f6259a1202381b4"
+  },
+  "policy_sha256": "7374b8e9e61616e86cde2a71387c7c23c9697e6da7857332de1f12f6b5230128",
+  "forecast_rows": 403,
+  "forecast_rows_by_horizon": {
+    "1": 97,
+    "3": 96,
+    "6": 105,
+    "12": 105
+  },
+  "output_sha256": {
+    "data/processed/model_policy_v2.csv": "7374b8e9e61616e86cde2a71387c7c23c9697e6da7857332de1f12f6b5230128",
+    "data/processed/forecast_operational_v2.csv": "44cada76fae314e744d2f64045f7eed6ac79eb12948cebc2f9a58fff265be19b"
+  }
+}
