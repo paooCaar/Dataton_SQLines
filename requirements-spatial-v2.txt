@@ -1,0 +1,7 @@
+# Standalone Phase 3 data/audit runtime; no modeling or application packages.
+# python -m pip install -r requirements-spatial-v2.txt
+numpy==2.3.5
+pandas==2.2.3
+shapely==2.1.2
+pyproj==3.7.2
+certifi==2026.2.25
