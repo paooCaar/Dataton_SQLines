@@ -1,0 +1,8 @@
+# Reproducible Phase 4 point-regression comparison, on top of the Phase 3 audit runtime.
+-r requirements-spatial-v2.txt
+lightgbm==4.6.0
+scipy==1.16.2
+scikit-learn==1.7.2
+joblib==1.5.2
+threadpoolctl==3.6.0
+# macOS LightGBM also requires an installed OpenMP runtime (libomp).
