@@ -177,11 +177,13 @@ Riesgos pendientes:
 - no hay todavía validación rolling ni validación espacial;
 - la semántica del forecast no debe confundirse con el opportunity score.
 
-## Siguiente fase recomendada
+## Siguiente fase recomendada después de la Fase 2 temporal
 
-La Fase 2 debe empezar con features temporales causales sobre
+La fase posterior debe partir de las features temporales causales sobre
 `panel_demanda_v2.csv`: una rejilla calendario explícita, lags y ventanas que
 solo utilicen información disponible hasta el origen. Antes de entrenar un
 modelo, debe definirse el corte de publicación de cada covariable y una
 validación rolling común para persistencia, naive estacional, Theil–Sen y
-LightGBM. No se implementó nada de eso en esta Fase 1.
+LightGBM. La implementación temporal de esta fase está documentada en
+[`docs/PHASE2_TEMPORAL_V2.md`](PHASE2_TEMPORAL_V2.md); LightGBM sigue fuera de
+alcance.

@@ -1040,5 +1040,7 @@ forecast V2 usará `viajes_total` como actividad ECOBICI (retiros + arribos),
 sin modificar todavía los outputs legacy ni la aplicación Streamlit.
 
 La Fase 1 ya genera `panel_demanda_v2.csv`, un catálogo estable de `zone_id`,
-un calendario explícito y manifiestos de calidad. No se han implementado aún
-features temporales o espaciales, validación rolling ni modelos nuevos.
+un calendario explícito y manifiestos de calidad. La Fase 2 agregó features
+temporales causales y validación rolling para persistencia, naive estacional y
+Theil-Sen; siguen pendientes las features espaciales, LightGBM, SHAP e
+incertidumbre.
