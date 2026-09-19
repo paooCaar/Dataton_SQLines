@@ -1,0 +1,5 @@
+# Read-only Streamlit app; model training/geospatial processing not required.
+numpy==2.3.5
+pandas==2.2.3
+plotly==7.1.0
+streamlit==1.64.0
