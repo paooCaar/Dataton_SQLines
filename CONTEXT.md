@@ -1070,3 +1070,17 @@ Se recomienda conservar el feature set temporal y no sustituir persistencia
 por LightGBM; el temporal a un mes queda solo como candidato secundario acotado.
 No se modificaron baselines, Queen, datos anteriores ni Streamlit. SHAP,
 incertidumbre y cualquier siguiente fase requieren un nuevo checkpoint.
+
+## Fase 5: política de forecast V2
+
+La política reproducible está documentada en
+[`docs/PHASE5_MODEL_POLICY_V2.md`](docs/PHASE5_MODEL_POLICY_V2.md). Usa
+exclusivamente los resultados persistidos de Fases 2 y 4, sin reentrenar ni
+ajustar modelos. Persistencia queda como modelo primario para 1, 3, 6 y 12
+meses; `LGBM_TEMPORAL` solo queda como secundario experimental para 1 mes en
+el subconjunto espacial comparable. `LGBM_TEMPORAL_SPATIAL` conserva un rol
+exploratorio y no alimenta el forecast operativo. El CSV operativo registra
+`viajes_total` en unidades de endpoints mensuales y la versión de umbral de
+dirección. Los horizontes de 36 y 60 meses son `SCENARIO_ONLY` y se excluyen
+del output operativo. No se modificaron legacy, Queen, Streamlit ni los
+artefactos de Fases 1–4.

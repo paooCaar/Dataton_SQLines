@@ -207,3 +207,15 @@ feature set temporal y persistencia como referencia principal. Los resultados,
 cobertura, riesgos y recomendaciones están en
 [`PHASE4_MODEL_COMPARISON_V2.md`](PHASE4_MODEL_COMPARISON_V2.md). Los artefactos
 de fases anteriores permanecen intactos y no se integró el modelo a la app.
+
+## Fase 5: selección de modelo y política de forecast
+
+`docs/PHASE5_MODEL_POLICY_V2.md` documenta la selección por horizonte y sus
+reglas de parsimonia. La decisión usa el universo completo de evaluación para
+el modelo primario y el universo espacial comparable solo como evidencia
+contextual. Persistencia es primaria en 1, 3, 6 y 12 meses. El LightGBM
+temporal queda secundario únicamente en 1 mes, mientras que el temporal más
+espacial permanece exploratorio. `model_policy_v2.csv` y
+`forecast_operational_v2.csv` son contratos reproducibles; no incluyen
+escenarios de 36 ni 60 meses. No se entrenaron modelos nuevos, no se añadieron
+features y no se modificó la app.
