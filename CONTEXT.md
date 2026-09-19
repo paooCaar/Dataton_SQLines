@@ -1057,3 +1057,16 @@ defecto. La auditoría reporta 38 estaciones fuera de su polígono y 47 pares
 con solapamiento sin reparaciones automáticas. No se modificaron baselines,
 métricas, outputs anteriores ni Streamlit. LightGBM y validación espacial
 siguen pendientes para una fase autorizada posterior.
+
+### Fase 4: comparación puntual temporal frente a espacial
+
+La comparación reproducible está documentada en
+[`docs/PHASE4_MODEL_COMPARISON_V2.md`](docs/PHASE4_MODEL_COMPARISON_V2.md).
+Usa los mismos 69 cortes de Fase 2, congela toda la historia en el origen y
+entrena dos LightGBM puntuales con iguales parámetros y filas. Las matrices
+conservan 106 zonas; ALL evalúa 4,302 eventos y el comparable estricto 2,326.
+En el comparable las features espaciales empeoran MAE en los cuatro horizontes.
+Se recomienda conservar el feature set temporal y no sustituir persistencia
+por LightGBM; el temporal a un mes queda solo como candidato secundario acotado.
+No se modificaron baselines, Queen, datos anteriores ni Streamlit. SHAP,
+incertidumbre y cualquier siguiente fase requieren un nuevo checkpoint.

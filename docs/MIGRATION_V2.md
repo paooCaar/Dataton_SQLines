@@ -197,3 +197,13 @@ temporales. Los descriptores de estaciones quedan fuera del conjunto causal
 por defecto. La auditoría y los límites de disponibilidad deben revisarse
 antes de la evaluación predictiva de Fase 4; no se entrenó LightGBM ni se
 modificó el contrato de la aplicación.
+
+## Fase 4: comparación temporal y temporal + espacial
+
+La evaluación puntual de LightGBM se realizó en dos universos idénticos entre
+modelos, con features congeladas al origen y snapshots bloqueados. El
+comparable estricto no muestra mejora espacial estable; se conserva el
+feature set temporal y persistencia como referencia principal. Los resultados,
+cobertura, riesgos y recomendaciones están en
+[`PHASE4_MODEL_COMPARISON_V2.md`](PHASE4_MODEL_COMPARISON_V2.md). Los artefactos
+de fases anteriores permanecen intactos y no se integró el modelo a la app.
