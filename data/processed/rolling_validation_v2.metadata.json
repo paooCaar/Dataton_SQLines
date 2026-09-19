@@ -1,0 +1,50 @@
+{
+  "pipeline_version": "2.0-phase2-rolling",
+  "run_date": "2026-09-18T17:26:41.044324+00:00",
+  "target": "viajes_total",
+  "horizons": [
+    1,
+    3,
+    6,
+    12
+  ],
+  "origin_policy": "expanding window; exact target at origin plus horizon",
+  "common_zone_policy": "same complete zone set for all three baselines on each split",
+  "available_statuses": [
+    "OBSERVED",
+    "ZERO_DEMAND"
+  ],
+  "missing_policy": "MISSING_DATA and UNKNOWN_ACTIVITY_STATUS exclude a split; never imputed as zero",
+  "minimum_theil_sen_history": 3,
+  "directional_accuracy_threshold": 0.0,
+  "directional_accuracy_definition": "matching sign of prediction and actual change from origin; zero endpoint threshold",
+  "metric_units": {
+    "MAE": "station endpoints",
+    "RMSE": "station endpoints",
+    "sMAPE": "percent",
+    "R2": "unitless",
+    "directional_accuracy": "fraction"
+  },
+  "split_counts": {
+    "1": 44,
+    "3": 44,
+    "6": 44,
+    "12": 44
+  },
+  "used_split_counts": {
+    "1": 18,
+    "3": 18,
+    "6": 17,
+    "12": 16
+  },
+  "limitations": [
+    "The common comparison starts only when origin, target and target-minus-12 are complete for all zones.",
+    "October 2024 is excluded as MISSING_DATA, never treated as zero.",
+    "Theil-Sen is a per-zone expanding robust trend baseline; no covariates are used.",
+    "No LightGBM, spatial features, SHAP or uncertainty estimation is included in this phase."
+  ],
+  "source_file": "data/processed/features_temporales_v2.csv",
+  "source_sha256": "9e1e08e90d93f54e3346eb9334c02b141e9e563bc474441ec8fb787797f6a141",
+  "metrics_file": "data/processed/baseline_metrics_v2.csv",
+  "splits_file": "data/processed/rolling_splits_v2.csv"
+}
