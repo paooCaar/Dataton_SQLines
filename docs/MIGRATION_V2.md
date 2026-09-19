@@ -187,3 +187,13 @@ validación rolling común para persistencia, naive estacional, Theil–Sen y
 LightGBM. La implementación temporal de esta fase está documentada en
 [`docs/PHASE2_TEMPORAL_V2.md`](PHASE2_TEMPORAL_V2.md); LightGBM sigue fuera de
 alcance.
+
+## Fase 3 espacial V2
+
+Se añadió el pipeline Queen y sus auditorías, descritos en
+[`PHASE3_SPATIAL_V2.md`](PHASE3_SPATIAL_V2.md), con todas las zonas del panel.
+El CSV combinado añade features de vecinos rezagadas sin reemplazar salidas
+temporales. Los descriptores de estaciones quedan fuera del conjunto causal
+por defecto. La auditoría y los límites de disponibilidad deben revisarse
+antes de la evaluación predictiva de Fase 4; no se entrenó LightGBM ni se
+modificó el contrato de la aplicación.

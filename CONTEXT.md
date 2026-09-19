@@ -1044,3 +1044,16 @@ un calendario explícito y manifiestos de calidad. La Fase 2 agregó features
 temporales causales y validación rolling para persistencia, naive estacional y
 Theil-Sen; siguen pendientes las features espaciales, LightGBM, SHAP e
 incertidumbre.
+
+### Fase 3 espacial V2
+
+El contexto Queen está documentado en
+[`docs/PHASE3_SPATIAL_V2.md`](docs/PHASE3_SPATIAL_V2.md). Conserva las 106 zonas
+y 4,664 filas; 84 zonas tienen polígono, 22 no, y el grafo tiene 256 relaciones
+dirigidas con cinco zonas aisladas y sin fallback. Las features de vecinos
+usan t-1 o antes y filtran datos cuya disponibilidad mínima es posterior al
+corte. Los snapshots de estaciones son descriptivos y están bloqueados por
+defecto. La auditoría reporta 38 estaciones fuera de su polígono y 47 pares
+con solapamiento sin reparaciones automáticas. No se modificaron baselines,
+métricas, outputs anteriores ni Streamlit. LightGBM y validación espacial
+siguen pendientes para una fase autorizada posterior.
