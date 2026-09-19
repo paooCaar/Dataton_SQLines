@@ -1095,3 +1095,19 @@ La cobertura objetivo es 80%; las filas sin historia suficiente quedan marcadas
 sin intervalo. La explicación primaria describe persistencia y mantiene el
 contexto temporal/espacial en campos descriptivos separados; no se usa SHAP.
 No se modificaron legacy, Streamlit ni los artefactos de Fases 1–5.
+
+## Fase 7: integración de producto V2
+
+La entrada V2 vive en `src/app/app_v2.py` y deja `src/app/app.py` y
+`src/app/algoritmo_puntuacion.py` intactos. La emisión actual usa un único
+origen común (`2026-08`), persistencia para 1, 3, 6 y 12 meses y el catálogo
+completo de 106 zonas. `forecast_product_v2.csv` sigue siendo la vista
+retrospectiva; `current_forecast_product_v2.csv` es la vista de emisión y no
+se mezclan entre sí. El opportunity score conserva el algoritmo legacy y se
+presenta como prioridad territorial, nunca como predicción de viajes.
+
+La app muestra intervalos empíricos de Fase 6, cobertura histórica por
+horizonte, contexto descriptivo no causal, zonas sin geometría en búsqueda y
+ranking, y escenarios de 36/60 meses solo como `SCENARIO_ONLY`. La ejecución
+local y el contrato de datos están en
+[`docs/PHASE7_PRODUCT_INTEGRATION_V2.md`](docs/PHASE7_PRODUCT_INTEGRATION_V2.md).

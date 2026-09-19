@@ -230,3 +230,15 @@ y el target del residuo ya son anteriores al nuevo origen. La banda objetivo es
 explicación primaria corresponde al mecanismo de persistencia; las señales
 temporales y espaciales quedan separadas como contexto descriptivo. SHAP se
 difiere y no se modificó Streamlit.
+
+## Fase 7: producto y Streamlit V2
+
+La app nueva se ejecuta con `streamlit run src/app/app_v2.py` y consume el
+contrato versionado de `forecast_product_v2.csv`, `current_forecast_product_v2.csv`,
+`model_policy_v2.csv`, `uncertainty_metrics_v2.csv`, el catálogo y las
+geometrías. La app legacy se mantiene con su ejecución existente. La emisión
+actual tiene origen común `2026-08`, 106 zonas y 424 filas; sus bandas usan el
+radio calibrado guardado en Fase 6 sin recalibración. El score legacy y el
+forecast V2 tienen campos, unidades y controles separados. Las limitaciones
+de cobertura, disponibilidad histórica, geometría y causalidad se muestran en
+la interfaz y en la documentación de Fase 7.
