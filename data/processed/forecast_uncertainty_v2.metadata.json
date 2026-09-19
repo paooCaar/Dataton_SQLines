@@ -1,0 +1,60 @@
+{
+  "pipeline_version": "2.0-phase6",
+  "git_commit": "ddfade86834f52aa69bd1091ae641293e5613e3e",
+  "created_at": "2026-09-19T15:43:38.872778+00:00",
+  "model_policy_version": "2.0-phase5-policy",
+  "model_used": "PERSISTENCE",
+  "uncertainty_method": "CONFORMAL_SYMMETRIC_ABS_RESIDUAL",
+  "target_coverage": 0.8,
+  "calibration_window_rule": "Same-horizon EVALUATION_ALL OOS residuals: origin and target < current origin month; max(target month end, target earliest availability) strictly before start of current origin month",
+  "quantile_rule": "k=ceil((n+1)*0.80); kth smallest absolute residual; no exchangeability guarantee for dependent rolling data",
+  "validation_coverage_rule": "Per-row coverage uses only previously evaluable intervals with outcomes available before the same origin cutoff; aggregate metrics are retrospective diagnostics",
+  "min_points_rationale": "30 is a pragmatic cold-start floor (about six observations in the 20% tail), not 30 independent cuts or a coverage guarantee",
+  "method_choice": "Symmetric absolute residuals fixed before final evaluation for simplicity, containment of the point forecast and a single estimated tail; signed residual intervals deferred, no method tuning",
+  "min_calibration_points": 30,
+  "context_feature_rules": {
+    "safe_features": [
+      "growth_1",
+      "growth_3",
+      "rolling_mean_3",
+      "trend_3",
+      "neighbor_trips_lag1",
+      "neighbor_growth_lag1",
+      "neighbor_observation_coverage"
+    ],
+    "unsafe_snapshots_in_forecast": false,
+    "source": "Phase 4 origin-frozen matrix; no future target columns loaded",
+    "levels": "No LOW/MEDIUM/HIGH labels; sign only for growth and trend"
+  },
+  "shap_enabled": false,
+  "limitations": [
+    "Intervals are empirical residual bands, not normal-theory prediction intervals.",
+    "Calibration is global by horizon, not zone-specific.",
+    "Rows without 30 prior known residuals are explicitly insufficient.",
+    "Context signals are descriptive and do not establish causality.",
+    "No 36- or 60-month scenarios are generated.",
+    "Historical target availability is only a lower bound; publication/revision vintages remain unverified.",
+    "Operational CSV is a historical replay with heterogeneous origins, not live future forecasts.",
+    "Dependent cuts/zones and varying activity scales invalidate an automatic conformal coverage guarantee; 12-month validation has very few post-cold-start cuts."
+  ],
+  "implementation_sha256": {
+    "src/models/uncertainty_v2.py": "0353f7ff133d4d43139c7801e1565781035a0922931e33911eb751d435141df8"
+  },
+  "source_sha256": {
+    "data/processed/lightgbm_compare_predictions_v2.csv": "adf11ddd7ccdb9263f2d9aa44849346f3eef66fbd998ec5b2b7d875094e158a2",
+    "data/processed/forecast_operational_v2.csv": "44cada76fae314e744d2f64045f7eed6ac79eb12948cebc2f9a58fff265be19b",
+    "data/processed/model_policy_v2.csv": "7374b8e9e61616e86cde2a71387c7c23c9697e6da7857332de1f12f6b5230128",
+    "data/processed/model_policy_v2.metadata.json": "ddbd526ca2aa6953aec9bb8b2d4b77041e8582728619c5003bd2c6e83b717c8f",
+    "data/processed/features_temporales_v2.csv": "9e1e08e90d93f54e3346eb9334c02b141e9e563bc474441ec8fb787797f6a141",
+    "data/processed/features_espaciales_v2.csv": "b7c5d6c7644e0919c1d1753336fdafecf9fd33a1ec0090f78876ca2c8a99cd37",
+    "data/processed/panel_demanda_v2.csv": "5c5e05d2bb851528db785e46c58b87fe52953823e7fd2b785f6259a1202381b4",
+    "data/processed/rolling_splits_v2.csv": "39417b2417b07e39b828f0072a00abcdd55f7a8095eebff9f8e78273a2f53279",
+    "data/processed/model_matrix_temporal_spatial_v2.csv": "835d973b83eb7acc4ca27c8c9f3a09d4e79c5d69eef2d248503fbfd0e60fc1c0"
+  },
+  "output": "forecast_uncertainty_v2.csv",
+  "output_sha256": {
+    "/Users/anapaolacarmona/Dataton_SQLines/data/processed/forecast_uncertainty_v2.csv": "a2c867f3b8d801b0cdf157232c7ede3df7bc6375694350bf9e67e476d6ab2da6",
+    "/Users/anapaolacarmona/Dataton_SQLines/data/processed/uncertainty_metrics_v2.csv": "37e92f244f1e91c6af2a46ccde77e509ef40d4d22e385871332b5c6310c42252",
+    "/Users/anapaolacarmona/Dataton_SQLines/data/processed/uncertainty_backtest_v2.csv": "260d8643ca5e70deefa45f401f08f40527ce5f2fd83c099c864f010956970525"
+  }
+}
