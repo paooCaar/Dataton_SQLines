@@ -1,0 +1,107 @@
+feature_name,feature_group,historical_safe,reference_time,uses_target_history,uses_static_snapshot,allowed_in_rolling_model,notes
+accidentes,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+accidentes_available_from,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+accidentes_forecast_eligible,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+accidentes_reference_date,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+accidentes_reportados_legacy,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+accidentes_source_version,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+activation_date_verified,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+alcaldia,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+aliases,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+archivo,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+archivo_disponible,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+colonia,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+cos_month,TEMPORAL_SAFE,True,known destination calendar,False,False,True,Conditional on earliest-availability guard; actual publication vintage unverified
+data_cutoff_date,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+data_status,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+datos_disponibles,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+estaciones_por_km2_catalogo,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+feature_causality,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+feature_reference_period,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+feature_target,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+feature_version,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+fecha,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+first_observed_activity_month,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+geometry_available,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+growth_1,TEMPORAL_SAFE,True,demand through origin; issue=start(origin+1),True,False,True,Conditional on earliest-availability guard; actual publication vintage unverified
+growth_12,TEMPORAL_SAFE,True,demand through origin; issue=start(origin+1),True,False,False,Safe formula; excluded by initial-history coverage rule
+growth_3,TEMPORAL_SAFE,True,demand through origin; issue=start(origin+1),True,False,True,Conditional on earliest-availability guard; actual publication vintage unverified
+growth_6,TEMPORAL_SAFE,True,demand through origin; issue=start(origin+1),True,False,False,Safe formula; excluded by initial-history coverage rule
+historical_availability_verified,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+horizon,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+issue_time,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+km_ciclovia,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+km_ciclovia_available_from,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+km_ciclovia_forecast_eligible,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+km_ciclovia_reference_date,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+km_ciclovia_snapshot_legacy,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+km_ciclovia_source_version,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+label_available_no_earlier_than,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+lag_1,TEMPORAL_SAFE,True,demand through origin; issue=start(origin+1),True,False,True,Conditional on earliest-availability guard; actual publication vintage unverified
+lag_12,TEMPORAL_SAFE,True,demand through origin; issue=start(origin+1),True,False,False,Safe formula; excluded by initial-history coverage rule
+lag_3,TEMPORAL_SAFE,True,demand through origin; issue=start(origin+1),True,False,True,Conditional on earliest-availability guard; actual publication vintage unverified
+lag_6,TEMPORAL_SAFE,True,demand through origin; issue=start(origin+1),True,False,False,Safe formula; excluded by initial-history coverage rule
+last_source_destino,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+last_source_origen,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+month,TEMPORAL_SAFE,True,known destination calendar,False,False,True,Conditional on earliest-availability guard; actual publication vintage unverified
+n_estaciones_catalogo_actual,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+n_estaciones_colonia_catalogo,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+n_neighbors_queen,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+negocios_denue,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+negocios_denue_available_from,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+negocios_denue_forecast_eligible,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+negocios_denue_reference_date,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+negocios_denue_snapshot_legacy,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+negocios_denue_source_version,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+neighbor_active_zones,SPATIAL_SAFE,True,demand through origin; issue=start(origin+1),True,False,True,Conditional on earliest-availability guard; actual publication vintage unverified
+neighbor_growth_coverage,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+neighbor_growth_lag1,SPATIAL_SAFE,True,demand through origin; issue=start(origin+1),True,False,True,Conditional on earliest-availability guard; actual publication vintage unverified
+neighbor_mean3_coverage,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+neighbor_observation_coverage,SPATIAL_SAFE,True,demand through origin; issue=start(origin+1),True,False,True,Conditional on earliest-availability guard; actual publication vintage unverified
+neighbor_station_count_catalogo,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+neighbor_station_density_catalogo,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+neighbor_trips_lag1,SPATIAL_SAFE,True,demand through origin; issue=start(origin+1),True,False,True,Conditional on earliest-availability guard; actual publication vintage unverified
+neighbor_trips_mean_lag3,SPATIAL_SAFE,True,demand through origin; issue=start(origin+1),True,False,True,Conditional on earliest-availability guard; actual publication vintage unverified
+observed_viajes_destino,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+observed_viajes_origen,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+origin_period,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+periodo,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+pipeline_version,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+poblacion_colonia_2020,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+poblacion_colonia_2020_available_from,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+poblacion_colonia_2020_forecast_eligible,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+poblacion_colonia_2020_reference_date,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+poblacion_colonia_2020_snapshot_legacy,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+poblacion_colonia_2020_source_version,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+rolling_mean_12,TEMPORAL_SAFE,True,demand through origin; issue=start(origin+1),True,False,False,Safe formula; excluded by initial-history coverage rule
+rolling_mean_3,TEMPORAL_SAFE,True,demand through origin; issue=start(origin+1),True,False,True,Conditional on earliest-availability guard; actual publication vintage unverified
+rolling_mean_6,TEMPORAL_SAFE,True,demand through origin; issue=start(origin+1),True,False,False,Safe formula; excluded by initial-history coverage rule
+rolling_std_12,TEMPORAL_SAFE,True,demand through origin; issue=start(origin+1),True,False,False,Safe formula; excluded by initial-history coverage rule
+rolling_std_3,TEMPORAL_SAFE,True,demand through origin; issue=start(origin+1),True,False,True,Conditional on earliest-availability guard; actual publication vintage unverified
+rolling_std_6,TEMPORAL_SAFE,True,demand through origin; issue=start(origin+1),True,False,False,Safe formula; excluded by initial-history coverage rule
+run_date,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+run_id,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+sin_month,TEMPORAL_SAFE,True,known destination calendar,False,False,True,Conditional on earliest-availability guard; actual publication vintage unverified
+source_status,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+spatial_features_available,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+spatial_geometry_usable,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+station_assignment_method,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+station_history_available,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+station_snapshot_historical_safe,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+station_snapshot_type,DESCRIPTIVE_ONLY,False,not a rolling predictor,False,True,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+target,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+target_available_no_earlier_than,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+target_demanda,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+target_finalized,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+target_period,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+target_unit,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+target_viajes_total,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+time_idx,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+trend_12,TEMPORAL_SAFE,True,demand through origin; issue=start(origin+1),True,False,False,Safe formula; excluded by initial-history coverage rule
+trend_3,TEMPORAL_SAFE,True,demand through origin; issue=start(origin+1),True,False,True,Conditional on earliest-availability guard; actual publication vintage unverified
+trend_6,TEMPORAL_SAFE,True,demand through origin; issue=start(origin+1),True,False,False,Safe formula; excluded by initial-history coverage rule
+viajes_destino,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+viajes_origen,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+viajes_total,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
+year,TEMPORAL_SAFE,True,known destination calendar,False,False,True,Conditional on earliest-availability guard; actual publication vintage unverified
+zone_id,BLOCKED_HISTORICAL,False,not a rolling predictor,False,False,False,"Excluded: snapshot, fixed geometry descriptor, identifier, label or incidental metadata"
