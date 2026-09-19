@@ -1,0 +1,65 @@
+{
+  "pipeline_version": "2.0-phase7",
+  "artifact_role": "CURRENT_FORECAST",
+  "issued_at": "2026-09-19T16:02:18.602535+00:00",
+  "git_commit": "95ae85beb4645342887f9c875598b88dfb7ae301",
+  "common_origin_period": "2026-08",
+  "n_zones": 106,
+  "n_rows": 424,
+  "horizons_months": [
+    1,
+    3,
+    6,
+    12
+  ],
+  "target": "viajes_total",
+  "target_unit": "station_endpoints_per_calendar_month",
+  "universe": "Entire V2 catalog; no missing/unknown values imputed",
+  "historical_availability_verified": false,
+  "target_finalized": false,
+  "interval_policy": "Reuse last saved Phase 6 global radius per horizon, no recalibration; lower clipped to zero",
+  "calibration_by_horizon": [
+    {
+      "horizon_months": 1,
+      "calibration_origin_period": "2026-07",
+      "frozen_radius": 1045.0,
+      "n_calibration_points": 911
+    },
+    {
+      "horizon_months": 3,
+      "calibration_origin_period": "2026-05",
+      "frozen_radius": 1278.0,
+      "n_calibration_points": 780
+    },
+    {
+      "horizon_months": 6,
+      "calibration_origin_period": "2026-02",
+      "frozen_radius": 1341.0,
+      "n_calibration_points": 571
+    },
+    {
+      "horizon_months": 12,
+      "calibration_origin_period": "2025-08",
+      "frozen_radius": 2281.0,
+      "n_calibration_points": 165
+    }
+  ],
+  "current_coverage_validated": false,
+  "source_sha256": {
+    "data/processed/panel_demanda_v2.csv": "5c5e05d2bb851528db785e46c58b87fe52953823e7fd2b785f6259a1202381b4",
+    "data/processed/catalogo_zonas_v2.csv": "4c8c0cebc241516cce92a3b2a34e26d1084727fe8c59075da57540b75eb644eb",
+    "data/processed/zone_neighbors_v2.csv": "51f137cf48ecb1586b08bc9ea1115bba93757e98cf38047189537a1343f62720",
+    "data/processed/model_policy_v2.csv": "7374b8e9e61616e86cde2a71387c7c23c9697e6da7857332de1f12f6b5230128",
+    "data/processed/model_policy_v2.metadata.json": "ddbd526ca2aa6953aec9bb8b2d4b77041e8582728619c5003bd2c6e83b717c8f",
+    "data/processed/uncertainty_backtest_v2.csv": "260d8643ca5e70deefa45f401f08f40527ce5f2fd83c099c864f010956970525",
+    "data/processed/forecast_uncertainty_v2.metadata.json": "5b1ca7432283079fd3779413d9f091fd0b3e09b1b3ba54d5d2946493ac43bb52"
+  },
+  "implementation_sha256": {
+    "src/models/current_forecast_v2.py": "7beeccdc59788ab5bff42a0b48f381f7241b2b140eb15faf5d8c887cea2bfbfe",
+    "src/models/uncertainty_v2.py": "0353f7ff133d4d43139c7801e1565781035a0922931e33911eb751d435141df8",
+    "src/features/model_matrices_v2.py": "62db64940ff3baf0f4682b564e08dcc7c85e0da3feb503f75e84fe668159ecc6"
+  },
+  "output_sha256": {
+    "data/processed/current_forecast_product_v2.csv": "5e4a0b8c7e9bfb56df9863dfffcaa833b94cca36e076a266f1ae0cf4b42ed282"
+  }
+}
