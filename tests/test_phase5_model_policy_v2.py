@@ -16,11 +16,9 @@ from src.models import forecast_policy_v2 as policy  # noqa: E402
 class Phase5ModelPolicyTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.policy, cls.forecast, cls.metadata = policy.run(
-            ROOT / "data/processed/model_policy_v2.csv",
-            ROOT / "data/processed/model_policy_v2.metadata.json",
-            ROOT / "data/processed/forecast_operational_v2.csv",
-        )
+        cls.policy, cls.metadata = policy.build_policy()
+        cls.forecast = policy.build_operational_forecast(cls.policy)
+        cls.metadata = json.loads((ROOT / "data/processed/model_policy_v2.metadata.json").read_text())
 
     def test_policy_uses_existing_sources_only(self):
         self.assertTrue(all(path.exists() for path in policy.INPUTS.values()))
