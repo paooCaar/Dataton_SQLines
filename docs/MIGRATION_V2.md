@@ -219,3 +219,14 @@ espacial permanece exploratorio. `model_policy_v2.csv` y
 `forecast_operational_v2.csv` son contratos reproducibles; no incluyen
 escenarios de 36 ni 60 meses. No se entrenaron modelos nuevos, no se añadieron
 features y no se modificó la app.
+
+## Fase 6: incertidumbre y explicabilidad
+
+La calibración conformal simétrica está documentada en
+[`PHASE6_UNCERTAINTY_EXPLAINABILITY_V2.md`](PHASE6_UNCERTAINTY_EXPLAINABILITY_V2.md).
+Usa residuos absolutos de persistencia fuera de muestra, solo cuando el origen
+y el target del residuo ya son anteriores al nuevo origen. La banda objetivo es
+80%, con mínimo de 30 puntos y estado explícito de historia insuficiente. La
+explicación primaria corresponde al mecanismo de persistencia; las señales
+temporales y espaciales quedan separadas como contexto descriptivo. SHAP se
+difiere y no se modificó Streamlit.

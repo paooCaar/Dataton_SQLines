@@ -1084,3 +1084,14 @@ exploratorio y no alimenta el forecast operativo. El CSV operativo registra
 dirección. Los horizontes de 36 y 60 meses son `SCENARIO_ONLY` y se excluyen
 del output operativo. No se modificaron legacy, Queen, Streamlit ni los
 artefactos de Fases 1–4.
+
+## Fase 6: incertidumbre y explicabilidad V2
+
+La implementación está documentada en
+[`docs/PHASE6_UNCERTAINTY_EXPLAINABILITY_V2.md`](docs/PHASE6_UNCERTAINTY_EXPLAINABILITY_V2.md).
+Las bandas operativas usan residuos absolutos fuera de muestra de persistencia,
+con calibración rolling estrictamente anterior al origen y mínimo de 30 puntos.
+La cobertura objetivo es 80%; las filas sin historia suficiente quedan marcadas
+sin intervalo. La explicación primaria describe persistencia y mantiene el
+contexto temporal/espacial en campos descriptivos separados; no se usa SHAP.
+No se modificaron legacy, Streamlit ni los artefactos de Fases 1–5.
