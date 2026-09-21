@@ -3,6 +3,10 @@ data/raw/*
 !data/raw/.gitkeep
 data/external/*
 !data/external/.gitkeep
+# Tiny frozen TomTom input required to reproduce the long-term scenarios.
+!data/external/tomtom/
+data/external/tomtom/*
+!data/external/tomtom/tomtom_traffic_index_cdmx_v2.csv
 # datos_bici/ (~1.9GB, con CSV mensuales de hasta 112MB) NO viene de un
 # script reproducible (el equipo lo coloca directo en el repo, ver
 # docs/fuentes_datos.md) - pero igual es demasiado pesado para git normal

@@ -87,14 +87,23 @@ SCENARIO_OPTIONS = {
     "Bajo": {
         "value": "scenario_low",
         "growth": "growth_low_annual_pct",
+        "traffic_target": "traffic_low_target_congestion_pct",
+        "traffic_adjustment": "traffic_low_adjustment_pct",
+        "traffic_change": "traffic_low_change_pp_per_year",
     },
     "Base": {
         "value": "scenario_base",
         "growth": "growth_base_annual_pct",
+        "traffic_target": "traffic_base_target_congestion_pct",
+        "traffic_adjustment": "traffic_base_adjustment_pct",
+        "traffic_change": "traffic_base_change_pp_per_year",
     },
     "Alto": {
         "value": "scenario_high",
         "growth": "growth_high_annual_pct",
+        "traffic_target": "traffic_high_target_congestion_pct",
+        "traffic_adjustment": "traffic_high_adjustment_pct",
+        "traffic_change": "traffic_high_change_pp_per_year",
     },
 }
 
@@ -202,6 +211,19 @@ def load_long_term_scenarios():
         "scenario_status",
         "scenario_role",
         "validation_status",
+        "tomtom_enabled",
+        "tomtom_latest_year",
+        "tomtom_congestion_pct",
+        "tomtom_recent_change_pp",
+        "traffic_low_target_congestion_pct",
+        "traffic_base_target_congestion_pct",
+        "traffic_high_target_congestion_pct",
+        "traffic_low_adjustment_pct",
+        "traffic_base_adjustment_pct",
+        "traffic_high_adjustment_pct",
+        "traffic_low_change_pp_per_year",
+        "traffic_base_change_pp_per_year",
+        "traffic_high_change_pp_per_year",
     }
 
     missing = required.difference(frame.columns)
@@ -324,6 +346,11 @@ método más estable frente a alternativas más complejas.
 Son **escenarios condicionados**, no pronósticos validados. Parten del
 nivel a 12 meses y preguntan qué pasaría si el crecimiento histórico
 reciente se mantuviera en una trayectoria baja, base o alta.
+
+Además incorporamos **TomTom Traffic Index** como stress factor de tráfico.
+No suponemos que más tráfico cause automáticamente más viajes en ECOBICI:
+el ajuste es una sensibilidad explícita del escenario. La señal actual es
+citywide, así que cambia niveles pero no crea diferencias entre colonias.
 
 **Rango de incertidumbre**
 
@@ -720,6 +747,14 @@ def long_term_map(frame, geometry, scenario_name):
         value_col
     ]
 
+    traffic_adjustment_col = SCENARIO_OPTIONS[
+        scenario_name
+    ]["traffic_adjustment"]
+
+    selected["ajuste_trafico_pct"] = selected[
+        traffic_adjustment_col
+    ]
+
     return _base_choropleth(
         selected,
         geometry,
@@ -730,12 +765,14 @@ def long_term_map(frame, geometry, scenario_name):
             "alcaldia_display": True,
             "valor_escenario": ":,.0f",
             "anchor_12m_value": ":,.0f",
+            "ajuste_trafico_pct": ":.2f",
         },
         labels={
             "nivel_mapa": "Actividad relativa",
             "alcaldia_display": "Alcaldía",
             "valor_escenario": f"Escenario {scenario_name.lower()}",
             "anchor_12m_value": "Ancla a 12 meses",
+            "ajuste_trafico_pct": "Ajuste TomTom (%)",
         },
         title=(
             f"Escenario {scenario_name.lower()} "
@@ -898,6 +935,18 @@ def show_long_term(
         scenario_name
     ]["growth"]
 
+    traffic_target_col = SCENARIO_OPTIONS[
+        scenario_name
+    ]["traffic_target"]
+
+    traffic_adjustment_col = SCENARIO_OPTIONS[
+        scenario_name
+    ]["traffic_adjustment"]
+
+    traffic_change_col = SCENARIO_OPTIONS[
+        scenario_name
+    ]["traffic_change"]
+
     scenario_value = row[value_col]
     anchor = row["anchor_12m_value"]
 
@@ -934,8 +983,81 @@ def show_long_term(
             f"### {number(accumulated_change, 1, '%')}"
         )
 
+    st.subheader(
+        "🚗 ¿Qué aporta el tráfico?"
+    )
+
+    if bool(row.get("tomtom_enabled", False)):
+        current_congestion = row[
+            "tomtom_congestion_pct"
+        ]
+
+        target_congestion = row[
+            traffic_target_col
+        ]
+
+        traffic_adjustment = row[
+            traffic_adjustment_col
+        ]
+
+        traffic_change = row[
+            traffic_change_col
+        ]
+
+        t1, t2, t3 = st.columns(3)
+
+        with t1:
+            st.markdown("**TomTom más reciente**")
+            st.markdown(
+                f"### {number(current_congestion, 1, '%')}"
+            )
+            st.caption(
+                f"Año {int(row['tomtom_latest_year'])}"
+            )
+
+        with t2:
+            st.markdown(
+                f"**Tráfico en escenario {scenario_name.lower()}**"
+            )
+            st.markdown(
+                f"### {number(target_congestion, 1, '%')}"
+            )
+            st.caption(
+                f"{number(traffic_change, 1, ' pp/año')}"
+            )
+            st.caption("Hipótesis para los años extra después del ancla a 12 meses; no es un dato observado futuro.")
+
+        with t3:
+            st.markdown("**Ajuste sobre ECOBICI**")
+            sign = "+" if traffic_adjustment > 0 else ""
+            st.markdown(
+                f"### {sign}{number(traffic_adjustment, 2, '%')}"
+            )
+            st.caption(
+                "Sensibilidad del escenario"
+            )
+
+        if row["tomtom_recent_change_pp"] < 0:
+            st.caption(
+                "Dato importante: el TomTom Traffic Index más reciente "
+                "bajó frente al año anterior. Por eso no asumimos que el "
+                "tráfico necesariamente crecerá: el escenario alto es un "
+                "stress case y el base mantiene la congestión."
+            )
+
+        st.info(
+            "TomTom sí modifica el valor de 3 y 5 años, pero como una "
+            "hipótesis de escenario, no como una causa demostrada. "
+            "Como esta señal es para toda la ciudad, cambia el nivel de "
+            "las proyecciones pero no el ranking entre colonias por sí sola."
+        )
+    else:
+        st.caption(
+            "Este artefacto fue generado sin ajuste TomTom."
+        )
+
     st.info(
-        f"Este escenario supone un crecimiento anual de "
+        f"El componente ECOBICI de este escenario usa un crecimiento anual de "
         f"{number(row[growth_col], 1, '%')} después del primer año. "
         "La tasa viene de la historia de la colonia y está limitada con "
         "reglas robustas para evitar extrapolaciones extremas."
@@ -948,7 +1070,7 @@ def show_long_term(
                 "Base",
                 "Alto",
             ],
-            "Crecimiento anual usado": [
+            "Crecimiento anual ECOBICI": [
                 number(
                     row["growth_low_annual_pct"],
                     1,
@@ -962,6 +1084,23 @@ def show_long_term(
                 number(
                     row["growth_high_annual_pct"],
                     1,
+                    "%",
+                ),
+            ],
+            "Ajuste TomTom": [
+                number(
+                    row["traffic_low_adjustment_pct"],
+                    2,
+                    "%",
+                ),
+                number(
+                    row["traffic_base_adjustment_pct"],
+                    2,
+                    "%",
+                ),
+                number(
+                    row["traffic_high_adjustment_pct"],
+                    2,
                     "%",
                 ),
             ],

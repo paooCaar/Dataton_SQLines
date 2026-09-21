@@ -31,6 +31,11 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from src.data.tomtom_v2 import (
+    DEFAULT_TOMTOM_PATH, TRAFFIC_PASS_THROUGH, build_traffic_scenario_bundle,
+    load_tomtom_traffic_index,
+)
+
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -40,7 +45,7 @@ CURRENT_PATH = ROOT / "data" / "processed" / "current_forecast_product_v2.csv"
 OUTPUT_PATH = ROOT / "data" / "processed" / "long_term_scenarios_v2.csv"
 METADATA_PATH = ROOT / "data" / "processed" / "long_term_scenarios_v2.metadata.json"
 
-VERSION = "2.0-phase8-long-term-scenarios"
+VERSION = "2.1-phase9-long-term-tomtom"
 
 HORIZONS = (36, 60)
 MIN_GROWTH_POINTS = 8
@@ -244,6 +249,8 @@ def build_long_term_scenarios(
     panel: pd.DataFrame,
     current: pd.DataFrame,
     min_points: int = MIN_GROWTH_POINTS,
+    *,
+    tomtom: pd.DataFrame | None = None,
 ) -> tuple[pd.DataFrame, dict]:
     """Construye escenarios 36/60 meses a partir del ancla de 12 meses."""
 
@@ -370,6 +377,28 @@ def build_long_term_scenarios(
         ]:
             frame[col] = frame[col].clip(lower=0)
 
+        # Keep the Phase 8 result explicit before applying one positive scalar
+        # per horizon/scenario to every zone. No change to historical growth.
+        frame["tomtom_enabled"] = tomtom is not None
+        if tomtom is not None:
+            traffic = build_traffic_scenario_bundle(tomtom, extra_years)
+        else:
+            traffic = {"tomtom_latest_year": np.nan, "tomtom_congestion_pct": np.nan,
+                       "tomtom_recent_change_pp": np.nan, "traffic_pass_through": 0.0,
+                       "traffic_stress_magnitude_pp_per_year": 0.0}
+            for name in ("low", "base", "high"):
+                traffic.update({f"traffic_{name}_change_pp_per_year": 0.0,
+                                f"traffic_{name}_target_congestion_pct": np.nan,
+                                f"traffic_{name}_multiplier": 1.0,
+                                f"traffic_{name}_adjustment_pct": 0.0})
+        for column, value in traffic.items():
+            frame[column] = value
+        for name in ("low", "base", "high"):
+            frame[f"scenario_{name}_before_traffic"] = frame[f"scenario_{name}"]
+            frame[f"scenario_{name}"] *= traffic[f"traffic_{name}_multiplier"]
+        traffic_columns = ["tomtom_enabled", *traffic,
+                           *(f"scenario_{name}_before_traffic" for name in ("low", "base", "high"))]
+
         frame["scenario_status"] = np.where(
             valid,
             "READY",
@@ -383,6 +412,8 @@ def build_long_term_scenarios(
         frame["scenario_method"] = (
             "12m_anchor_plus_compounded_robust_yoy_log_growth"
         )
+        if tomtom is not None:
+            frame["scenario_method"] += "_times_citywide_tomtom_sensitivity"
 
         frame["extra_years_after_12m_anchor"] = extra_years
 
@@ -397,6 +428,8 @@ def build_long_term_scenarios(
                 "tiene suficiente historia interanual válida."
             ),
         )
+        if tomtom is not None:
+            frame["notes"] += " TomTom es una sensibilidad citywide de escenario, no una relación causal estimada."
 
         rows.append(
             frame[
@@ -423,7 +456,7 @@ def build_long_term_scenarios(
                     "scenario_method",
                     "extra_years_after_12m_anchor",
                     "notes",
-                ]
+                ] + traffic_columns
             ]
         )
 
@@ -489,6 +522,16 @@ def build_long_term_scenarios(
         ),
         "not_a_forecast_interval": True,
         "not_p10_p50_p90": True,
+        "tomtom_enabled": tomtom is not None,
+        "tomtom_methodology": {
+            "pass_through": TRAFFIC_PASS_THROUGH if tomtom is not None else 0.0,
+            "formula": "scenario_before_traffic * ((1 + future_congestion_pct/100)/(1 + latest_congestion_pct/100)) ** pass_through",
+            "stress": "abs(latest published yoy_change_pp); low=-stress, base=0, high=+stress",
+            "years_after_anchor": {"36": 2, "60": 4},
+            "role": "Citywide scenario sensitivity, not a causal elasticity; same positive multiplier preserves spatial rank within horizon/scenario",
+            "anchor_assumption": "2025 congestion is held as the reference at the 12-month anchor; only the extra 2/4 years are stressed",
+            "observations": None if tomtom is None else json.loads(tomtom.to_json(orient="records")),
+        },
         "min_growth_points": min_points,
         "growth_caps": caps,
         "n_rows": int(len(output)),
@@ -506,6 +549,7 @@ def build_long_term_scenarios(
             "Los escenarios mantienen la tasa histórica condicionada y no modelan cambios de política, infraestructura o cobertura futuros.",
             "El crecimiento histórico de ECOBICI puede reflejar expansión de red además de cambios de uso.",
             "Bajo/base/alto son escenarios condicionados, no cuantiles predictivos ni intervalos de confianza.",
+            "El pass-through de TomTom es una hipótesis no estimada; no existe validación causal ni tráfico por colonia.",
         ],
         "input_sha256": {
             str(PANEL_PATH.relative_to(ROOT)): sha256_file(PANEL_PATH),
@@ -534,7 +578,13 @@ def main() -> None:
     output, metadata = build_long_term_scenarios(
         panel,
         current,
+        tomtom=load_tomtom_traffic_index(),
     )
+    metadata["input_sha256"][str(DEFAULT_TOMTOM_PATH.relative_to(ROOT))] = sha256_file(DEFAULT_TOMTOM_PATH)
+    metadata["implementation_sha256"] = {
+        path: sha256_file(ROOT / path) for path in (
+            "src/models/long_term_scenarios_v2.py", "src/data/tomtom_v2.py")
+    }
 
     OUTPUT_PATH.parent.mkdir(
         parents=True,
