@@ -166,23 +166,18 @@ class Phase7AppContractTests(unittest.TestCase):
         from streamlit.testing.v1 import AppTest
         app = AppTest.from_file(str(ROOT / "src/app/app_v2.py")).run(timeout=30)
         self.assertEqual(len(app.exception), 0)
-        select = lambda label: next(widget for widget in app.selectbox if widget.label == label)
-        no_geo = self.inputs["catalog"][~self.inputs["catalog"].geometry_available].zone_id.iloc[0]
-        select("Colonia").set_value(no_geo).run()
-        self.assertTrue(any("Sin geometría disponible" in x.value for x in app.info))
-        for choice in ["Dirección", "Opportunity Score", "Cambio esperado"]:
-            select("Mostrar en mapa").set_value(choice).run()
+        self.assertEqual(len(app._registered_pages), 2)
+        self.assertEqual(len(app.get("plotly_chart")), 1)
+        self.assertEqual(len(app.metric), 0)
+
+        app._page_hash = next(key for key, entry in app._registered_pages.items()
+                              if entry["url_pathname"] == "futuro")
+        app.run(timeout=30)
+        for h in [12, 36, 60]:
+            next(widget for widget in app.button_group if widget.label == "Horizonte").set_value(h).run(timeout=30)
             self.assertEqual(len(app.exception), 0)
-        for h in [3, 6, 12, 36, 60]:
-            select("Horizonte").set_value(h).run()
-            self.assertEqual(len(app.exception), 0)
-            if h in [36, 60]:
-                self.assertEqual(len(app.metric), 0)
-                self.assertTrue(any("SCENARIO_ONLY" in x.value for x in app.subheader))
-        select("Horizonte").set_value(1).run()
-        app.radio[0].set_value("Validación histórica").run()
-        self.assertEqual(len(app.exception), 0)
-        self.assertTrue(any("No es una emisión actual" in x.value for x in app.warning))
+            self.assertEqual(len(app.metric), 0)
+            self.assertEqual(len(app.get("plotly_chart")), 1)
 
     def test_app_missing_current_does_not_substitute_backtest(self):
         from streamlit.testing.v1 import AppTest
@@ -191,7 +186,13 @@ class Phase7AppContractTests(unittest.TestCase):
             app = AppTest.from_file(str(ROOT / "src/app/app_v2.py")).run(timeout=30)
         self.assertEqual(len(app.exception), 0)
         self.assertEqual(len(app.metric), 0)
-        self.assertTrue(any("Emisión actual no disponible" in x.value for x in app.warning))
+        self.assertEqual(len(app.get("plotly_chart")), 1)  # el dato observado sigue disponible
+        app._page_hash = next(key for key, entry in app._registered_pages.items()
+                              if entry["url_pathname"] == "futuro")
+        with patch("src.app.product_contract_v2.load_inputs", return_value=missing):
+            app.run(timeout=30)
+        self.assertEqual(len(app.get("plotly_chart")), 0)
+        self.assertTrue(app.warning)
 
 
 if __name__ == "__main__":

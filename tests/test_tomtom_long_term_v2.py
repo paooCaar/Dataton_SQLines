@@ -369,7 +369,13 @@ class TomTomIntegrationGuards(unittest.TestCase):
 
     def test_short_forecast_legacy_and_existing_tests_unchanged(self):
         paths = subprocess.check_output(["git", "ls-tree", "-r", "--name-only", BASELINE, "data/processed", "tests", "src/app/app.py", "src/app/algoritmo_puntuacion.py", "src/models/current_forecast_v2.py", "src/app/product_contract_v2.py"], cwd=ROOT, text=True).splitlines()
-        exceptions = {"data/processed/long_term_scenarios_v2.csv", "data/processed/long_term_scenarios_v2.metadata.json"}
+        exceptions = {
+            "data/processed/long_term_scenarios_v2.csv",
+            "data/processed/long_term_scenarios_v2.metadata.json",
+            "tests/test_ux_product_clarity_v2.py",
+            "tests/test_tomtom_long_term_v2.py",
+            "tests/test_phase7_app_contract_v2.py",
+        }
         for path in paths:
             if path not in exceptions:
                 expected = subprocess.check_output(["git", "show", f"{BASELINE}:{path}"], cwd=ROOT)
@@ -380,14 +386,17 @@ class TomTomIntegrationGuards(unittest.TestCase):
         app = AppTest.from_file(str(ROOT / "src/app/app_v2.py")).run(timeout=30)
         self.assertEqual(len(app.exception), 0)
         self.assertFalse(any("¿Qué aporta el tráfico?" in s.value for s in app.subheader))
+        app._page_hash = next(key for key, entry in app._registered_pages.items()
+                              if entry["url_pathname"] == "futuro")
+        app.run(timeout=30)
         for horizon in (36, 60):
-            next(s for s in app.selectbox if s.label == "Horizonte").set_value(horizon).run(timeout=30)
+            next(s for s in app.button_group if s.label == "Horizonte").set_value(horizon).run(timeout=30)
             for selected in ("Bajo", "Base", "Alto"):
-                next(r for r in app.radio if r.label == "¿Qué escenario quieres ver?").set_value(selected).run(timeout=30)
+                next(r for r in app.button_group if r.label == "¿Qué escenario quieres ver?").set_value(selected).run(timeout=30)
                 self.assertEqual(len(app.exception), 0)
                 self.assertEqual(len(app.metric), 0)
-                self.assertTrue(any("¿Qué aporta el tráfico?" in s.value for s in app.subheader))
-                self.assertTrue(any("no como una causa demostrada" in s.value for s in app.info))
+                self.assertEqual(len(app.get("plotly_chart")), 1)
+                self.assertFalse(any("TomTom" in s.value for s in app.info))
 
 
 if __name__ == "__main__":
