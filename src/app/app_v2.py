@@ -47,6 +47,26 @@ from src.app.product_contract_v2 import (  # noqa: E402
     number,
     safe_context,
 )
+from src.app.ux_signals_v2 import (  # noqa: E402
+    MAP_EXPLANATIONS, SCENARIO_EXPLANATIONS, LONG_MAP_EXPLANATIONS,
+    observed_trend, scenario_display,
+)
+
+
+def choose_primary_map():
+    st.session_state["short-map-choice"] = st.session_state["primary-map-choice"]
+
+
+def choose_secondary_map():
+    choice = st.session_state["short-map-choice"]
+    st.session_state["primary-map-choice"] = choice if choice in (
+        "Actividad prevista", "Incertidumbre", "Tendencia reciente") else None
+
+
+@st.cache_data
+def load_observed_history():
+    return pd.read_csv(ROOT / "data/processed/panel_demanda_v2.csv", usecols=[
+        "zone_id", "periodo", "viajes_total", "data_status", "target_available_no_earlier_than"])
 
 
 LONG_TERM_PATH = (
@@ -370,7 +390,7 @@ pipeline, preferimos decir **sin pronóstico** antes que inventar uno.
         )
 
 
-def show_outside_coverage(municipality, inputs):
+def show_outside_coverage(municipality, inputs, horizon=1):
     """Vista amigable para alcaldías sin histórico ECOBICI suficiente."""
 
     st.subheader(
@@ -384,20 +404,8 @@ def show_outside_coverage(municipality, inputs):
 
     c1, c2, c3 = st.columns(3)
 
-    c1.metric(
-        "Pronóstico",
-        "No disponible",
-    )
-
-    c2.metric(
-        "Historia ECOBICI",
-        "Insuficiente",
-    )
-
-    c3.metric(
-        "Qué hacemos",
-        "No inventar",
-    )
+    for column, label in zip((c1, c2, c3), ("Actividad", "Historia ECOBICI", "Tendencia reciente")):
+        column.markdown(f"**{label}**\n\nSin dato")
 
     st.info(
         "Esto no significa que la zona no tenga demanda potencial. "
@@ -513,6 +521,18 @@ def short_term_map(frame, geometry, choice):
     selected["alcaldia_display"] = (
         selected["alcaldia"].map(alcaldia_label)
     )
+
+    if choice == "Tendencia reciente":
+        selected["trend_display"] = selected.trend_pct.map(lambda v: number(v, 1, "%"))
+        return _base_choropleth(
+            selected, geometry, color="trend_category",
+            hover_data={"zone_id": False, "alcaldia_display": True, "trend_display": True,
+                        "origin_period": True, "trend_comparison_period": True},
+            labels={"trend_category": "Tendencia observada", "trend_display": "Cambio interanual",
+                    "alcaldia_display": "Alcaldía", "origin_period": "Mes observado",
+                    "trend_comparison_period": "Mismo mes del año anterior"},
+            title="Tendencia reciente · historia observada",
+            color_discrete_map={"Subiendo": "#18887a", "Estable": "#718096", "Bajando": "#bc583c", "Sin dato": "#d1d5db"})
 
     # --------------------------------------------------------
     # ACTIVIDAD PREVISTA
@@ -720,7 +740,7 @@ def short_term_map(frame, geometry, choice):
     )
 
 
-def long_term_map(frame, geometry, scenario_name):
+def long_term_map(frame, geometry, scenario_name, choice="Actividad del escenario"):
     """Mapa de escenario 36/60 meses."""
 
     value_col = SCENARIO_OPTIONS[
@@ -738,6 +758,28 @@ def long_term_map(frame, geometry, scenario_name):
     selected["alcaldia_display"] = (
         selected["alcaldia"].map(alcaldia_label)
     )
+
+    selected = scenario_display(selected, scenario_name)
+    if choice == "Dirección del escenario":
+        selected["change_display"] = selected.scenario_change_pct.map(lambda v: number(v, 1, "%"))
+        return _base_choropleth(
+            selected, geometry, color="scenario_direction",
+            hover_data={"zone_id": False, "alcaldia_display": True, "change_display": True},
+            labels={"scenario_direction": "Dirección del escenario", "alcaldia_display": "Alcaldía",
+                    "change_display": "Cambio vs. ancla"}, title="Dirección del escenario · regla ±5%",
+            color_discrete_map={"AUMENTO": "#18887a", "ESTABLE": "#718096", "DISMINUCIÓN": "#bc583c", "Sin dato": "#d1d5db"})
+    if choice in ("Cambio vs. ancla", "Aporte TomTom"):
+        column = "scenario_change_pct" if choice == "Cambio vs. ancla" else "selected_traffic_adjustment_pct"
+        selected = selected[np.isfinite(selected[column])].copy()
+        if selected.empty:
+            return None
+        limit = max(1.0, selected[column].abs().max())
+        return _base_choropleth(
+            selected, geometry, color=column,
+            hover_data={"zone_id": False, "alcaldia_display": True, column: ":.2f"},
+            labels={column: f"{choice} (%)", "alcaldia_display": "Alcaldía"},
+            title=f"{choice} · escenario {scenario_name.lower()}",
+            color_continuous_scale="RdBu", range_color=(-limit, limit))
 
     selected["nivel_mapa"] = quantile_category(
         selected[value_col]
@@ -798,6 +840,11 @@ def show_long_term(
     st.subheader(
         f"🔭 SCENARIO_ONLY · Mirada a {years} años"
     )
+    st.info("El forecast de 12 meses no desaparece: lo usamos como punto de partida. A partir de ahí construimos escenarios de 3 y 5 años combinando la tendencia histórica de ECOBICI con una hipótesis de presión vial TomTom.")
+    st.markdown("**Forecast validado a 12 meses (persistencia)** → ancla\n\n"
+                "+ crecimiento histórico ECOBICI bajo / mediano / alto + ajuste TomTom\n\n"
+                "→ **Escenario a 3 / 5 años · SCENARIO_ONLY**")
+    st.caption("is_validated_forecast = False · No son probabilidades ni intervalos conformales.")
 
     st.warning(
         "SCENARIO_ONLY · Aquí hablamos de escenarios, no de una "
@@ -852,6 +899,10 @@ def show_long_term(
         index=1,
         horizontal=True,
     )
+    st.info(SCENARIO_EXPLANATIONS[scenario_name])
+    frame = scenario_display(frame, scenario_name)
+    long_choice = st.selectbox("Mostrar en mapa de escenarios", list(LONG_MAP_EXPLANATIONS))
+    st.caption(LONG_MAP_EXPLANATIONS[long_choice])
 
     st.caption(
         "Bajo / base / alto salen de la historia anual de cada colonia. "
@@ -862,6 +913,7 @@ def show_long_term(
         frame,
         inputs["geometry"],
         scenario_name,
+        long_choice,
     )
 
     if fig is None:
@@ -950,12 +1002,7 @@ def show_long_term(
     scenario_value = row[value_col]
     anchor = row["anchor_12m_value"]
 
-    if pd.notna(anchor) and anchor > 0:
-        accumulated_change = (
-            scenario_value / anchor - 1
-        ) * 100
-    else:
-        accumulated_change = np.nan
+    accumulated_change = row["scenario_change_pct"]
 
     # En 36/60 meses evitamos st.metric a propósito:
     # los tests heredados de Fase 7 reservan las métricas numéricas
@@ -982,6 +1029,11 @@ def show_long_term(
         st.markdown(
             f"### {number(accumulated_change, 1, '%')}"
         )
+    d1, d2, d3 = st.columns(3)
+    d1.markdown(f"**Dirección del escenario**\n\n{row['scenario_direction']}")
+    d2.markdown(f"**Tendencia histórica ECOBICI**\n\n{number(row[growth_col], 1, '%')} anual")
+    d3.markdown(f"**Ajuste TomTom**\n\n{number(row[traffic_adjustment_col], 2, '%')}")
+    st.caption("La dirección usa ±5% de cambio desde el ancla como regla de producto, no como verdad estadística.")
 
     st.subheader(
         "🚗 ¿Qué aporta el tráfico?"
@@ -1048,8 +1100,9 @@ def show_long_term(
         st.info(
             "TomTom sí modifica el valor de 3 y 5 años, pero como una "
             "hipótesis de escenario, no como una causa demostrada. "
-            "Como esta señal es para toda la ciudad, cambia el nivel de "
-            "las proyecciones pero no el ranking entre colonias por sí sola."
+            "TomTom modifica el valor del escenario, pero no representa una relación causal demostrada. "
+            "Como la señal TomTom usada aquí es citywide, cambia el nivel de los escenarios "
+            "pero no el ranking espacial entre colonias por sí sola."
         )
     else:
         st.caption(
@@ -1206,6 +1259,7 @@ def main():
                 60: "5 años · escenario",
             }[value],
         )
+        st.caption("1 / 3 / 6 / 12 meses: forecast validado retrospectivamente.\n\n3 / 5 años: escenarios condicionados.")
 
         municipality = st.selectbox(
             "Alcaldía",
@@ -1220,6 +1274,12 @@ def main():
             ),
         )
 
+    st.subheader("CORTO PLAZO · FORECAST VALIDADO" if horizon in (1, 3, 6, 12)
+                 else "LARGO PLAZO · ESCENARIOS · SCENARIO_ONLY")
+    if horizon in (1, 3, 6, 12):
+        st.info("Para 1, 3, 6 y 12 meses usamos un forecast validado retrospectivamente. El punto central usa persistencia: toma el nivel reciente como mejor referencia porque fue el método más estable en nuestras pruebas históricas.")
+        st.caption("¿Cuánta actividad esperamos? → Actividad prevista · ¿Qué tan incierto es? → Incertidumbre · ¿Cómo venía cambiando? → Tendencia reciente")
+
     if (
         municipality != "Todas"
         and municipality not in ecobici_municipalities
@@ -1227,6 +1287,7 @@ def main():
         show_outside_coverage(
             municipality,
             inputs,
+            horizon,
         )
         return
 
@@ -1380,6 +1441,14 @@ def main():
         scores,
         horizon,
     )
+    try:
+        trends = observed_trend(load_observed_history(), frame[["zone_id", "origin_period"]])
+        frame = frame.merge(trends, on=["zone_id", "origin_period"], how="left", validate="one_to_one")
+    except (OSError, ValueError, KeyError) as exc:
+        st.warning(f"Tendencia reciente no disponible: {exc}")
+        frame["trend_pct"] = np.nan
+        frame["trend_category"] = "Sin dato"
+        frame["trend_comparison_period"] = None
 
     if municipality != "Todas":
         frame = frame[
@@ -1454,19 +1523,17 @@ def main():
         "🗺️ Vista general"
     )
 
-    # IMPORTANTE:
-    # Este nombre y este tipo de widget se mantienen por compatibilidad
-    # con los tests de Fase 7.
-    choice = st.selectbox(
-        "Mostrar en mapa",
-        [
-            "Actividad prevista",
-            "Incertidumbre",
-            "Cambio esperado",
-            "Dirección",
-            "Opportunity Score",
-        ],
-    )
+    st.selectbox("Vista principal del mapa", ["Actividad prevista", "Incertidumbre", "Tendencia reciente"],
+                 key="primary-map-choice", on_change=choose_primary_map)
+    with st.expander("Detalles técnicos y complementarios"):
+        st.caption("Cambio esperado y Dirección describen el punto central de persistencia. Opportunity Score es independiente del forecast.")
+        # Existing tests and users keep the same label/options, now secondary.
+        choice = st.selectbox("Mostrar en mapa", list(MAP_EXPLANATIONS), key="short-map-choice", on_change=choose_secondary_map)
+        st.caption(MAP_EXPLANATIONS[choice])
+    st.markdown(f"**Mapa activo: {choice}**")
+    st.caption(MAP_EXPLANATIONS[choice])
+    if choice == "Tendencia reciente":
+        st.caption("Comparación con el mismo mes del año previo: >+5% Subiendo, <−5% Bajando, entre ambos Estable. Sin ambas observaciones válidas: Sin dato.")
 
     fig = short_term_map(
         frame,
@@ -1508,7 +1575,7 @@ def main():
             "La dirección resume el cambio puntual del forecast."
         )
 
-    else:
+    elif choice == "Opportunity Score":
         st.caption(
             "El Opportunity Score es un indicador legacy complementario "
             "y no forma parte del forecast V2."
@@ -1541,6 +1608,7 @@ def main():
             "No tenemos un pronóstico para esta colonia y horizonte. "
             "No lo interpretamos como cero."
         )
+        st.markdown("**Actividad reciente / prevista / incertidumbre: Sin dato**")
     else:
         c1, c2, c3 = st.columns(3)
 
@@ -1553,7 +1621,7 @@ def main():
         )
 
         c2.metric(
-            "Lo que esperamos",
+            "Actividad prevista",
             number(
                 row["forecast_value"],
                 suffix=" endpoints",
@@ -1561,12 +1629,8 @@ def main():
         )
 
         c3.metric(
-            "Cambio puntual",
-            number(
-                row["forecast_change_pct"],
-                1,
-                "%",
-            ),
+            "Incertidumbre · intervalo 80%",
+            f"[{number(row.interval_lower_80)}, {number(row.interval_upper_80)}]" if pd.notna(row.interval_lower_80) and pd.notna(row.interval_upper_80) else "Sin dato",
         )
 
         st.caption(
@@ -1579,6 +1643,9 @@ def main():
             "este método fue el que se comportó de forma más estable "
             "cuando lo probamos con meses pasados."
         )
+    st.metric("Tendencia reciente · historia observada", row["trend_category"])
+    st.caption(f"Cambio interanual: {number(row['trend_pct'], 1, '%')} · mes observado {row.origin_period if pd.notna(row.origin_period) else 'Sin dato'} · referencia {row.trend_comparison_period if pd.notna(row.trend_comparison_period) else 'Sin dato'}.")
+    st.caption("Es historia observada, no una predicción. Endpoints = inicios + finales registrados en la colonia durante el mes.")
 
     # ========================================================
     # INCERTIDUMBRE
